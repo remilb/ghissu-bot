@@ -48,7 +48,7 @@ def main():
     vocab_size = len(vocab)
     embedding_dim = len(embd[0])
     embedding = np.asarray(embd)
-    print embedding[0], vocab[0]
+    print(embedding[0], vocab[0])
     
     
     #init vocab processor
@@ -58,7 +58,7 @@ def main():
     #transform inputs
     X = np.array(list(vocab_processor.transform(X)))
     
-    print X[0]
+    print(X[0])
     
     
 #    TF variable (placeholder)
@@ -71,7 +71,7 @@ def main():
     
     sess.run(embedding_init, feed_dict={embedding_placeholder: embedding})
 
-    print X[0]
+    print(X[0])
     var = W.eval(session=sess)
-    print var
+    print(var)
 main()
