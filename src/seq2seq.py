@@ -4,6 +4,7 @@ import os
 import tensorflow as tf
 import copy
 from tensorflow.contrib import learn
+import cPickle as pickle
 
 def read_from_csv():
 
@@ -72,10 +73,8 @@ def main():
 #        Call the session
         sess.run(embedding_init, feed_dict={embedding_placeholder: embedding})
 
-        print(req_embedded.get_shape)
-        print(req_embedded.eval()[0])
-        
-        saver = tf.train.Saver()
-        save_path = saver.save(req_embedded, "X")        
-        
+        vectors = req_embedded.eval()
+        print vectors[0]
+        pickle.dump(vectors, open("vectorized_input", "wb"))        
+
 main()
