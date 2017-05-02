@@ -74,5 +74,8 @@ def main():
 
         print(req_embedded.get_shape)
         print(req_embedded.eval()[0])
-
+        
+        saver = tf.train.Saver()
+        save_path = saver.save(req_embedded, "X")        
+        
 main()
