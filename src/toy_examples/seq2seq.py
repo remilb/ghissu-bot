@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-import toy_examples.helpers
+import toy_examples.helpers as helpers
 
 #x = [[5,7,8], [6,3], [3], [1]]
 
