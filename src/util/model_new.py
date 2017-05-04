@@ -16,7 +16,7 @@ class Seq2SeqModel():
 
     PAD = 0
     EOS = 1
-
+#todo move to new file with class def
     def __init__(self, encoder_cell, decoder_cell, vocab_size, embedding_size,
                  bidirectional=True,
                  attention=False,
@@ -303,6 +303,7 @@ def make_seq2seq_model(**kwargs):
                 debug=False)
     args.update(kwargs)
     return Seq2SeqModel(**args)
+
 
 
 def train_on_copy_task(session, model,
