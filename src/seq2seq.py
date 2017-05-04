@@ -4,11 +4,12 @@ import os
 import tensorflow as tf
 import copy
 from tensorflow.contrib import learn
-import cPickle as pickle
+import _pickle as pickle
 
 def read_from_csv():
 
-    df = pd.DataFrame.from_csv("/home/sharath/programming/friends.csv")
+    csv_fname = "/Users/shubhi/Public/CMPS296/friends.csv" #replace with local file loc
+    df = pd.DataFrame.from_csv(csv_fname)
     df = df.dropna(subset = ['utterance'])
     print(len(df))
     X = list(df['utterance'])
@@ -42,15 +43,13 @@ def main():
     (X,Y) = read_from_csv()
     max_sentence_length = 20
 
-    filename = '/home/sharath/programming/glove.6B.100d.txt'
-
-    vocab, embd = loadGloVe(filename)
+    glove_filename = '/Users/shubhi/Public/CMPS296/glove.6B/glove.6B.50d.txt' #replace with local file loc
+    vocab, embd = loadGloVe(glove_filename)
     
     vocab_size = len(vocab)
     embedding_dim = len(embd[0])
     embedding = np.asarray(embd)
-    
-    
+
     #init vocab processor
     vocab_processor = learn.preprocessing.VocabularyProcessor(max_sentence_length)
     #fit the vocab from glove
@@ -58,7 +57,7 @@ def main():
     #transform inputs
     X = np.array(list(vocab_processor.transform(X)))
     
-    print X[0]
+    print (X[0])
     
     with tf.Session() as sess:
         
@@ -74,7 +73,7 @@ def main():
         sess.run(embedding_init, feed_dict={embedding_placeholder: embedding})
 
         vectors = req_embedded.eval()
-        print vectors[0]
+        print (vectors[0])
         pickle.dump(vectors, open("vectorized_input", "wb"))        
 
 main()
