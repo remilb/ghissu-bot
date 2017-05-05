@@ -1,6 +1,7 @@
 from util import preprocess as pp
 import tensorflow as tf
 from model import Seq2SeqModel
+import tensorflow.contrib.seq2seq as tf_s2s
 from tensorflow.contrib.rnn import LSTMCell, GRUCell
 
 class seq2seq_contrib:
@@ -30,6 +31,8 @@ class seq2seq_contrib:
             req_embedded = tf.nn.embedding_lookup(W, self.X)
 
             session.run(tf.global_variables_initializer())
+
+
 
 
             #global vars initialised
