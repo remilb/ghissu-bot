@@ -26,14 +26,14 @@ class Seq2SeqModel():
         self.decoder_cell = decoder_cell
         self._make_graph()
 
-    def get_batch(X, vocab_size, batch_size):
+    def get_batch(X, vocab_size, batch_size, input_dim):
         global PAD, EOS
         encoder_size, decoder_size  =  vocab_size
         encoder_inputs = []
         decoder_inputs = []
         for a in range(batch_size):
             encoder_inputs, decoder_inputs = random.choice(X)
-            encoder_pad = [PAD] * (encoder_size - len(encoder_inputs))
+            encoder_pad = [[PAD] * input_dim]* (encoder_size - len(encoder_inputs))
             '''encoder inputs are padded and then reversed and cast into a list'''
             encoder_inputs.append(list(reversed(encoder_inputs +  encoder_pad)))
 
