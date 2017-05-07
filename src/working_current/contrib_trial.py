@@ -1,9 +1,9 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.contrib.rnn import LSTMCell, GRUCell
-from model_new import Seq2SeqModel, train_on_copy_task
+from src.working_current.model_new import Seq2SeqModel, train_on_copy_task
 #import pandas as pd
-import helpers
+import src.working_current.helpers as helpers
 
 import warnings
 warnings.filterwarnings("ignore")
