@@ -4,7 +4,7 @@ import numpy as np
 import  pandas as pd
 from tensorflow.contrib import learn
 
-from util.embedding_models import load_glove
+from src.util.embedding_models import load_glove
 
 
 def read_from_csv():
