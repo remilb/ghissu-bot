@@ -370,10 +370,10 @@ def train_on_copy_task(session, model,
     '''
 
     loss_track = []
-    iter =0
+    iter =-1
     try:
         for n in range(max_batches):
-            for batch in helpers.iterate_minibatches(model.input_data_pp, model.decoder_target_pp, batch_size, shuffle=True):
+            for batch in helpers.iterate_minibatches(model.input_data_pp, model.decoder_target_pp, batch_size, shuffle=False):
         #for batch in range(max_batches+1):
             #batch_data = next(batches)
                 x_batch, y_batch = batch
@@ -401,7 +401,14 @@ def train_on_copy_task(session, model,
                                 print ([model.id_to_word_map[x] for x in e_in])
                                 print('    enc input           > {}'.format(e_in))
                                 print('    dec train predicted > {}'.format(dt_pred))
-                                #print ([model.id_to_word_map[x] for x in dt_pred])
+                                if iter%50 ==0 :
+                                   '''for x in dt_pred:
+                                        if model.id_to_word_map.__contains__(x):
+                                            print(model.id_to_word_map[x] + "  ")
+                                        else:
+                                            print("Unknown Embedding")'''
+
+                                print ([model.id_to_word_map[x] for x in dt_pred])
 
                             if i >= 2:
                                 break

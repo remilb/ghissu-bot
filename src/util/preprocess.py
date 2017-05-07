@@ -43,8 +43,8 @@ def read_from_csv_with_custom_transform():
     Y = copy.deepcopy(X)
     word_to_id_mapping = custom_transorm(X)
     inv_map = {v: k for k, v in word_to_id_mapping.items()}
-    inv_map[0] = 'UNK'
-    inv_map[1] = 'PAD'
+    inv_map[0] = 'PAD'
+    inv_map[1] = 'EOS'
     X = X[:-1]
     Y = Y[1:]
     Y_transform =  map_to_indices(Y, word_to_id_mapping)

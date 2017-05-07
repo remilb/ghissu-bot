@@ -18,7 +18,7 @@ with tf.Session() as session:
     # 2x encoder state size
     model = Seq2SeqModel(encoder_cell=LSTMCell(10),
                          decoder_cell=LSTMCell(20),
-                         vocab_size=400000,
+                         vocab_size=20869,
                          embedding_size=50,
                          attention=True,
                          bidirectional=True,
@@ -30,7 +30,7 @@ with tf.Session() as session:
     train_on_copy_task(session, model,
                        length_from=3, length_to=8,
                        vocab_lower=2, vocab_upper=10,
-                       batch_size=20,
+                       batch_size=100,
                        max_batches=8000,
                        batches_in_epoch=1000,
                        verbose=True)
