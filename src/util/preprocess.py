@@ -39,10 +39,13 @@ def read_from_csv_with_custom_transform():
 
     Y = copy.deepcopy(X)
     word_to_id_mapping = custom_transorm(X)
+    inv_map = {v: k for k, v in word_to_id_mapping.items()}
+    inv_map[0] = 'UNK'
+    inv_map[1] = 'PAD'
     X = X[:-1]
     Y = Y[1:]
     Y_transform =  map_to_indices(Y, word_to_id_mapping)
-    return (map_to_indices(X , word_to_id_mapping), Y_transform, Y_transform)
+    return (map_to_indices(X , word_to_id_mapping), Y_transform, Y_transform, inv_map)
 
 
 def embed_and_transform(X, Y,  glove_filename):
@@ -59,6 +62,7 @@ def embed_and_transform(X, Y,  glove_filename):
     #fit the vocab from glove
     pretrain = vocab_processor.fit(vocab)
     #transform inputs
+
     X = np.array(list(vocab_processor.transform(X)))
     Y = np.array(list(vocab_processor.transform(Y)))
     return (vocab_size, embedding_dim, embedding, X, Y)

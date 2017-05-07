@@ -18,7 +18,7 @@ with tf.Session() as session:
     # 2x encoder state size
     model = Seq2SeqModel(encoder_cell=LSTMCell(10),
                          decoder_cell=LSTMCell(20),
-                         vocab_size=150,
+                         vocab_size=96,
                          embedding_size=50,
                          attention=True,
                          bidirectional=True,
@@ -30,6 +30,6 @@ with tf.Session() as session:
                        length_from=3, length_to=8,
                        vocab_lower=2, vocab_upper=10,
                        batch_size=10,
-                       max_batches=3000,
+                       max_batches=8000,
                        batches_in_epoch=10,
                        verbose=True)

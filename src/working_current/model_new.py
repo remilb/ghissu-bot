@@ -32,7 +32,7 @@ class Seq2SeqModel():
 
         self.encoder_cell = encoder_cell
         self.decoder_cell = decoder_cell
-        (self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp) =  pp.read_from_csv_with_custom_transform()
+        (self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp, self.id_to_word_map) =  pp.read_from_csv_with_custom_transform()
         #(self.vocab_size_pp, self.embedding_dim_pp, self.embedding_pp , self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp) =  pp.read_from_csv()
         #self.embedding_pp = [tf.cast(embedding_pp, tf.float32) for embedding_pp in self.embedding_pp ]
 
@@ -363,8 +363,12 @@ def train_on_copy_task(session, model,
                             session.run(model.decoder_prediction_train, fd).T
                         )):
                         print('  sample {}:'.format(i + 1))
-                        print('    enc input           > {}'.format(e_in))
-                        print('    dec train predicted > {}'.format(dt_pred))
+                        #print('    enc input           > {}'.format(e_in))
+                        #print('    dec train predicted > {}'.format(dt_pred))
+                        #print (" sample String Representation")
+                        print ([model.id_to_word_map[x] for x in e_in])
+                        print ([model.id_to_word_map[x] for x in dt_pred])
+
                         if i >= 2:
                             break
                     print()
