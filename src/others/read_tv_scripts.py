@@ -45,4 +45,4 @@ if __name__ == "__main__":
     df = pd.DataFrame(data=None,index=None, columns=headers);
     tv_script_dir = args.in_dname
     df = read_tv_script(tv_script_dir, df)
-    df.to_csv("sample.csv")
+    df.to_csv("friends.csv")
