@@ -9,7 +9,7 @@ from util.embedding_models import load_glove
 
 def read_from_csv():
 
-    csv_fname = "/Users/shubhi/Public/CMPS296/friends.csv" #replace with local file loc
+    csv_fname = "/Users/shubhi/Public/CMPS296/friends_sample.csv" #replace with local file loc
     glove_filename = '/Users/shubhi/Public/CMPS296/glove.6B/glove.6B.50d.txt'
 
     df = pd.DataFrame.from_csv(csv_fname)
@@ -22,11 +22,30 @@ def read_from_csv():
     X = X[:-1]
     Y = Y[1:]
 
-    (vocab_size, embedding_dim, embedding , X) = embed_and_transform(X, glove_filename=glove_filename)
-    return (vocab_size, embedding_dim, embedding , X, Y)
+    (vocab_size, embedding_dim, embedding , X, Y_input) = embed_and_transform(X, Y, glove_filename=glove_filename)
+
+    return (vocab_size, embedding_dim, embedding , X, Y_input, Y_input)
+
+def read_from_csv_with_custom_transform():
+
+    csv_fname = "/Users/shubhi/Public/CMPS296/friends_sample.csv" #replace with local file loc
+    glove_filename = '/Users/shubhi/Public/CMPS296/glove.6B/glove.6B.50d.txt'
+
+    df = pd.DataFrame.from_csv(csv_fname)
+    df = df.dropna(subset = ['utterance'])
+
+    X = list(df['utterance'])
+    X = clean_data(X, limit=20)
+
+    Y = copy.deepcopy(X)
+    word_to_id_mapping = custom_transorm(X)
+    X = X[:-1]
+    Y = Y[1:]
+    Y_transform =  map_to_indices(Y, word_to_id_mapping)
+    return (map_to_indices(X , word_to_id_mapping), Y_transform, Y_transform)
 
 
-def embed_and_transform(X, glove_filename):
+def embed_and_transform(X, Y,  glove_filename):
     max_sentence_length = 20
      #replace with local file loc
     vocab, embd = load_glove(glove_filename)
@@ -41,8 +60,29 @@ def embed_and_transform(X, glove_filename):
     pretrain = vocab_processor.fit(vocab)
     #transform inputs
     X = np.array(list(vocab_processor.transform(X)))
+    Y = np.array(list(vocab_processor.transform(Y)))
+    return (vocab_size, embedding_dim, embedding, X, Y)
 
-    return (vocab_size, embedding_dim, embedding, X)
+def custom_transorm(X):
+    word_to_id_mapping = {}
+    map_id =2
+    for sentence in X:
+        sentence_map=[]
+        for word in sentence.split():
+            if word not in word_to_id_mapping.keys():
+                word_to_id_mapping[word] = map_id
+                map_id += 1
+            sentence_map.append(word_to_id_mapping[word])
+    return word_to_id_mapping
+
+def map_to_indices(X, map):
+     X_indices = []
+     for sentence in X:
+        sentence_map=[]
+        for word in sentence.split():
+             sentence_map.append(map[word])
+        X_indices.append(np.asanyarray(sentence_map))
+     return np.asanyarray(X_indices)
 
 
 def shrink_vocab(X):
@@ -55,11 +95,13 @@ def shrink_vocab(X):
 
 def clean_data(X, limit):
     X = [" ".join(sentence.split("-")) for sentence in X]
-    X = [" ".join(sentence.split(" ")[:limit]) for sentence in X]
+    #X = [" ".join(sentence.split(" ")[:limit]) for sentence in X]
+    print("X in preprocess")
+    #print (X)
     return X
 
 
-read_from_csv()
+#read_from_csv()
 
 '''
 def tf_session(vocab_size, embedding_dim, embedding,  X):

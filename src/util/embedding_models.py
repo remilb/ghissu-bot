@@ -1,6 +1,6 @@
-import nltk
+#import nltk
 import  numpy as np
-import gensim.models.word2vec as wv
+#import gensim.models.word2vec as wv
 
 #glove_filename = "/Users/shubhi/Public/CMPS296/glove.6B/" + "glove.6B.100d.txt"
 def load_glove(glove_filename):
@@ -27,7 +27,7 @@ def loadGloveModel(gloveFile):
     print ("Done.",len(model)," words loaded!")
     return model
 
-def word2vec(df):
+'''def word2vec(df):
     df['tokenized_sents'] = df.apply(lambda row: nltk.word_tokenize(row['utterance']), axis=1)
     import gensim, logging
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -46,7 +46,7 @@ def gensim_word2vec(df):
     #model.similarity("this", "is")
     model.init_sims(replace=True)
     return model
-    #pass
+    #pass'''
 
 
 def getEmbedding(sentence):
