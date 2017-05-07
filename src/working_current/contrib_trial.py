@@ -18,10 +18,11 @@ with tf.Session() as session:
     # 2x encoder state size
     model = Seq2SeqModel(encoder_cell=LSTMCell(10),
                          decoder_cell=LSTMCell(20),
-                         vocab_size=96,
+                         vocab_size=400000,
                          embedding_size=50,
                          attention=True,
                          bidirectional=True,
+                         custom_transform=True,
                          debug=False)
 
     session.run(tf.global_variables_initializer())

@@ -9,13 +9,15 @@ from util.embedding_models import load_glove
 
 def read_from_csv():
 
-    csv_fname = "/Users/shubhi/Public/CMPS296/friends_sample.csv" #replace with local file loc
+    csv_fname = "/Users/shubhi/Public/CMPS296/friends.csv" #replace with local file loc
+    #csv_fname="/Users/shubhi/Public/CMPS296/friends_sample.csv"
     glove_filename = '/Users/shubhi/Public/CMPS296/glove.6B/glove.6B.50d.txt'
 
     df = pd.DataFrame.from_csv(csv_fname)
     df = df.dropna(subset = ['utterance'])
 
     X = list(df['utterance'])
+    #X = X[:100]
     X = clean_data(X, limit=20)
 
     Y = copy.deepcopy(X)
@@ -29,6 +31,7 @@ def read_from_csv():
 def read_from_csv_with_custom_transform():
 
     csv_fname = "/Users/shubhi/Public/CMPS296/friends_sample.csv" #replace with local file loc
+    csv_fname = "/Users/shubhi/Public/CMPS296/friends.csv"
     glove_filename = '/Users/shubhi/Public/CMPS296/glove.6B/glove.6B.50d.txt'
 
     df = pd.DataFrame.from_csv(csv_fname)
@@ -36,7 +39,7 @@ def read_from_csv_with_custom_transform():
 
     X = list(df['utterance'])
     X = clean_data(X, limit=20)
-
+    #X = X[:100]
     Y = copy.deepcopy(X)
     word_to_id_mapping = custom_transorm(X)
     inv_map = {v: k for k, v in word_to_id_mapping.items()}
@@ -99,10 +102,16 @@ def shrink_vocab(X):
 
 def clean_data(X, limit):
     X = [" ".join(sentence.split("-")) for sentence in X]
-    #X = [" ".join(sentence.split(" ")[:limit]) for sentence in X]
+    X_new = []
+    for sentence in X:
+        if(len(sentence.split(" ")) > limit):
+            sentence = " ".join(sentence.split(" ")[0:limit])
+        X_new.append(sentence)
+
     print("X in preprocess")
+
     #print (X)
-    return X
+    return X_new
 
 
 #read_from_csv()

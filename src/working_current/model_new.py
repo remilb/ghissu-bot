@@ -19,21 +19,24 @@ class Seq2SeqModel():
     PAD = 0
     EOS = 1
 
-    def __init__(self, encoder_cell, decoder_cell, vocab_size, embedding_size,
+    def __init__(self, encoder_cell, decoder_cell, vocab_size, embedding_size, custom_transform = False,
                  bidirectional=True,
                  attention=False,
                  debug=False):
         self.debug = debug
         self.bidirectional = bidirectional
         self.attention = attention
-
+        self.custom_transform = custom_transform
         self.vocab_size = vocab_size
         self.embedding_size = embedding_size
 
         self.encoder_cell = encoder_cell
         self.decoder_cell = decoder_cell
-        (self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp, self.id_to_word_map) =  pp.read_from_csv_with_custom_transform()
-        #(self.vocab_size_pp, self.embedding_dim_pp, self.embedding_pp , self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp) =  pp.read_from_csv()
+
+        if custom_transform:
+            (self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp, self.id_to_word_map) =  pp.read_from_csv_with_custom_transform()
+        else:
+            (self.vocab_size_pp, self.embedding_dim_pp, self.embedding_pp , self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp) =  pp.read_from_csv()
         #self.embedding_pp = [tf.cast(embedding_pp, tf.float32) for embedding_pp in self.embedding_pp ]
 
         self.vocab_size = self.vocab_size
@@ -100,10 +103,11 @@ class Seq2SeqModel():
             name='decoder_targets_length',
         )
         ## adding code for embedding placeholder
-        '''self.W = tf.Variable(tf.constant(0.0, shape=[self.vocab_size_pp, self.embedding_dim_pp], dtype=tf.float32),
-                    trainable=False, name="W")
-        self.embedding_placeholder = tf.placeholder(dtype=tf.float32, shape=[self.vocab_size_pp, self.embedding_dim_pp])
-        self.embedding_init = self.W.assign(self.embedding_placeholder)'''
+        if not  self.custom_transform:
+            self.W = tf.Variable(tf.constant(0.0, shape=[self.vocab_size_pp, self.embedding_dim_pp], dtype=tf.float32),
+                        trainable=False, name="W")
+            self.embedding_placeholder = tf.placeholder(dtype=tf.float32, shape=[self.vocab_size_pp, self.embedding_dim_pp])
+            self.embedding_init = self.W.assign(self.embedding_placeholder)
 
         #req_embedded = tf.nn.embedding_lookup(W, X)
 
@@ -159,18 +163,19 @@ class Seq2SeqModel():
             #self.embedding_matrix = self.embedding_pp
             #self.encoder_inputs =  self.input_data_pp
             #self.decoder_train_inputs = self.decoder_input_pp
-            '''
-            self.encoder_inputs_embedded = tf.nn.embedding_lookup(
-                self.W, self.encoder_inputs)
+            if not self.custom_transform:
+                self.encoder_inputs_embedded = tf.nn.embedding_lookup(
+                    self.W, self.encoder_inputs)
 
-            self.decoder_train_inputs_embedded = tf.nn.embedding_lookup(
-                self.W, self.decoder_train_inputs)'''
+                self.decoder_train_inputs_embedded = tf.nn.embedding_lookup(
+                    self.W, self.decoder_train_inputs)
 
-            self.encoder_inputs_embedded = tf.nn.embedding_lookup(
-                self.embedding_matrix, self.encoder_inputs)
+            else:
+                self.encoder_inputs_embedded = tf.nn.embedding_lookup(
+                    self.embedding_matrix, self.encoder_inputs)
 
-            self.decoder_train_inputs_embedded = tf.nn.embedding_lookup(
-                self.embedding_matrix, self.decoder_train_inputs)
+                self.decoder_train_inputs_embedded = tf.nn.embedding_lookup(
+                    self.embedding_matrix, self.decoder_train_inputs)
 
 
     def _init_simple_encoder(self):
@@ -343,35 +348,64 @@ def train_on_copy_task(session, model,
                        batches_in_epoch=1000,
                        verbose=True):
 
-    #batches = helpers.random_sequences(length_from=length_from, length_to=length_to,
-                                      # vocab_lower=vocab_lower, vocab_upper=vocab_upper,
-                                      # batch_size=batch_size)
+    '''
+
+    :param session: session for tensorflow
+    :param model: seq2seq model instance
+    :param batch_size:
+    :param mini_batch:
+    :param max_batches:
+    :param batches_in_epoch:
+    :param verbose:
+    :return:
+    currently using mini_batching
+    usage for mini-batch in helper
+    for n in xrange(n_epochs):
+    for batch in iterate_minibatches(X, Y, batch_size, shuffle=True):
+        x_batch, y_batch = batch
+        l_train, acc_train = f_train(x_batch, y_batch)
+
+    l_val, acc_val = f_val(Xt, Yt)
+    logging.info('epoch ' + str(n) + ' ,train_loss ' + str(l_train) + ' ,acc ' + str(acc_train) + ' ,val_loss ' + str(l_val) + ' ,acc ' + str(acc_val))
+    '''
+
     loss_track = []
+    iter =1
     try:
-        for batch in range(max_batches+1):
+        for n in range(max_batches):
+            for batch in helpers.iterate_minibatches(model.input_data_pp, model.decoder_target_pp, batch_size, shuffle=True):
+        #for batch in range(max_batches+1):
             #batch_data = next(batches)
-            fd = model.make_train_inputs(model.input_data_pp, model.decoder_input_pp)
-            _, l = session.run([model.train_op, model.loss], fd)
-            loss_track.append(l)
+                x_batch, y_batch = batch
+                fd = model.make_train_inputs(x_batch, y_batch)
+                _, l = session.run([model.train_op, model.loss], fd)
+                loss_track.append(l)
 
-            if verbose:
-                if batch == 0 or batch % batches_in_epoch == 0:
-                    print('batch {}'.format(batch))
-                    print('  minibatch loss: {}'.format(session.run(model.loss, fd)))
-                    for i, (e_in, dt_pred) in enumerate(zip(
-                            fd[model.encoder_inputs].T,
-                            session.run(model.decoder_prediction_train, fd).T
-                        )):
-                        print('  sample {}:'.format(i + 1))
-                        #print('    enc input           > {}'.format(e_in))
-                        #print('    dec train predicted > {}'.format(dt_pred))
-                        #print (" sample String Representation")
-                        print ([model.id_to_word_map[x] for x in e_in])
-                        print ([model.id_to_word_map[x] for x in dt_pred])
+                if verbose:
+                    if n == 0 or n % batches_in_epoch == 0:
+                        print (" iter is", iter)
+                        iter += 1
 
-                        if i >= 2:
-                            break
-                    print()
+                        #print('batch {}'.format(batch))
+                        print('  minibatch loss: {}'.format(session.run(model.loss, fd)))
+                        for i, (e_in, dt_pred) in enumerate(zip(
+                                fd[model.encoder_inputs].T,
+                                session.run(model.decoder_prediction_train, fd).T
+                            )):
+                            print('  sample {}:'.format(i + 1))
+                            if not model.custom_transform:
+                                print('    enc input           > {}'.format(e_in))
+                                print('    dec train predicted > {}'.format(dt_pred))
+                            else:
+                                #print (" sample String Representation")
+                                print ([model.id_to_word_map[x] for x in e_in])
+                                print('    enc input           > {}'.format(e_in))
+                                print('    dec train predicted > {}'.format(dt_pred))
+                                #print ([model.id_to_word_map[x] for x in dt_pred])
+
+                            if i >= 2:
+                                break
+                        print()
     except KeyboardInterrupt:
         print('training interrupted')
 
