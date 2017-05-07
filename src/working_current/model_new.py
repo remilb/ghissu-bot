@@ -370,7 +370,7 @@ def train_on_copy_task(session, model,
     '''
 
     loss_track = []
-    iter =1
+    iter =0
     try:
         for n in range(max_batches):
             for batch in helpers.iterate_minibatches(model.input_data_pp, model.decoder_target_pp, batch_size, shuffle=True):
@@ -380,11 +380,11 @@ def train_on_copy_task(session, model,
                 fd = model.make_train_inputs(x_batch, y_batch)
                 _, l = session.run([model.train_op, model.loss], fd)
                 loss_track.append(l)
-
+                iter += 1
                 if verbose:
-                    if n == 0 or n % batches_in_epoch == 0:
+                    if iter%batch_size == 0 :
                         print (" iter is", iter)
-                        iter += 1
+
 
                         #print('batch {}'.format(batch))
                         print('  minibatch loss: {}'.format(session.run(model.loss, fd)))
@@ -406,6 +406,7 @@ def train_on_copy_task(session, model,
                             if i >= 2:
                                 break
                         print()
+
     except KeyboardInterrupt:
         print('training interrupted')
 

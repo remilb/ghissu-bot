@@ -30,7 +30,7 @@ with tf.Session() as session:
     train_on_copy_task(session, model,
                        length_from=3, length_to=8,
                        vocab_lower=2, vocab_upper=10,
-                       batch_size=10,
+                       batch_size=20,
                        max_batches=8000,
-                       batches_in_epoch=10,
+                       batches_in_epoch=1000,
                        verbose=True)
