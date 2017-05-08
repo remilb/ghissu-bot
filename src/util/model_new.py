@@ -7,7 +7,7 @@ import tensorflow as tf
 import tensorflow.contrib.seq2seq as seq2seq
 from tensorflow.contrib.rnn import LSTMCell, LSTMStateTuple
 
-from util import helpers
+from src.util import helpers
 
 
 class Seq2SeqModel():

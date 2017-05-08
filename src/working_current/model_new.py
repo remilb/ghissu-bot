@@ -2,14 +2,12 @@
 
 import math
 
-import numpy as np
 import tensorflow as tf
 import tensorflow.contrib.seq2seq as seq2seq
 from tensorflow.contrib.layers import safe_embedding_lookup_sparse as embedding_lookup_unique
 from tensorflow.contrib.rnn import LSTMCell, LSTMStateTuple, GRUCell
 
 import  src.util.preprocess as pp
-import src.working_current.helpers
 
 
 class Seq2SeqModel():
