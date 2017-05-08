@@ -8,6 +8,7 @@ import tensorflow.contrib.seq2seq as seq2seq
 from tensorflow.contrib.layers import safe_embedding_lookup_sparse as embedding_lookup_unique
 from tensorflow.contrib.rnn import LSTMCell, LSTMStateTuple, GRUCell
 
+#import  preprocess as pp
 import  util.preprocess as pp
 import helpers
 
@@ -18,6 +19,7 @@ class Seq2SeqModel():
 
     PAD = 0
     EOS = 1
+
 
     def __init__(self, encoder_cell, decoder_cell, vocab_size, embedding_size, custom_transform = False,
                  bidirectional=True,
@@ -34,7 +36,8 @@ class Seq2SeqModel():
         self.decoder_cell = decoder_cell
 
         if custom_transform:
-            (self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp, self.id_to_word_map) =  pp.read_from_csv_with_custom_transform()
+            (self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp, self.id_to_word_map, self.vocab_size) =  pp.read_from_csv_with_custom_transform()
+
         else:
             (self.vocab_size_pp, self.embedding_dim_pp, self.embedding_pp , self.input_data_pp, self.decoder_target_pp, self.decoder_input_pp) =  pp.read_from_csv()
         #self.embedding_pp = [tf.cast(embedding_pp, tf.float32) for embedding_pp in self.embedding_pp ]
@@ -382,20 +385,21 @@ def train_on_copy_task(session, model,
                 loss_track.append(l)
                 iter += 1
                 if verbose:
-                    if iter%batch_size == 0 :
+                    if iter%20 == 0 :
                         print (" iter is", iter)
 
 
                         #print('batch {}'.format(batch))
                         print('  minibatch loss: {}'.format(session.run(model.loss, fd)))
-                        for i, (e_in, dt_pred) in enumerate(zip(
+                        for i, (e_in, dt_pred, dt_inp) in enumerate(zip(
                                 fd[model.encoder_inputs].T,
-                                session.run(model.decoder_prediction_train, fd).T
+                                session.run(model.decoder_prediction_train, fd).T , fd[model.decoder_targets].T
                             )):
                             print('  sample {}:'.format(i + 1))
                             if not model.custom_transform:
                                 print('    enc input           > {}'.format(e_in))
                                 print('    dec train predicted > {}'.format(dt_pred))
+                                print('    dec target          > {}'.format(dt_inp))
                             else:
                                 #print (" sample String Representation")
                                 print ([model.id_to_word_map[x] for x in e_in])
@@ -409,6 +413,8 @@ def train_on_copy_task(session, model,
                                             print("Unknown Embedding")'''
 
                                 print ([model.id_to_word_map[x] for x in dt_pred])
+                                print (" decoder target is ")
+                                print([model.id_to_word_map[x] for x in dt_inp])
 
                             if i >= 2:
                                 break
