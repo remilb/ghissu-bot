@@ -229,11 +229,11 @@ class PipelineTest(tf.test.TestCase):
     - class: DumpBeams
       params:
         file: {}
-    """.format(os.path.join(self.output_dir, "beams.npz"))
+    """.format(os.path.join(self.output_dir, "beams.txt"))
 
     # Run inference w/ beam search
     infer_script.main([])
-    self.assertTrue(os.path.exists(os.path.join(self.output_dir, "beams.npz")))
+    self.assertTrue(os.path.exists(os.path.join(self.output_dir, "beams.txt")))
 
 
 if __name__ == "__main__":

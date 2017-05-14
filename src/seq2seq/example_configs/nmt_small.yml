@@ -3,8 +3,11 @@ model_params:
   attention.class: seq2seq.decoders.attention.AttentionLayerDot
   attention.params:
     num_units: 128
+
   bridge.class: seq2seq.models.bridges.ZeroBridge
-  embedding.dim: 128
+
+  embedding.dim: 100
+
   encoder.class: seq2seq.encoders.BidirectionalRNNEncoder
   encoder.params:
     rnn_cell:
@@ -14,6 +17,7 @@ model_params:
       dropout_input_keep_prob: 0.8
       dropout_output_keep_prob: 1.0
       num_layers: 1
+
   decoder.class: seq2seq.decoders.AttentionDecoder
   decoder.params:
     rnn_cell:
@@ -23,10 +27,12 @@ model_params:
       dropout_input_keep_prob: 0.8
       dropout_output_keep_prob: 1.0
       num_layers: 1
+
   optimizer.name: Adam
   optimizer.params:
     epsilon: 0.0000008
-  optimizer.learning_rate: 0.0001
+  optimizer.learning_rate: 0.001
+
   source.max_seq_len: 50
   source.reverse: false
   target.max_seq_len: 50
@@ -37,14 +43,14 @@ input_pipeline_train:
   class: ParallelTextInputPipeline
   params:
     source_files:
-        - ../../utterances.csv
+        - ../../utterances_train.csv
     target_files:
-        - ../../responses.csv
+        - ../../responses_train.csv
 
 input_pipeline_dev:
   class: ParallelTextInputPipeline
   params:
     source_files:
-        - ../../utterances.csv
+        - ../../utterances_dev.csv
     target_files:
-        - ../../responses.csv
+        - ../../responses_dev.csv

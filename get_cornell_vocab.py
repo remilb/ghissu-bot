@@ -1,6 +1,6 @@
 from collections import Counter
 
-vocab = Counter()
+word_counts = Counter()
 
 #Get vocab
 for filename in ["utterances.csv", "responses.csv"]:
@@ -8,15 +8,15 @@ for filename in ["utterances.csv", "responses.csv"]:
         for line in file.readlines():
             tokens = line.strip().split()
             for token in tokens:
-                vocab[token] += 1
+                word_counts[token] += 1
 
 #Organize vocab from most common to least
 vocab_size = 30000
-ordered_vocab = [pair[0] for pair in vocab.most_common(vocab_size)]
+vocab = [pair[0] for pair in word_counts.most_common(vocab_size)]
 
 #Write vocab
 with open("cornell_films_vocab.txt", 'w', encoding='utf8') as file:
-    file.writelines([token + '\n' for token in ordered_vocab])
+    file.writelines([token + '\n' for token in vocab])
 
 
 

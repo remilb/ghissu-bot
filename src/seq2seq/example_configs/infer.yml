@@ -1,0 +1,14 @@
+tasks:
+  - class: DecodeText
+  - class: DumpBeams
+    params:
+      file: ../../beams.txt
+
+model_params:
+  inference.beam_search.beam_width: 5
+
+input_pipeline:
+  class: ParallelTextInputPipeline
+  params:
+    source_files:
+        - ../../test_convo.txt

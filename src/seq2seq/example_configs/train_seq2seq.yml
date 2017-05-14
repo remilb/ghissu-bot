@@ -1,4 +1,4 @@
-buckets: 10,20,30,40
+buckets: 5,10,20,30,40
 hooks:
   - class: SyncReplicasOptimizerHook
   - class: TrainSampleHook
