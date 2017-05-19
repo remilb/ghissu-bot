@@ -1,7 +1,9 @@
 # CMPS296
 
-Run Python Script using following params : -d sample/
+PROJECT STRUCTURE:
 
-or 
-
-python3 read_tv_scripts.py -d sample/
+ghissubot ------- our module
+seq2seq --------- Google seq2seq repo, used as git submodule
+data ------------ directory where data is stored
+data_scripts ---- scripts for extracting and transforming data
+trained_models -- directory for tensorflow checkpoints
