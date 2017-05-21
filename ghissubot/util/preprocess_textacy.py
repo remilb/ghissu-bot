@@ -5,6 +5,7 @@ import textacy as tt
 import copy
 import re
 
+
 def tokenize(text):
     return " ".join(nltk.word_tokenize(text))
     pass
@@ -37,6 +38,20 @@ def preprocess(filename, utterance_filename, response_filename):
 
     print("done")
 
+
+
+def preprocess_cnn(df, data_filename , label_filename, data_col, label_col):
+    df = df.dropna(subset=[data_col])
+    df['tokenised_sents'] = df[data_col].apply(clean_punctuations).apply(textacy_preprocess).apply(tokenize)
+
+    clean_utterances = df['tokenised_sents']
+    clean_utterances.to_csv(data_filename, index=False)
+
+    df[label_col].to_csv(label_filename, index=False)
+    print("done preprocessing")
+
+
+
 def main():
     # pass source and target filenames as commandline arguments
     filename = sys.argv[1]
@@ -45,4 +60,4 @@ def main():
     preprocess(filename, utterance_filename, response_filename)
     pass
 
-main()
+#main()
