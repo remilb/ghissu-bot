@@ -1,0 +1,1088 @@
+,speaker,utterance,prevId,episode_name
+0,Rachel,Pheebs? Could you get that? Please?,-1.0,S05E23
+1,Phoebe,Why? Just 'cause you're too lazy to get up off your touchie?,0.0,S05E23
+2,Rachel,No! No! It's just that all the people in the entire world that I want to talk to are right here.,1.0,S05E23
+3,Phoebe, Okay! ,2.0,S05E23
+4,Rachel, Sucker!,3.0,S05E23
+5,Phoebe, Hello?  Hey Joey!,4.0,S05E23
+6,Joey,"Hey Pheebs! Listen, uh can you do me a favor? I forgot the pin number to my ATM card can, can you get it for me?",5.0,S05E23
+7,Phoebe,Sure! Where is it?,6.0,S05E23
+8,Joey,"Uh, I scratched it on the ATM machine down on the corner.",7.0,S05E23
+9,Phoebe,Ohh! So you're 5639?!,8.0,S05E23
+10,Joey,That's it! Thanks Pheebs!,9.0,S05E23
+11,Chandler, Hey!,10.0,S05E23
+12,Phoebe," Ooh, do you want to talk to Chandler?",11.0,S05E23
+13,Chandler, Is that Joey?!  Let me talk to him!,12.0,S05E23
+14,Joey,No!  Because he didn't believe in my movie! Which is a big mistake because it is real! Real!,13.0,S05E23
+15,A Casino Boss,Hey! Tribbiani! Get back to work! Break time's over!,14.0,S05E23
+16,Phoebe,Who was that?,15.0,S05E23
+17,Joey,"Uhh, my stunt double. Yeah, and y'know, he's getting a little too familiar for my tastes.",16.0,S05E23
+18,Chandler," Y'know what? I have been trying to apologize to him all week! If he's not gonna let me do it on the phone, I'm gonna go down there and do it in person.",17.0,S05E23
+19,Joey,"Uhh Pheebs, I heard that. Can you put him on?",18.0,S05E23
+20,Phoebe,Yeah! ,19.0,S05E23
+21,Chandler, Hey!,20.0,S05E23
+22,Joey,Don't come out here!,21.0,S05E23
+23,Chandler,"No-no-no-no, I've supported you one hundred percent and I want to prove that to you in person!",22.0,S05E23
+24,Joey,I got that! I forgive ya! Don't come out here!,23.0,S05E23
+25,Chandler,Forgive me? You haven't been taking my calls in a week!,24.0,S05E23
+26,Joey,"Well, I'm totally over it Chandler. Friends forever! Don't come out here!",25.0,S05E23
+27,A Tourist, Would you mind doing a picture with us?,26.0,S05E23
+28,Chandler,"Uh, what was that?",27.0,S05E23
+29,Joey,"Uh, Entertainment Tonight. [Cut to Chandler] Yeah, okay so, good talking to ya and don't come out here. All right. ",28.0,S05E23
+30,Phoebe,Monica! I'm sorry I'm late!  Monica? ,29.0,S05E23
+31,Monica," Phoebe?  Oh, Phoebe, I'm so sorry. Have you been here long?",30.0,S05E23
+32,Phoebe, It's okay. What the hell took you so long?,31.0,S05E23
+33,Monica,"Okay, you can not tell Chandler. Okay? That I ran into Richard.",32.0,S05E23
+34,Phoebe,Which Richard?,33.0,S05E23
+35,Monica,The Richard.,34.0,S05E23
+36,Phoebe,Richard Simmons?! Oh my God!,35.0,S05E23
+37,Monica,"Noo! My ex-boyfriend Richard! Y'know the tall guy, moustache?",36.0,S05E23
+38,Phoebe,"Oh! Okay, that actually makes more sense. So how was it?",37.0,S05E23
+39,Monica,"It was, it was really nice. We started talking and I-I ended up having lunch with him.",38.0,S05E23
+40,Phoebe,That is so weird! I had a dream that you'd have lunch with Richard.,39.0,S05E23
+41,Monica,Really?,40.0,S05E23
+42,Phoebe,"But again, Simmons. Go on.",41.0,S05E23
+43,Monica,"The strange part was, he was really nice, umm and he looks great, but I didn't feel anything at all!",42.0,S05E23
+44,Phoebe,Ooh! So now why can't we tell Chandler?,43.0,S05E23
+45,Monica,Because it would totally freak him out and tomorrow's our anniversary. I just don't want anything to spoil that.,44.0,S05E23
+46,Phoebe,"Oh, I can't believe you guys lasted a whole year!",45.0,S05E23
+47,Monica,I know.,46.0,S05E23
+48,Phoebe,Wow! I owe Rachel 20 bucks!,47.0,S05E23
+49,Monica,What?,48.0,S05E23
+50,Phoebe,On a totally different bet.,49.0,S05E23
+51,Chandler, Hey!,50.0,S05E23
+52,Monica,It's almost our anniversary!,51.0,S05E23
+53,Chandler,I know. Can you believe it? One year ago today I was just your annoying friend Chandler.,52.0,S05E23
+54,Phoebe,Awww! Now you're just my annoying friend Chandler.,53.0,S05E23
+55,Chandler,Huh.,54.0,S05E23
+56,Monica,I got you a present!,55.0,S05E23
+57,Chandler,"Oh, but it's not 'til tomorrow!",56.0,S05E23
+58,Monica,"I know, but you have to open it today! ",57.0,S05E23
+59,Chandler,Okay.,58.0,S05E23
+60,Monica, Okay! There you go! It's two tickets to Vegas!,59.0,S05E23
+61,Chandler,Wow!,60.0,S05E23
+62,Monica,"For this weekend! Oh gosh, it would be perfect, we get to see Joey plus we get to start our anniversary celebration on the plane. We can call it out plane-aversary.",61.0,S05E23
+63,Chandler,Do we have to?,62.0,S05E23
+64,Monica,No.,63.0,S05E23
+65,Chandler,"Okay this is great, but Joey said he didn't want any of us out there.",64.0,S05E23
+66,Monica,"Oh, he just doesn't want us to go through any trouble. Think of how excited he'll be when we go out and surprise him! Plus we get to have our own, ani-Vegas-ary! A-Nevadaversary!",65.0,S05E23
+67,Chandler,"Yeah, I think we should see other people.",66.0,S05E23
+68,Monica,"But we can go, right?",67.0,S05E23
+69,Chandler,Yes.,68.0,S05E23
+70,Monica,Okay!,69.0,S05E23
+71,Chandler,It's a great idea. ,70.0,S05E23
+72,Phoebe,"Okay, I'm gonna go too!",71.0,S05E23
+73,Chandler,"Y'know Pheebs, it's kinda our  anniversary.",72.0,S05E23
+74,Phoebe,"Oh please, you are not gonna ditch again like you did with London.",73.0,S05E23
+75,Monica,"Ditch you? Phoebe, you were pregnant with the triplets!",74.0,S05E23
+76,Phoebe,"Uh-huh, great story! I'm going!",75.0,S05E23
+77,Rachel, Hi!,76.0,S05E23
+78,Phoebe,Hey!,77.0,S05E23
+79,Ross,Hey!,78.0,S05E23
+80,Phoebe,"Hey, you guys, listen, this weekend we're all gonna go to Las Vegas to surprise Joey! Including me!! You wanna go?!",79.0,S05E23
+81,Rachel,"Well, I guess I could take a couple days off work.",80.0,S05E23
+82,Phoebe,Of course you can take a couple days off work because this trip includes me!,81.0,S05E23
+83,Rachel,"Oh no, wait a minute, wait, I've got a presentation tomorrow. I can't miss that.",82.0,S05E23
+84,Ross,"Oh, but I've got tickets to the Van Gogh exhibit! I've been waiting like a year for this.",83.0,S05E23
+85,Chandler, Art lover!,84.0,S05E23
+86,Ross,What'd you say?,85.0,S05E23
+87,Chandler,I said art lover.,86.0,S05E23
+88,Ross,Is that supposed to be an insult?,87.0,S05E23
+89,Chandler,"I don't know, I'm very tired.",88.0,S05E23
+90,Ross,"So Rach, maybe you and I could fly out together Saturday.",89.0,S05E23
+91,Rachel,That sounds great.,90.0,S05E23
+92,Ross,Yeah? All right I'll call the airlines. ,91.0,S05E23
+93,Rachel,"Okay. Yeah, that would be nice actually, to have the apartment to myself for a night.",92.0,S05E23
+94,Phoebe,"Oh yeah, so you can walk around naked.",93.0,S05E23
+95,Rachel,No! So I can be by myself. Y'know? Have a little alone time.,94.0,S05E23
+96,Phoebe,Naked alone time.,95.0,S05E23
+97,Rachel,"No! Phoebe just because I'm alone doesn't mean I wanna walk around naked. I mean, you live alone, you don't walk around naked.",96.0,S05E23
+98,Phoebe,Uh-huh! Why do you think it takes me so long to answer the door?,97.0,S05E23
+99,Phoebe,"So, so far is this trip to Vegas better or worse than the trip to London?",98.0,S05E23
+100,Chandler,So it's pretty much the same Pheebs.,99.0,S05E23
+101,Phoebe,"Okay, what about after I give you these candies? ",100.0,S05E23
+102,Chandler,"Yeah, I guess it's a little better now.",101.0,S05E23
+103,Phoebe,"Ah-ha! Okay,  Las Vegas 1, London 0! I'll be right back. ",102.0,S05E23
+104,Chandler, Happy plane-aversary.,103.0,S05E23
+105,Monica,Aww! I love you!,104.0,S05E23
+106,Chandler,Can I give you a present now?,105.0,S05E23
+107,Monica,Okay!,106.0,S05E23
+108,Chandler,Okay!  Oh man! Don't tell me I did this!,107.0,S05E23
+109,Monica,I love the I forgot the present fake out!,108.0,S05E23
+110,Chandler,"How do you feel about the, I really did forgot the present, please forgive me not fake out?",109.0,S05E23
+111,Monica,"Oh that's okay. Don't worry about it, you can give it to me when we get back.",110.0,S05E23
+112,Chandler,Ohh that's the worse thing that can happen on an anniversary ever!,111.0,S05E23
+113,Phoebe," Oh good! All right, so you decided to tell him about the Richard thing.",112.0,S05E23
+114,Chandler,What-what Richard thing?,113.0,S05E23
+115,Phoebe,Oh no. [The patented version.],114.0,S05E23
+116,Chandler,What Richard thing?,115.0,S05E23
+117,Phoebe, Simmons! Go with Simmons!,116.0,S05E23
+118,Monica,"Okay, I umm, I ran into Richard yesterday and he asked me if I wanted to go for a bite and I did. The only reason I didn't tell you is because I knew you'd get mad and I didn't want to spoil our anniversary.",117.0,S05E23
+119,Chandler, I'm not mad.,118.0,S05E23
+120,Monica,Really?!,119.0,S05E23
+121,Chandler,"Oh yeah! Yeah, so you-you bumped into Richard! You grabbed a bite! It's no big deal. ",120.0,S05E23
+122,Monica,Great!,121.0,S05E23
+123,Phoebe,"Okay, London 1...",122.0,S05E23
+124,Rachel," Oh! Look what happened! {Don't get your hopes up guys, we only get to see her from the back or from the neck up. Its times like these I wish that the networks would broadcast some nudity other than Denis Franz's butt.}  Huh, check me out! I'm in my kitchen...naked! I'm picking up an orange.  I'm naked!  Lighting the candles, naked, and carefully. ",123.0,S05E23
+125,Ross," Oh my God! That's Rachel naked! I can't look at that! I am looking at this.  Okay, vivid colors, expressive brush strokes-Unless she wants me to be looking at that. She knows I'm home. She knows I can see her. What kind of game is she playing? I think maybe someone's lonely tonight. Oh-ho, Dr. Geller! Stop it! You're being silly! Or, am I?",124.0,S05E23
+126,Rachel," Love to love ya baby! Ow! Love to love ya baby! Ow!  Love to love ya, baby!  Darnit!  Ugh. ",125.0,S05E23
+127,Ross,Hey.,126.0,S05E23
+128,Ross,May I come in?,127.0,S05E23
+129,Rachel,"Uh, yeah, if you want too.",128.0,S05E23
+130,Ross,Do you want me too?,129.0,S05E23
+131,Rachel,"Yeah, sure?",130.0,S05E23
+132,Ross,"So do I.  Okay Rach, before anything happens  I just want to lay down a couple of ground rules.  This is just about tonight. I don't to go through with this if it's going to raise the question of Us.  Okay? I just want this to be  about what it is! ",131.0,S05E23
+133,Rachel,"And um, what-what is that Ross?",132.0,S05E23
+134,Ross,The physical act of love. ,133.0,S05E23
+135,Rachel, What?! Are you crazy?,134.0,S05E23
+136,Ross,Oh so-so you weren't trying to entice me just now with your-your nakedness?,135.0,S05E23
+137,Rachel," Oh God, you saw me?! Oh!",136.0,S05E23
+138,Ross,You weren't trying to entice me with your nakedness.,137.0,S05E23
+139,Rachel,"Noo!! No! You thought, you actually thought I wanted to have sex with you?!",138.0,S05E23
+140,Ross,No! No!  No!  No-no-no-no. ,139.0,S05E23
+141,Rachel,"Ohh wow! I'm sorry, but Ross you kicked off your shoes!",140.0,S05E23
+142,Ross,"Can we, can we just forget this ever happened?",141.0,S05E23
+143,Rachel,"Yes of course, absolutely! You're right. I'm sorry.",142.0,S05E23
+144,Ross,Thank you.,143.0,S05E23
+145,Rachel,Yes.,144.0,S05E23
+146,Ross,"All right I guess I'm, gonna go pack. ",145.0,S05E23
+147,Rachel,"Okay. Oh wait! One more thing umm, do-do we still need to uh settle the question of us?",146.0,S05E23
+148,Phoebe,"Hey you guys wait! Guys!  This place is so much better than London! Okay? This lady dressed like Cleopatra gave me a coupon, 99 cent steak and lobster dinner. Huh!",147.0,S05E23
+149,Monica,"Phoebe, you don't eat animals.",148.0,S05E23
+150,Phoebe,"For 99 cents, I'd eat you.  Okay, I can totally settle down here. It's got everything I could ever want, including Joey! Look!  Oh! Look! Hi!",149.0,S05E23
+151,Chandler,Oh my God.,150.0,S05E23
+152,Phoebe,Hey! Joey!  Hey! Hey!! Wow! ,151.0,S05E23
+153,Joey,Hi!,152.0,S05E23
+154,Chandler,Love your condoms my man.,153.0,S05E23
+155,Joey,What-what are you guys doing here? I thought I told you not to come.,154.0,S05E23
+156,Phoebe,Why are you dressed as a gladiator?,155.0,S05E23
+157,Joey,"Uhh, because I'm shooting a scene right now. Yeah, I uh, I play a gladiator. Uh, y'know what? Hold-hold on a second.  Can we cut? Yeah, my-my friends are here, I'm gonna take a little break.",156.0,S05E23
+158,Monica,Who are you talking too?,157.0,S05E23
+159,Joey,"They uh director. Uhh, her.  All right, all right, it's not a gladiator movie. I work here.",158.0,S05E23
+160,Chandler,Why?! What happened?!,159.0,S05E23
+161,Joey,"Well, the movie got shutdown because they ran out of money, so I'm working here 'til it starts up again, if it ever does.",160.0,S05E23
+162,Monica,I'm so sorry.,161.0,S05E23
+163,Joey,"Look, I'm sorry I didn't tell ya.  I'm sorry man.",162.0,S05E23
+164,Chandler,"No-no, that's okay, apparently there's a new policy where we don't have to share everything with everybody.",163.0,S05E23
+165,Monica,I knew you were not okay with that.,164.0,S05E23
+166,Phoebe,So you're a gladiator! Wow!,165.0,S05E23
+167,Joey,"Yeah, what-what's going on?",166.0,S05E23
+168,Phoebe,Monica had lunch with Richard.,167.0,S05E23
+169,Joey,Dawson?!,168.0,S05E23
+170,Phoebe,Noo! But that would've been so cool!,169.0,S05E23
+171,Chandler,No! Her boyfriend Richard!,170.0,S05E23
+172,Monica,"It meant nothing! Okay? After all this time, how can you not trust me?",171.0,S05E23
+173,Chandler,When you go lunching with hunky moustache men and don't tell me about it!,172.0,S05E23
+174,Monica,You're right. I'm sorry. I should've told you.,173.0,S05E23
+175,Chandler,Thanks. ,174.0,S05E23
+176,Joey,"Aww, there we go.",175.0,S05E23
+177,Phoebe,I love Vegas!,176.0,S05E23
+178,Monica,"I promise you, next time I will absolutely tell you.",177.0,S05E23
+179,Chandler, Next time?,178.0,S05E23
+180,Joey,"Ooh, so close.",179.0,S05E23
+181,Chandler,There's not gonna be a next time! You can not ever see him again!,180.0,S05E23
+182,Monica,"I can not see him? I mean, you can't tell me what to do!",181.0,S05E23
+183,Chandler,"That's so funny, because I think I just did!",182.0,S05E23
+184,Monica,"Oh y'know what? If you're gonna be acting like this all night, I really, I don't even want to be around you.",183.0,S05E23
+185,Chandler,Fine with me!,184.0,S05E23
+186,Monica,Fine! Happy Anniversary!,185.0,S05E23
+187,Joey,Whoa! Whoa! Guys! Please! Come on! Come on! This is obviously just a big misunderstanding.,186.0,S05E23
+188,Monica,No it is not!,187.0,S05E23
+189,Chandler,What are you talking...,188.0,S05E23
+190,Joey,Hey-hey don't look at me! I just work here! ,189.0,S05E23
+191,Rachel," Okay umm, Ross? I'm-I'm really warm, so I'm going to be taking off my sweater. Now, I'm just letting you know that this is not an invitation to the physical act of love.",190.0,S05E23
+192,Ross, Yep! That's hilarious!,191.0,S05E23
+193,Rachel,I'm sorry. I'm done. I'm done.,192.0,S05E23
+194,Ross,"Y'know, last night was embarrassing for you too.",193.0,S05E23
+195,Rachel,"No, not really. I mean you've seen me naked hundreds of times.",194.0,S05E23
+196,Ross,Uh-huh. But it was a first for the rest of my building.,195.0,S05E23
+197,Rachel,"Okay. All right, that's true! But y'know I just don't embarrass that easily.",196.0,S05E23
+198,Ross,What?! You totally get embarrassed!,197.0,S05E23
+199,Rachel,"No, I don't! Ross, I think I'm just a more secure person than you are.",198.0,S05E23
+200,Ross,Is that so?,199.0,S05E23
+201,Rachel,Yeah.,200.0,S05E23
+202,Ross, Hey lady! I don't care how much you want it! Okay?! I am not gonna to have sex with you in the bathroom! ,201.0,S05E23
+203,Joey,"Hey, y'know in Roman times this was more than just a hat.",202.0,S05E23
+204,Chandler,Really?,203.0,S05E23
+205,Joey,"Yeah, sure! Sure! They would uh, they would scrub the floors with it! They would use it to get the mud off their shoe. And sometimes underneath the horse would get dirty so they would stick it right...",204.0,S05E23
+206,Chandler," Joey, I uh! I can't believe this is how I'm spending my anniversary.",205.0,S05E23
+207,Joey,"All right well, I'll take you someplace nice then. Look! A guy tipped me a hundred bucks today.",206.0,S05E23
+208,Chandler,Whoa!,207.0,S05E23
+209,Joey,"Yeah-yeah, he was playing blackjack for like an hour and he won $5,000. Can you believe that? $5,000!",208.0,S05E23
+210,Chandler,"Y'know, if I won $5,000 I'd join a gym, y'know build up my upper body and hit Richard from behind with a stick! ",209.0,S05E23
+211,Joey,"Wait a minute! Why don't I do what that guy did? I'll take this $100 and turn it into $5,000! And then I'll turn that into enough money to get my movie going again!",210.0,S05E23
+212,Chandler,Good luck!,211.0,S05E23
+213,Joey,Chandler! I don't need luck. I have thought this through!,212.0,S05E23
+214,Chandler,I see.,213.0,S05E23
+215,Monica, Thank you.,214.0,S05E23
+216,Phoebe,Thanks.,215.0,S05E23
+217,Monica,I can't believe this! This is like the worst night ever!,216.0,S05E23
+218,Phoebe,Y'know Monica you had a minor setback in your relationship with Chandler. Big deal! It's only Chandler.  I am so sorry.,217.0,S05E23
+219,Monica,"This is crazy! I mean, it's such a stupid argument. I don't even wanna see Richard again.",218.0,S05E23
+220,Phoebe,So go fix it! Go find Chandler! He's probably up in your room! Tell him that you're sorry and that you love him.,219.0,S05E23
+221,Monica,Y'know what? You're right Phoebe. You're right. Thank you! ,220.0,S05E23
+222,Phoebe,"Sure!   Yeah! Las Vegas, number one!",221.0,S05E23
+223,Monica,Anybody lose this? ,222.0,S05E23
+224,The Croupier,Comin' out. Place your bet.  Dice are out.  Double or nothin'! Pay the front line! ,223.0,S05E23
+225,Monica,Hmm.,224.0,S05E23
+226,Guy," So uh, I'm on my way back to the bathroom. ",225.0,S05E23
+227,Rachel,"Yeah, all right. All right! Just keep walkin'! All right?",226.0,S05E23
+228,Rachel,"Ross! What are you... I'm sorry sir. I just, I think he just really likes you.",227.0,S05E23
+229,Ross, Hey! Y'know that teacher who had a baby with her student? ,228.0,S05E23
+230,Ross,What the? What...,229.0,S05E23
+231,Rachel, Hi!,230.0,S05E23
+232,The Flight Attendant,Miss? May I help you?,231.0,S05E23
+233,Rachel,"Yes, I'm sorry. Do you have any extra pants? Umm, my friend seems to have had a little accident.",232.0,S05E23
+234,Joey, Can I change a hundred? ,233.0,S05E23
+235,Blackjack Dealer,Changing one hundred!  Good luck sir.,234.0,S05E23
+236,Joey, Let's ride.,235.0,S05E23
+237,Blackjack Dealer, 13.,236.0,S05E23
+238,Joey,Hit me!  Ohh man!  Wait! ,237.0,S05E23
+239,Joey,Chandler! You are not gonna believe this! I have found my identical hand twin!,238.0,S05E23
+240,Chandler, What?,239.0,S05E23
+241,Joey,My identical hand twin!,240.0,S05E23
+242,Chandler,What's an identical hand twin?,241.0,S05E23
+243,Joey,"What's it sound like? It's a guy with my identical hands! It was incredible! Chandler, the dealer's hands were exactly like me! It-it was like looking at my hands in a mirror!",242.0,S05E23
+244,Chandler,Are you sure you weren't  looking at your hands in a mirror?,243.0,S05E23
+245,Joey,Don't you see what this means?! I can forget about that stupid movie. I'm gonna be a millionaire!,244.0,S05E23
+246,Chandler, How?,245.0,S05E23
+247,Joey,"Look, I don't have it all worked out yet, but it's gotta mean big money! Come on! Identical hands!",246.0,S05E23
+248,Chandler,"Again I must go back to, how?",247.0,S05E23
+249,Joey,"This is Vegas man! People will pay to see freaky stuff! Okay, how much would you pay to see this hand  twice? Huh?",248.0,S05E23
+250,Chandler," Y'know, I-I can't really put a price on that Joe.",249.0,S05E23
+251,Joey,"Hey, are you unsupporting me again?",250.0,S05E23
+252,Chandler,"No! No! I support you 100%! I just didn't, I didn't get it right away. Y'know now I'm caught up! Identical hand twins! It's a million-dollar idea!",251.0,S05E23
+253,Phoebe,Hey!,252.0,S05E23
+254,Joey,Pheebs!!,253.0,S05E23
+255,Phoebe,Yeah?,254.0,S05E23
+256,Joey,I found my identical hand twin!,255.0,S05E23
+257,Phoebe,"Ohh, you are so lucky!  Hey! So, where's Monica? Did you guys make up?",256.0,S05E23
+258,Chandler,No!,257.0,S05E23
+259,Phoebe,But she just came up here!,258.0,S05E23
+260,Chandler,That was Joey!,259.0,S05E23
+261,Phoebe,I wonder where she is. That is so weird.,260.0,S05E23
+262,Chandler,"Yeah, well, she's probably talking to Richard.",261.0,S05E23
+263,Phoebe,Would you stop that! Do you wanna know the first thing she said when she came back from her lunch with Richard? She didn't feel anything for him. She loves you!,262.0,S05E23
+264,Chandler,Really?,263.0,S05E23
+265,Phoebe,"Yes! Now, she feels terrible! She really wants to make up! You gotta find her.",264.0,S05E23
+266,Chandler,Okay. ,265.0,S05E23
+267,Phoebe,Good.  I should really start wearing hats!,266.0,S05E23
+268,The Flight Attendant, Welcome to Las Vegas.,267.0,S05E23
+269,The Flight Attendant, Thank you!  Enjoy your flight?,268.0,S05E23
+270,Rachel,"Yes, I did. Thank you very much, it was excellent. ",269.0,S05E23
+271,The Flight Attendant, Hope you had a nice flight.,270.0,S05E23
+272,Ross,"Ohh, it was the best!",271.0,S05E23
+273,Ross,God that is the most beautiful engagement ring ever!,272.0,S06E24
+274,Rachel,"Yeah? Well, you should know. You've bought like a billion of 'em.",273.0,S06E24
+275,Ross,"Yeah, you didn't get one.",274.0,S06E24
+276,Chandler,"Okay, well tonight's the big night.",275.0,S06E24
+277,Phoebe,Yeah!,276.0,S06E24
+278,Joey,"Okay listen, how are you gonna ask her?",277.0,S06E24
+279,Chandler,"It is going to be perfect. I am taking her to her favorite restaurant. I'm going to get her a bottle of the champagne that she really loves; therefore knows how expensive it is. Then when the glasses are full, instead of proposing a toast I'm just gonna propose.",278.0,S06E24
+280,Rachel,Ohh...,279.0,S06E24
+281,Joey,That sounds perfect!,280.0,S06E24
+282,Chandler,Yeah.,281.0,S06E24
+283,Joey,You're gonna mess it up let me do it.,282.0,S06E24
+284,Chandler,I'm not gonna mess it up.,283.0,S06E24
+285,Phoebe,"If she says no, can I have the ring?",284.0,S06E24
+286,Chandler,She's not gonna say no.,285.0,S06E24
+287,Phoebe,If!,286.0,S06E24
+288,Monica, Hey!,287.0,S06E24
+289,Ross,Hey!,288.0,S06E24
+290,Chandler,Hey!,289.0,S06E24
+291,Phoebe, Hi Monica.,290.0,S06E24
+292,Chandler, Give me it!,291.0,S06E24
+293,Phoebe,It's gone.,292.0,S06E24
+294,Chandler,Phoebe!,293.0,S06E24
+295,Joey,Hey!,294.0,S06E24
+296,Chandler, Hi Monica.,295.0,S06E24
+297,Phoebe, We're practically kissing. ,296.0,S06E24
+298,Rachel, Hey!,297.0,S06E24
+299,Chandler,Hey!,298.0,S06E24
+300,Joey,Hey Rach!,299.0,S06E24
+301,Rachel,"Are any of you guys free tonight? My boss is hosting this charity event for underprivileged kids and the more people I bring, the better I look. So, Monica? Chandler?",300.0,S06E24
+302,Chandler," Well, Monica and Chandler can't go. We're going to dinner remember?!",301.0,S06E24
+303,Rachel,"Oh my God, I'm so sorry.",302.0,S06E24
+304,Monica,What's the big deal?,303.0,S06E24
+305,Chandler,I just get mad when Rachel doesn't remember where we're going.,304.0,S06E24
+306,Joey,Where are you going?,305.0,S06E24
+307,Rachel,How about you guys? ,306.0,S06E24
+308,Phoebe,Open bar?,307.0,S06E24
+309,Rachel,I think so.,308.0,S06E24
+310,Phoebe,I can do that for the kids.,309.0,S06E24
+311,Joey,"Hey, y'know what? I'll come too. I'm making money now; it's about time I give something back.",310.0,S06E24
+312,Chandler,"Well, you could also give back the money you owe me.",311.0,S06E24
+313,Joey,Okay. Have a benefit.,312.0,S06E24
+314,Ross, Hey!,313.0,S06E24
+315,Rachel,"Hey! Ross, listen can you come to a charity event tonight?",314.0,S06E24
+316,Ross,"Oh no, I have plans with Elizabeth.",315.0,S06E24
+317,Chandler,"Oh, so you're already doing your part for the kids.",316.0,S06E24
+318,Ross,"I'm sorry, it's just one of my last nights together before she leaves for camp-to be a counselor!",317.0,S06E24
+319,Monica,"Ross let me ask you a question. All jokes aside, where is this relationship going?",318.0,S06E24
+320,Chandler,"Wait a minute, all jokes aside? I didn't agree to that!",319.0,S06E24
+321,Monica,Do you really see this as a long-term thing?,320.0,S06E24
+322,Ross,I don't know.,321.0,S06E24
+323,Phoebe,"Y'know, you are 12 years older than her.",322.0,S06E24
+324,Ross,"Wait a minute, does-does everyone feel this way?",323.0,S06E24
+325,All,"Yeah! Yeah, sort of. I'm sorry.",324.0,S06E24
+326,Ross,"Uh-uh-Wow! Uh, I thought you guys were just like making jokes, I had no idea. What you know what? You guys are wrong. Uh yes, there is a chronological age difference but I never notice it. You know why? Because she is very mature. Besides, it doesn't really matter to me what you guys think. I mean, I'm the one dating Elizabeth, not you!",325.0,S06E24
+327,Joey,That's not what she said last night. ,326.0,S06E24
+328,Rachel,"See? Now, he could date her.",327.0,S06E24
+329,Chandler,"Will you marry me? Will you marry me?  Hey, you marry me!  What's going on little elves?",328.0,S06E24
+330,Joey,It's the big night! We wanted to wish you good luck!,329.0,S06E24
+331,Ross,"Yeah, yeah you have the ring?",330.0,S06E24
+332,Chandler,"Yeah, right here in my pocket.  Pheebs?",331.0,S06E24
+333,Phoebe,Oh! Oop! ,332.0,S06E24
+334,Chandler,"Okay, now will you guys get out of here? I want this is to be a surprise and she's gonna know.",333.0,S06E24
+335,Ross, Yeah-yeah you guys. Get out of here!,334.0,S06E24
+336,Monica,Hi guys.,335.0,S06E24
+337,Chandler, You are beautiful.,336.0,S06E24
+338,Monica,"Oh, thank you!   What's going on?",337.0,S06E24
+339,Rachel, We're just really...very excited about this charity event that we have to go to.,338.0,S06E24
+340,Phoebe,Here.,339.0,S06E24
+341,Rachel,Oh! Thank you!,340.0,S06E24
+342,Phoebe,So now what's going on here?,341.0,S06E24
+343,Rachel,"Uh well, uh this is a silent auction. They lay out all the stuff here and then you write down your offer and then the highest bid gets it.",342.0,S06E24
+344,Phoebe,"No, I know what a silent is I meant, what's going on with your hair?",343.0,S06E24
+345,Rachel," Uh, wh-why?",344.0,S06E24
+346,Phoebe,No! It's nice!,345.0,S06E24
+347,Mr. Thompson,Nice to see you Rachel.,346.0,S06E24
+348,Rachel,"Oh, hi!",347.0,S06E24
+349,Mr. Thompson,So glad you brought someone.,348.0,S06E24
+350,Rachel,"Someone? I brought people. Mr. Thompson, this is Phoebe. Phoebe, this is Mr. Thompson.  He's the head of my department.",349.0,S06E24
+351,Phoebe,"Oh, hi. ",350.0,S06E24
+352,Rachel,And I also brought my friend Joey...,351.0,S06E24
+353,Joey, Oh!! Shrimp toast! ,352.0,S06E24
+354,Rachel,"Well, y'know I-I don't know where he is.",353.0,S06E24
+355,Mr. Thompson,"Well, I hope you're gonna bid on some things Rachel.",354.0,S06E24
+356,Rachel,"Well, y'know what? Actually, I was about to bid on this lovely trip to Paris.",355.0,S06E24
+357,Mr. Thompson,"Ohh, nice choice.",356.0,S06E24
+358,Rachel,Yeah.,357.0,S06E24
+359,Mr. Thompson,Good luck.,358.0,S06E24
+360,Rachel,"Thank you.  Okay,  twenty dollars.",359.0,S06E24
+361,{Transcriber's Note,"Elizabeth has two friends in the room with her who are named in the credits, but not in this scene. So I'm just gonna guess since it doesn't matter one way or the other. }",360.0,S06E24
+362,Zoe,Shut the door! Shut the door!! ,361.0,S06E24
+363,Ross,What's-what's going on?,362.0,S06E24
+364,Elizabeth,The guys across the hall are throwing water balloons at us.,363.0,S06E24
+365,Ross,"Oh, you have to call the police! That's what I did to the kids in my building!",364.0,S06E24
+366,Elizabeth,"No, it's a water balloon fight! We started it!",365.0,S06E24
+367,Ross,"Oh!  Listen umm, I, I just stopped by to see if you wanted to see this play tonight. Umm, it's supposed to be excellent. The director is the same...",366.0,S06E24
+368,Elizabeth, Who drank all the Kamikazes?,367.0,S06E24
+369,Sarah, Nobody! We put them in here! ,368.0,S06E24
+370,Elizabeth, You want some?! ,369.0,S06E24
+371,Ross,"No! Okay! Okay!  Okay, look, can I, can I just-just talk to you for a second?",370.0,S06E24
+372,Elizabeth,"Yeah, sure.",371.0,S06E24
+373,Ross,"Uh, so this play umm, what do you think? It's-it's gotten great reviews! Y'know the uh...",372.0,S06E24
+374,First Dorm Guy,Attack!,373.0,S06E24
+375,Second Dorm Guy,Put your balloons down!,374.0,S06E24
+376,The Girls,You put your balloons down!!,375.0,S06E24
+377,First Dorm Guy,You put your balloons down!!,376.0,S06E24
+378,Ross, Everybody put their balloons down!!!  Now this is a nice suit!! ,377.0,S06E24
+379,Mr. Thompson,"Our next item is the romantic trip to Paris.  It goes to Emil Alexander high a high bid of 2,300.",378.0,S06E24
+380,Rachel,Ugh! So close!,379.0,S06E24
+381,Phoebe,Hey you guys! Look!,380.0,S06E24
+382,Joey,Hey!,381.0,S06E24
+383,Phoebe,I got me some drinks!,382.0,S06E24
+384,Rachel,What are you doing?,383.0,S06E24
+385,Phoebe,Open bar!,384.0,S06E24
+386,Rachel,Well now it's an empty bar.,385.0,S06E24
+387,Phoebe,You just can't stand anyone else enjoying themselves can't you?,386.0,S06E24
+388,Mr. Thompson,"And finally, our biggest item of the night, the 22-foot gentleman's day sailer sailboat. The winning bid was a whooping $20,000! ",387.0,S06E24
+389,Joey,I won! That was my guess!,388.0,S06E24
+390,Rachel,What?! What?! What?!,389.0,S06E24
+391,Joey,"I guessed 20,000!",390.0,S06E24
+392,Rachel,"Joey! It is an auction! You don't guess, you buy!",391.0,S06E24
+393,Joey,"What?! I don't have 20,000!",392.0,S06E24
+394,Mr. Thompson,"Congratulations on your new boat, Joey Tribbiani!!",393.0,S06E24
+395,Rachel,Joey! Sit down! ,394.0,S06E24
+396,Phoebe,Forget her! You enjoy this!! (Pulls him back up and starts applauding again. Joey waves and does a salute.],395.0,S06E24
+397,Monica,What are you doing?,396.0,S06E24
+398,Chandler," One nation, under God. Indivisible with liberty and justice for all.  I remembered it.  The champagne is here. ",397.0,S06E24
+399,Monica,Are you okay?,398.0,S06E24
+400,Chandler,Yes! Yes! I'm good! Are you good? Are you good? Is everything-are you-are you perrr-perfect?!,399.0,S06E24
+401,Monica,"Yeah. I'm okay. I'm actually-I'm a little cold, can I have your jacket?",400.0,S06E24
+402,Chandler,"Oh, yeah.  Uh, no you can't have my jacket! Because then I would be cold! If you thought that you were going to be cold, you should've brought your own jacket. But uh, other than that, are you okay? Are you okay?",401.0,S06E24
+403,Monica, Are you sure you're okay?,402.0,S06E24
+404,Chandler,"Yes! I'm fine. In fact I've been fine for a long time now and I think, the reason is you.",403.0,S06E24
+405,Monica,Ohh that's sweet!,404.0,S06E24
+406,Chandler,"Okay umm, before I meant you I had really little life and I couldn't imagine growing old with...",405.0,S06E24
+407,Monica, Oh my God!,406.0,S06E24
+408,Chandler," I know, but just let me say it.",407.0,S06E24
+409,Monica,"Oh my God, Richard. ",408.0,S06E24
+410,Chandler,"What?! I'm Chandler!  Oh, that's Richard!",409.0,S06E24
+411,Monica,"Oh God, maybe he won't see us. Richard!",410.0,S06E24
+412,Richard, Monica! Chandler!,411.0,S06E24
+413,Chandler,"Hey-hey, hey!  I don't know why I did that!",412.0,S06E24
+414,Monica,"Hey, it's good to see you!",413.0,S06E24
+415,Richard,"You too, you let uh, your hair grow long.",414.0,S06E24
+416,Monica,"Yeah-Oh that's right. You, you always wanted me too. Hey, I see you got your mustache back.",415.0,S06E24
+417,Richard,"Well, my nose got lonely.",416.0,S06E24
+418,Chandler," And uh, you don't have a mustache which is good.  I'm Chandler; I make jokes when I'm uncomfortable.",417.0,S06E24
+419,Richard's Date,"Hi, I'm Lisa.",418.0,S06E24
+420,Chandler,Hi.,419.0,S06E24
+421,Richard,"Oh, I'm sorry.  Lisa,  Monica, Chandler. We used to date.",420.0,S06E24
+422,Chandler,"Richard! No one supposed to know about us!  See I, did it again.",421.0,S06E24
+423,Monica,"Chandler, wh-why don't we sit down?",422.0,S06E24
+424,Chandler,"Yeah, I'll sit down. ",423.0,S06E24
+425,Monica, It's good to see you,424.0,S06E24
+426,Matire'd, You're table's ready sir.,425.0,S06E24
+427,Richard,Oh. Good to see you guys.,426.0,S06E24
+428,Chandler,Yes. ,427.0,S06E24
+429,Matire'd," Or if you prefer, this table is available.",428.0,S06E24
+430,Richard,That might be fun. ,429.0,S06E24
+431,Rachel,What were you thinking?!,430.0,S06E24
+432,Joey,I didn't know it was an auction!,431.0,S06E24
+433,Rachel,Wh?!,432.0,S06E24
+434,Joey,"I figured, take a guess, help a charity, free boat!",433.0,S06E24
+435,Rachel,Why would a charity give away a free boat?!,434.0,S06E24
+436,Joey,I don't know! Charity?,435.0,S06E24
+437,Rachel,Ugh!,436.0,S06E24
+438,Phoebe,"Well, just buy the damn boat! ",437.0,S06E24
+439,Rachel,"Phoebe, don't you think you've had enough to drink?",438.0,S06E24
+440,Phoebe,I'm just helping the kids!,439.0,S06E24
+441,Rachel,How is you drinking helping the kids?,440.0,S06E24
+442,Phoebe,"Because the more I drink, the less there is for the kids to drink.",441.0,S06E24
+443,Mr. Thompson, Mr. Tribbiani.,442.0,S06E24
+444,Joey,Oh hi!,443.0,S06E24
+445,Mr. Thompson,Your generous contribution brings us a big step closer to building the youth center.,444.0,S06E24
+446,Joey,"Just out of curiosity, how-how much is that boat worth?",445.0,S06E24
+447,Mr. Thompson,"I think it was valued at 19,000",446.0,S06E24
+448,Joey," Hey, I was pretty close.  Uhh, so bad news. Umm, I can't buy the boat, I don't have any money.",447.0,S06E24
+449,Rachel,"Joey! Joey, good one! ",448.0,S06E24
+450,Mr. Thompson,That's good. Very good! ,449.0,S06E24
+451,Joey,"So uh listen, I think I'm gonna take off now. ",450.0,S06E24
+452,Rachel," Hey! You...can't...leave Joey! You agreed to buy that boat, all right?! That is a contract! And plus if you leave, my boss is gonna kill me!",451.0,S06E24
+453,Joey,"Well, what am I gonna do Rach?! I don't have that kind of money!",452.0,S06E24
+454,Rachel,"I know. Okay.  Okay. Okay. All right. All right, this is what we're gonna do, we are gonna go to the next highest bidder, and we are just gonna let them buy it, and then you're just gonna pay the difference.",453.0,S06E24
+455,Joey,Okay.,454.0,S06E24
+456,Rachel,Okay.,455.0,S06E24
+457,Joey,"Look, I don't know why the kids need a youth center anyway! Y'know? They should just watch TV after school like I did and I turned out fine!",456.0,S06E24
+458,Rachel,Not great.,457.0,S06E24
+459,Monica,"And so, we're hiding in the bathroom.",458.0,S06E24
+460,Richard,And-and then I sneak out and before Monica can her parents come in.,459.0,S06E24
+461,Monica,So I hide in the shower and the next thing you know they're going at it right on the bathroom floor.,460.0,S06E24
+462,Lisa, Oh my God!,461.0,S06E24
+463,{Transcriber's Note,"For further reading on the above story, please check out The One Where Joey Moves Out.}",462.0,S06E24
+464,Chandler,"I got a good one, I got a good one! I once walked in on both my parents making love to the same guy.",463.0,S06E24
+465,Richard,"It's so great seeing you guys again. I'd like to make a toast.  Uh, as a poet once said, In the sweetness of friendship, let there be laughter and sharing of pleasures for in the due of little things the heart finds it's morning and is refreshed.",464.0,S06E24
+466,Monica,Ohh.,465.0,S06E24
+467,Chandler,What?!,466.0,S06E24
+468,Ross,"Oh my God, you guys!! ",467.0,S06E24
+469,Chandler," Before you say anything, have we got a story for you! Guess who we bumped into at dinner!",468.0,S06E24
+470,Ross,Who?,469.0,S06E24
+471,Chandler,Richard!,470.0,S06E24
+472,Ross,What?  A-ohh!  Ohh. Oh that's right that's right. That's Richard's favorite place too.,471.0,S06E24
+473,Chandler,Oh you knew that. Good!,472.0,S06E24
+474,Monica,I thought you were going out with Elizabeth.,473.0,S06E24
+475,Ross,"Yeah, I was but uh, she was a little busy with a water balloon fight.",474.0,S06E24
+476,Monica,"Oh Ross, sometimes grown-ups have commitments they just can't get out of!",475.0,S06E24
+477,Ross,"Y'know, maybe she is too young for me. Y'know, when I was over there and she was running around with her friends, I felt like I was a baby-sitter. I finally started to see what you guys were talking about. I don't know what to do.",476.0,S06E24
+478,Monica,Why don't you just weigh out the good stuff about the relationship against the bad stuff. I mean that's what I did when I first  weighing stuff.,477.0,S06E24
+479,Ross,"Okay umm, bad stuff. Well, I'm-I'm 12 years older than she is.",478.0,S06E24
+480,Monica,If the school finds out you're fired.,479.0,S06E24
+481,Ross,Hmm.,480.0,S06E24
+482,Monica,She's leaving for three months.,481.0,S06E24
+483,Chandler,For camp!,482.0,S06E24
+484,Ross,"Okay, good stuff. Umm, well she's-she's sweet and pretty and...",483.0,S06E24
+485,Monica,"Look Ross, the only question you need to ask is, Do you see a future? I mean like do you see yourself marrying her?  Oh my God! You did it already! You married her, didn't you?!",484.0,S06E24
+486,Ross,"No! No! I...didn't do that. It's just... Okay, honestly no. I don't, I don't see a big future with her.",485.0,S06E24
+487,Monica,Okay well I think...that's your answer.,486.0,S06E24
+488,Ross,"I've got to talk to her. Ugh, I hate this part.",487.0,S06E24
+489,Chandler,"Hey, you have to forget about Elizabeth. I mean if you're not careful you may not get married at all this year!",488.0,S06E24
+490,Joey,"Rach! Rachel! Okay, the next highest bidder is at table one.",489.0,S06E24
+491,Rachel,Oh great!,490.0,S06E24
+492,Joey, Oh and uh the guy who got the Paris trip is at table four.,491.0,S06E24
+493,Phoebe,"Oh, okay.",492.0,S06E24
+494,Rachel, Why do you care about the guy who won the Paris trip?,493.0,S06E24
+495,Phoebe,"It's a trip for two!  Excuse me.  Excuse me, is the person who won the Paris trip at this table?",494.0,S06E24
+496,Emil Alexander,That was me.,495.0,S06E24
+497,Phoebe,"Oh, enchantee. ",496.0,S06E24
+498,Joey,"Uhh, excuse me is there a Mr. Bowmont at this table?",497.0,S06E24
+499,Mr. Bowmont,That's me.,498.0,S06E24
+500,Joey,"Ahh, yes. ",499.0,S06E24
+501,Rachel,"Oh well, hello. This is your lucky day Mr. Bowmont, the uh gentleman day sailer as just become available again and I believe that you made a bid of $18,000.",500.0,S06E24
+502,Joey,You-you have to pay that! It's not just a guess.,501.0,S06E24
+503,Rachel, Okay. Okay. ,502.0,S06E24
+504,Mr. Bowmont,I was actually relieved uh I didn't win the boat. My wife would've killed me.,503.0,S06E24
+505,Rachel,Ohh...,504.0,S06E24
+506,Joey,Are you kidding me?! She's gonna this boat!,505.0,S06E24
+507,Rachel,Y-Yeah! What-what is your wife's name?,506.0,S06E24
+508,Mr. Bowmont,It's Pam.,507.0,S06E24
+509,Rachel,"Pam! Oh God okay, just imagine this, The Pam.",508.0,S06E24
+510,Joey,Aw-awww!,509.0,S06E24
+511,Mr. Bowmont,I don't think she'd like that.,510.0,S06E24
+512,Rachel,"Okay, uh-uh imagine this, The Mr. Bowmont.",511.0,S06E24
+513,Joey,Oooooh...,512.0,S06E24
+514,Mr. Bowmont,I don't think so dear.,513.0,S06E24
+515,Rachel,"Okay look, let me paint you a little picture.  All right, you are settin' sail up the Hudson! You've got the wind in your h--arms! You-you get all that peace and quiet that you've always wanted! You get back to nature! You can go fishin'! You can-ooh, you can get one of those little hats and have people call you captain, and then when you're old, Cappy.",514.0,S06E24
+516,Mr. Bowmont,"What the hell, it's for a good cause! All right!",515.0,S06E24
+517,Joey,No way! It's mine!!,516.0,S06E24
+518,Rachel, What?! What?!,517.0,S06E24
+519,Joey,All that stuff you just said? I want that!,518.0,S06E24
+520,Rachel,"But Joey you don't have $20,000!",519.0,S06E24
+521,Joey,"Who cares?! I-I'll make payments, whatever it takes, I want the Mr. Bowmont!!",520.0,S06E24
+522,Joey,"Oh my God, you're back!",521.0,S06E24
+523,Phoebe,"Ohh, let me see it! Let me see your hand! ",522.0,S06E24
+524,Monica,Why do you want to see my hand?,523.0,S06E24
+525,Phoebe,I wanna see what's in your hand. I wanna see the trash.,524.0,S06E24
+526,Joey,Yeah.,525.0,S06E24
+527,Phoebe,"Eww! Oh, it's all dirty. You should throw this out.",526.0,S06E24
+528,Monica, Okay. ,527.0,S06E24
+529,Chandler, What did you guys just do?!,528.0,S06E24
+530,Phoebe,What happened?,529.0,S06E24
+531,Chandler,Richard was there so I couldn't do it!,530.0,S06E24
+532,Joey,What?! Noooo... ,531.0,S06E24
+533,Chandler,"I'm gonna do it tomorrow y'know, and-and surprise her, but now you've ruined it!",532.0,S06E24
+534,Joey,We didn't ruin it!,533.0,S06E24
+535,Chandler,Who walks into a room and asks to see a person's hands?!,534.0,S06E24
+536,Phoebe,"Well, a palm reader, a manicurist, a hand doctor...",535.0,S06E24
+537,Joey,Glove salesman!,536.0,S06E24
+538,Phoebe,Good one! Yeah.,537.0,S06E24
+539,Chandler,This is terrible. What am I going to do?,538.0,S06E24
+540,Phoebe,"Look, she only suspects something okay? She doesn't know for sure, so just throw her off the track.",539.0,S06E24
+541,Chandler,"That's right, I can throw her off. I can make her think marriage is the last thing on my mind.",540.0,S06E24
+542,Phoebe,Yeah! Yeah! Convince her that-that you're scared of commitment! Convince her that you're a little coward!,541.0,S06E24
+543,Chandler,"I can do that, I've had 30 years of practice.",542.0,S06E24
+544,Joey,"Hey, being you is finally gonna pay off! ",543.0,S06E24
+545,Monica, I had to go all the way to the basement because some idiot keeps stuffing the trash chute with pizza boxes!,544.0,S06E24
+546,Joey,That guy's still doing that?!,545.0,S06E24
+547,Rachel," Hey!  Oh my God you're here, let me see your hand!!",546.0,S06E24
+548,Phoebe,"No, you're too late!!! She already took out the trash!!!",547.0,S06E24
+549,Ross, Wow! I have never had such a healthy break-up! She was such a grown-up about it! She didn't seem too immature for me! Did I just make a huge mistake?,548.0,S06E24
+550,Elizabeth, Ross! Wait!,549.0,S06E24
+551,Ross,"Elizabeth, thank God! I was just thinking about...",550.0,S06E24
+552,Elizabeth,You suck!!,551.0,S06E24
+553,Ross,What?!,552.0,S06E24
+554,Ross,"Okay, break-up's still on!",553.0,S06E24
+555,Chandler,"Okay, okay, here she comes!  How do I look? Do I look like a guy who doesn't want to get married?",554.0,S06E24
+556,Joey,"Yeah! And also, a little like a French guy.  I never noticed that before.",555.0,S06E24
+557,Monica, Hi guys!,556.0,S06E24
+558,Joey,Hey!,557.0,S06E24
+559,Chandler,Hey!,558.0,S06E24
+560,Monica,What are you up too?,559.0,S06E24
+561,Chandler,"Oh, just hanging out, talkin' about uh, websites.  Yeah, we saw this really interesting website about marriage and how totally unnecessary it is and how its just a way for the government to keep tabs on you.",560.0,S06E24
+562,Joey," Yeah, Big Brother.",561.0,S06E24
+563,Monica,Well that's a little crazy. Although I am y'know glad to hear that you're branching out on what you look at on the Internet.,562.0,S06E24
+564,Chandler,"Yeah, well... Y'know, it just got me thinking though, why would anybody ever want to get married huh?",563.0,S06E24
+565,Monica,Why?! To celebrate your relationship! To solidify your commitment! To declare your love for one another to the world!,564.0,S06E24
+566,Chandler,Eh...,565.0,S06E24
+567,Monica,Okay well that's good to know.,566.0,S06E24
+568,Joey, The Mr. Bowmont's here!!! ,567.0,S06E24
+569,Waitress,"Hey Monica, there's a customer who wants to complement the chef, should I let him in?",568.0,S06E24
+570,Monica,"Sure, I love this part! ",569.0,S06E24
+571,Waitress, Come on in.,570.0,S06E24
+572,Richard,Hi!,571.0,S06E24
+573,Monica,Richard!,572.0,S06E24
+574,Richard,"Actually, I'm not here to complement the chef.",573.0,S06E24
+575,Monica,"Ohh... Oh, that's okay I hate when people come back to complement the chef. Like I have nothing better to do! So what's up?",574.0,S06E24
+576,Richard,"Well, it was great seeing you the other night.",575.0,S06E24
+577,Monica,"Oh, good to see you too. Did you come down here to tell me that?",576.0,S06E24
+578,Richard,No! I came here to tell you something else.  I came here  to tell you I still love you.,577.0,S06E24
+579,Monica,What uh-What did you-What?!,578.0,S06E25
+580,Richard,"I still love you. And I know I probably shouldn't even be here telling you this, I mean you're with Chandler a guy I really like, and if you say he's straight I'll believe you! After seeing ya the other night I knew if I didn't tell ya I'd regret it for the rest of my life. Letting you go was the stupidest thing I ever did.",579.0,S06E25
+581,Monica,Y'know you're really not supposed to be back here!,580.0,S06E25
+582,Richard,"Well yeah, I'm sorry. I know this is the wrong time and the wrong place but I had to tell ya! I wanna spend my life with you. I wanna marry you. I wanna have kids with you.",581.0,S06E25
+583,Monica,Oh God...  Why don't they put chairs back here?!,582.0,S06E25
+584,Richard,I know this is crazy but am I too late?,583.0,S06E25
+585,Monica,What the... Yes you're too late! Where was all this three years ago?!,584.0,S06E25
+586,Richard,"Well I know I was an idiot! And I tried to forget you, I really did! Y'know after we had lunch last year I spent six months in Africa trying to get you out of my head!",585.0,S06E25
+587,Monica,What were you doing in Africa?,586.0,S06E25
+588,Richard,Working with blind kids.,587.0,S06E25
+589,Monica,"Ohhh! What are you doing to me?! Oh look, I-I... I'm sorry but umm, this-this-this-this is not going to happen.",588.0,S06E25
+590,Richard,"Okay that's fine, I'll walk away. And I'll never bother you again, but only if you tell me Chandler's willing to give you everything I am.",589.0,S06E25
+591,Monica,"Well he is! Yeah, I mean marriage is all he talks about! My goodness, in fact, I'm the one that's making him wait!",590.0,S06E25
+592,Richard,You are?,591.0,S06E25
+593,Monica,Yeah!,592.0,S06E25
+594,Richard,Why?,593.0,S06E25
+595,Monica,Why? Because of the government.,594.0,S06E25
+596,Rachel,"Isn't it incredible?! Monica and Chandler, gettin' married.",595.0,S06E25
+597,Phoebe,"I know, they're gonna be so happy together.",596.0,S06E25
+598,Rachel,"Ohh... I mean two best friends falling in love, how often does that happen?",597.0,S06E25
+599,Phoebe,Not that often!,598.0,S06E25
+600,Rachel,No! I'm so happy for them!,599.0,S06E25
+601,Phoebe,Me too! So happy for them!,600.0,S06E25
+602,Rachel,I'm so happy and not at all jealous.,601.0,S06E25
+603,Phoebe,"Oh no! No God, definitely not jealous!",602.0,S06E25
+604,Rachel,"I mean I'm probably 98% happy, maybe 2% jealous. And I mean what's 2%? That's nothing.",603.0,S06E25
+605,Phoebe,Totally. I'm like 90/10.,604.0,S06E25
+606,Rachel,Yeah me too.,605.0,S06E25
+607,Joey,"Hey uh, have you guys scene Chandler?",606.0,S06E25
+608,Rachel," Wh-no, but y'know who did stop in here looking for ya, Tennille.",607.0,S06E25
+609,Monica,"So that marriage stuff that you were saying yesterday, you don't really believe that do you?",608.0,S06E25
+610,Chandler,"Sure I do. In fact, I think the whole concept of marriage is unnatural. I mean look at pigs. Let's take a second here and look at pigs. Okay pigs don't mate for life. I mean a pig can have like a hundred sexual partners in a lifetime, and that's just an ordinary pig not even a pig that's good at sports!",609.0,S06E25
+611,Monica,"Yeah, but that's pigs not people!",610.0,S06E25
+612,Chandler,"If marriage worked, I'd be all for it. But do you know what the divorce rate in this country is? 97%.",611.0,S06E25
+613,Monica,Wait a minute. Are you honestly telling me that-that you may never want to get married?,612.0,S06E25
+614,Chandler,"Well, never say never but y'know probably uh yeah, never.",613.0,S06E25
+615,Monica,Oh my God! Then-then-then what are we even doing?! What is this?!,614.0,S06E25
+616,Chandler,Whoa! Whoa! Whoa! What is all this pressure?! Is this some new kind of strategy? Why don't you put down your copy of 'The Rules' huh mantrap?!,615.0,S06E25
+617,Monica,Y'know what?! I gotta go! Ugh!,616.0,S06E25
+618,Chandler," It's okay, I got a plan.",617.0,S06E25
+619,Rachel,We're gonna find love!,618.0,S06E25
+620,Phoebe,Definitely!,619.0,S06E25
+621,Rachel,"Yeah, I'm pretty confident about that. That's what makes it so easy for me to be 80% happy for Monica and Chandler! It would be nice to have a little guarantee though.",620.0,S06E25
+622,Phoebe,What do you mean?,621.0,S06E25
+623,Rachel,"Well y'know, some people make deals with a friend, like if neither of them are married by the time they're 40, they marry each other.",622.0,S06E25
+624,Phoebe,You mean a backup?,623.0,S06E25
+625,Rachel,Exactly!,624.0,S06E25
+626,Phoebe,"Yeah, yeah I got that.",625.0,S06E25
+627,Rachel,You do?,626.0,S06E25
+628,Phoebe,Hm-mmm.,627.0,S06E25
+629,Rachel,Who?,628.0,S06E25
+630,Phoebe,Joey.,629.0,S06E25
+631,Rachel,Joey?!,630.0,S06E25
+632,Phoebe,Yeah!,631.0,S06E25
+633,Rachel,Are you serious?!,632.0,S06E25
+634,Phoebe,"Yeah, I locked him years ago!",633.0,S06E25
+635,Rachel,"Wh... So... If neither of you are married by the time you're 40, you're gonna marry Joey.",634.0,S06E25
+636,Phoebe,"Yep, we shook on it. Yeah but believe me that is not how he wanted to seal the deal.",635.0,S06E25
+637,Rachel,"Oh, seriously?",636.0,S06E25
+638,Phoebe,"Ohh, yeah. I think his exact words were... ",637.0,S06E25
+639,Rachel,Charming.,638.0,S06E25
+640,Phoebe,"Well hey, it's just a backup.",639.0,S06E25
+641,Rachel,Yeah.,640.0,S06E25
+642,Joey,Hey Monica!,641.0,S06E25
+643,Monica,Have you seen Rachel? Or a mirror?,642.0,S06E25
+644,Joey,"This is for my boat, pretty cool huh?",643.0,S06E25
+645,Monica,"Yeah, it's great.",644.0,S06E25
+646,Joey,"Whoa-whoa, what's the matter?! Talk to the captain!",645.0,S06E25
+647,Monica,I'm just having one of those days where you realize you're in a dead-end relationship!,646.0,S06E25
+648,Joey,Chandler giving you a hard time huh?,647.0,S06E25
+649,Monica,"It's not like I want to get married tomorrow! It's just that I-I'd like to believe that I'm in a relationship that's actually going somewhere, that I'm not just wasting my time!",648.0,S06E25
+650,Joey,"Well, you know Chandler.",649.0,S06E25
+651,Monica,No I don't know Chandler! Not anymore! It's like it's like something's changed.,650.0,S06E25
+652,Joey,Maybe you changed?,651.0,S06E25
+653,Monica,I didn't change!,652.0,S06E25
+654,Joey,Maybe that's the problem.,653.0,S06E25
+655,Monica,What?!,654.0,S06E25
+656,Joey,"Chandler is a complex fellow, one who is unlikely to take a wife.",655.0,S06E25
+657,Monica,Is that some kind of boat talk?,656.0,S06E25
+658,Joey,I don't know!  I haven't totally decided how to talk on my boat yet.,657.0,S06E25
+659,Monica,What does he think? Does he think I'm just gonna wait around for nothing?,658.0,S06E25
+660,Joey,"Monica face it, Chandler is against marriage. And-and always will be!",659.0,S06E25
+661,Monica, Well there's some people who do want to marry me.,660.0,S06E25
+662,Joey,There are?,661.0,S06E25
+663,Monica,Yeah! Richard!,662.0,S06E25
+664,Joey,R-R-Richard said he wants to marry you?!  And-and Chandler's tellin' ya how much he hates marriage?!,663.0,S06E25
+665,Monica,That's right.,664.0,S06E25
+666,Joey,Chandler loves marriage!!,665.0,S06E25
+667,Monica,You just told me that he hates marriage! That-that he's a-a complex fellow who's unlikely to take a wife! That-that he's against marriage and always will be!,666.0,S06E25
+668,Joey,You got that from what I said?!,667.0,S06E25
+669,Narrator,"When the Cretaceous period ended, the dinosaurs were gone.",668.0,S06E25
+670,Ross,What happened you guys?,669.0,S06E25
+671,Ross,Rach!,670.0,S06E25
+672,Rachel,Hey you!,671.0,S06E25
+673,Ross,"Hey, come on in.",672.0,S06E25
+674,Rachel,"Oh thank you. Hey y'know, I'm so sorry to hear about you and Elizabeth.",673.0,S06E25
+675,Ross,"Oh, thanks. Yeah, I really thought we'd be able to make it work, but uh, I guess it just wasn't meant to be.",674.0,S06E25
+676,Rachel,"Yeah, love. It's a tricky business isn't it?",675.0,S06E25
+677,Ross,I guess so.,676.0,S06E25
+678,Rachel,"So what do you say we make a pact? If you and I are both single by the time we're 40, we get married. I mean, we know each other, we like each other, and we've-we've already slept together so y'know there'll be no surprises there! You know what I mean? No like, What's that?!",677.0,S06E25
+679,Ross,Right. Ohh! You-you want me to be your backup.,678.0,S06E25
+680,Rachel,Exactly.,679.0,S06E25
+681,Ross,"Ohh, yeah I already have one.",680.0,S06E25
+682,Rachel,What? Who?,681.0,S06E25
+683,Ross,Phoebe.,682.0,S06E25
+684,Rachel,"Phoebe?! Wait a-but-but she just, she said that Joey was her backup.",683.0,S06E25
+685,Ross,"Ohh, I don't think so.",684.0,S06E25
+686,Rachel,"Ross! I just had a conversation with her, and she said that she and Joey made a deal!",685.0,S06E25
+687,Ross,"That's impossible! I mean we have had a deal for years! We-we-we shook on it, although believe me she wanted to do a lot more than that.",686.0,S06E25
+688,Joey,Where the hell have you been?!,687.0,S06E25
+689,Chandler,I was making a coconut phone with the professor.,688.0,S06E25
+690,Joey,Richard told Monica he wants to marry her!,689.0,S06E25
+691,Chandler,What?!,690.0,S06E25
+692,Joey,"Yeah! Yeah, I've been trying to find ya to tell to stop messing with her and maybe I would have if these  damn boat shoes wouldn't keep flying off!",691.0,S06E25
+693,Chandler,My-Oh my God!,692.0,S06E25
+694,Joey,I know! They suck!!,693.0,S06E25
+695,Chandler,He's not supposed to ask my girlfriend to marry him! I'm supposed to do that!,694.0,S06E25
+696,Joey,I know!,695.0,S06E25
+697,Chandler,Well what... Y'know what I'm gonna do? I'm gonna go over there; I'm gonna kick his ass!  Will you help me?!,696.0,S06E25
+698,Joey,"Look, Chandler I don't think us getting our asses kicked is a solution. Okay? Just go and find Monica!",697.0,S06E25
+699,Chandler,You're right.,698.0,S06E25
+700,Joey,Yeah!,699.0,S06E25
+701,Chandler,Okay.  I'm gonna get the ring! I'm gonna get the ring!  I'm gonna go find her and  I'm just going to propose!,700.0,S06E25
+702,Joey,Okay.,701.0,S06E25
+703,Chandler,Okay great.,702.0,S06E25
+704,Joey,Dude-dude-dude!,703.0,S06E25
+705,Chandler,What?!,704.0,S06E25
+706,Joey,"Let me know about that coconut phone, it might great for the boat.",705.0,S06E25
+707,Monica,Hi.,706.0,S06E25
+708,Richard,Hi.,707.0,S06E25
+709,Monica,I don't know why I'm here.,708.0,S06E25
+710,Richard,I didn't ask. You wanna come in?,709.0,S06E25
+711,Monica,I don't know.,710.0,S06E25
+712,Richard,"Oh, okay. Well, I'll just leave the door open and go sit on the couch. ",711.0,S06E25
+713,Monica, Chandler is such an idiot!,712.0,S06E25
+714,Richard, Drink?,713.0,S06E25
+715,Monica,"Yeah, I'll have a scotch...",714.0,S06E25
+716,Richard,...on the rocks with a twist? I remember. ,715.0,S06E25
+717,Monica, Still smoking cigars?,716.0,S06E25
+718,Richard,"Uh, no! No! That's...art! If it bothers you I can put my art out.",717.0,S06E25
+719,Monica,"No that's, that's okay.",718.0,S06E25
+720,Richard,"So Monica let me ask you a question. Y'know, since we broke up do you ever, think about me?",719.0,S06E25
+721,Monica,"Uh yeah, I-I actually I thought about you a couple months ago.",720.0,S06E25
+722,Richard,Oh really?,721.0,S06E25
+723,Monica,Yeah but it was because I-I had an eye exam and I don't like my new eye doctor.,722.0,S06E25
+724,Richard,Who is it?,723.0,S06E25
+725,Monica,Edward Nevski?,724.0,S06E25
+726,Richard,Yeah he's no good. Do you ever  think about me in a  non-eye doctor way?,725.0,S06E25
+727,Monica,No.,726.0,S06E25
+728,Richard,Ahh.,727.0,S06E25
+729,Monica,But getting over was the hardest thing that I've ever had to do. And I never let myself think about you.,728.0,S06E25
+730,Rachel,Phoebe! You picked Joey and Ross?! You can not have two backups!,729.0,S06E25
+731,Phoebe,"Of course I can! It's just good sense to backup your backup! Look, I've already lost Chandler!",730.0,S06E25
+732,Rachel,What?!,731.0,S06E25
+733,Joey, Hey!,732.0,S06E25
+734,Ross, Hey!,733.0,S06E25
+735,Joey,Phoebe! We're both  your backup?!,734.0,S06E25
+736,Ross,"Phoebe, how could you do this to me?!",735.0,S06E25
+737,Phoebe,I don't-Look I don't know what you're complaining about now? You were both aware of the situation!,736.0,S06E25
+738,Joey,No we weren't!,737.0,S06E25
+739,Ross,I was not!,738.0,S06E25
+740,Phoebe,"Okay, this kind of back talk is not gonna fly when we're married!",739.0,S06E25
+741,Rachel,Phoebe you can't have both of them! You have to pick one!,740.0,S06E25
+742,Joey,Pick me!!,741.0,S06E25
+743,Ross,No! Pick me! I don't want to end up an old maid!,742.0,S06E25
+744,Phoebe,"All right well let's see, Ross is a good father, but Joey has a boat-This is hard!",743.0,S06E25
+745,Joey,"This is crazy! Hey look, I wanna switch to Rachel!",744.0,S06E25
+746,Ross,"Ooh, I wanna switch to Rachel too!",745.0,S06E25
+747,Phoebe,"No wait! Just-Okay-Just wait! You guys! Wait you guys! Don't make any rash decisions, okay? Just remember my promise, when we get married, three times a week.",746.0,S06E25
+748,Rachel,"Oh God, Phoebe!",747.0,S06E25
+749,Phoebe, I'm talking about massages.,748.0,S06E25
+750,Rachel,Oh.,749.0,S06E25
+751,Rachel,"Okay, y'know what?! I know-I know how to settle this! All right here, this is what we're gonna do! I'm gonna write Joey on one napkin  and I'm gonna right Ross on the other napkin  and we are going to pick one! And that person is going to be our backup! Okay?",750.0,S06E25
+752,Joey,Okay that's fair.,751.0,S06E25
+753,Ross,All right.,752.0,S06E25
+754,Phoebe,Good!,753.0,S06E25
+755,Rachel,Pick one.,754.0,S06E25
+756,Phoebe,Left!  Thank you.,755.0,S06E25
+757,Rachel,You're welcome.,756.0,S06E25
+758,Phoebe, Ross!,757.0,S06E25
+759,Rachel, Joey!  We should just switch.,758.0,S06E25
+760,Phoebe,Yeah absolutely! ,759.0,S06E25
+761,Joey,Yeah.,760.0,S06E25
+762,Monica," I missed you-you ugly, flat faced old freak!",761.0,S06E25
+763,Richard,Excuse me?,762.0,S06E25
+764,Monica,Oh!  Him.,763.0,S06E25
+765,Richard,Oh.  Whew!,764.0,S06E25
+766,Monica,"I missed this apartment! Now, this is a grown-up's apartment! Y'know, I-I should be with a grown-up, do you know what I mean?!",765.0,S06E25
+767,Richard,"Yeah! You're saying, you need to be with someone more mature. Maybe someone with, a license to practice medicine. Or a mustache.",766.0,S06E25
+768,Monica,"Y'know, let's face it, I'm not a kid anymore! I-I need to be with someone who-who wants the same things that I do! I mean coming to my place of work and telling me that you love me, I want that! Talking about pig sex over lunch, I don't want that!",767.0,S06E25
+769,Richard,I think that's fair.,768.0,S06E25
+770,Monica,"Fair? Please don't even talk to me about fair! Fair would've been you wanting to marry me back then! Or fair would've been Chandler wanting to marry me now! Believe me, nothing about this is fair! Nothing! Nothing! Nothing! Nothing! Nothing! Nothing! Nothing! Nothing! Nothing! Nothing!",769.0,S06E25
+771,Richard,It's okay! Shh! Hey. Hey.  Shhhh.,770.0,S06E25
+772,Monica,Nothing.  I don't kn-Umm. I don't know. Umm...,771.0,S06E25
+773,Richard,I know. ,772.0,S06E25
+774,Monica,"Y'know, I-I... I have to figure...some st-Y'know, some stuff before I can...",773.0,S06E25
+775,Richard,"Yeah, I understand. Take as much time as you want.  Ten, even twenty minutes if you need it. I'll be here. Not smoking. ",774.0,S06E25
+776,Richard,Chandler.,775.0,S06E25
+777,Chandler,Where is she? I'm not scared of you! ,776.0,S06E25
+778,Richard,She's not here and please come in.,777.0,S06E25
+779,Chandler," Scotch on the rocks, with a twist, on a coaster? Ha-ha, Monica! Monica!",778.0,S06E25
+780,Richard,"Okay, she was here, but she left.",779.0,S06E25
+781,Chandler,Well where did she go?,780.0,S06E25
+782,Richard,Well she said she had to think things over.,781.0,S06E25
+783,Chandler,"Oh my God, I can't believe this! Y'know, I thought...I thought you were a good guy.",782.0,S06E25
+784,Richard,"Oh, hey look nothing happened.",783.0,S06E25
+785,Chandler,Nothing happened? Nothing? So you didn't tell my girlfriend that you love her?,784.0,S06E25
+786,Richard,"Well all right, one thing happened?",785.0,S06E25
+787,Chandler,Y'know what? I can't believe this! Do you know what you did? My girlfriend is out there thinking things over! You made my girlfriend think!!,786.0,S06E25
+788,Richard,Well I'm sorry.,787.0,S06E25
+789,Chandler,And what does she have to think about? I love her!,788.0,S06E25
+790,Richard,"Well, apparently I'm willing to offer her things that you are not.",789.0,S06E25
+791,Chandler,"But I am willing to offer her all those things. This was just a plan, y'know? A way to throw her off course so that when I offered her all these things, she'd be surprised!",790.0,S06E25
+792,Richard,"Well if it helps, it worked very well.",791.0,S06E25
+793,Chandler,"It was working until you showed up, you big tree! I mean, this isn't fair. You had your chance with her! You had your chance and you blew it! And this is my chance and I am not going to blow it because we are meant for each other! And this is all just been one stupid mistake!  I was gonna propose tonight.",792.0,S06E25
+794,Richard,You were gonna propose? ,793.0,S06E25
+795,Chandler,Yeah I even  got a ring.  Did you get a ring?,794.0,S06E25
+796,Richard,"No I don't have a ring!  You go get her Chandler.  And can I give you a piece of advice? If you do get her, don't let her go. Trust me.",795.0,S06E25
+797,Chandler,Y'know Richard...you are a good guy.,796.0,S06E25
+798,Richard,I know.  I hate that!,797.0,S06E25
+799,Joey,Dude!,798.0,S06E25
+800,Chandler,"I can't talk to you now, I gotta find Monica!",799.0,S06E25
+801,Joey,She's gone.,800.0,S06E25
+802,Chandler,What?,801.0,S06E25
+803,Joey,She's gone. She had a bag and she left.,802.0,S06E25
+804,Chandler,What are you talking about?,803.0,S06E25
+805,Joey,"She was all crying. She-she said you guys want different things, and that and that she needed time to think.",804.0,S06E25
+806,Chandler,Well why didn't you stop her?! Why didn't you just tell her it was a plan?!,805.0,S06E25
+807,Joey,"I-I did! I told her everything, Chandler! But she wouldn't believe me.",806.0,S06E25
+808,Chandler,Well where... Where did she go?,807.0,S06E25
+809,Joey,To her parent's I think and she said you shouldn't call her. But if I were you I would.,808.0,S06E25
+810,Chandler,I can't believe I ruined this.,809.0,S06E25
+811,Joey,I am so sorry man.,810.0,S06E25
+812,Monica,You wanted it to be a surprise.,811.0,S06E25
+813,Chandler,Oh my God.,812.0,S06E25
+814,Monica,Chandler... In all my life... I never thought I would be so lucky.  As to...fall in love with my best...my best... There's a reason why girls don't do this!,813.0,S06E25
+815,Chandler,"Okay!  Okay! Okay! Oh God, I thought...  Wait a minute, I-I can do this.  I thought that it mattered what I said or where I said it. Then I realized the only thing that matters is that you,  you make me happier than I ever thought I could be.  And if you'll let me, I will spend the rest of my life trying to make you feel the same way.  Monica, will you marry me?",814.0,S06E25
+816,Monica,Yes.,815.0,S06E25
+817,Monica,I knew you were likely to take a wife!,816.0,S06E25
+818,Joey, Can we come it yet?! We're dying out here!,817.0,S06E25
+819,Monica,Come in! Come in!  We're engaged!!!,818.0,S06E25
+820,Rachel,"Ohhh, this is the least jealous I've ever been!",819.0,S06E25
+821,Phoebe,"Oh no wait no, this is wrong! Ross isn't here!",820.0,S06E25
+822,Monica,Oh...,821.0,S06E25
+823,Rachel,"Oh hell, he's done this three times! He knows what its about!",822.0,S06E25
+824,Joey,Yeah!,823.0,S06E25
+825,Ross,"Hey, what?s going on?",824.0,S07E01
+826,Chandler,Hey.,825.0,S07E01
+827,Ross,"I found a note on my door, Come to Monica?s quick, bring champagne and a Three Musketeers bar.",826.0,S07E01
+828,Joey, Yeah I?ll take that.,827.0,S07E01
+829,Ross,What?s up?,828.0,S07E01
+830,Chandler,Monica and I are engaged.,829.0,S07E01
+831,Ross,Oh my God.  Congratulations.,830.0,S07E01
+832,Chandler,Thanks.,831.0,S07E01
+833,Ross,Where is she?,832.0,S07E01
+834,Monica, I?m engaged!!!!!! I?m engaged!!!!,833.0,S07E01
+835,Joey,"Yeah, she?s been out there for twenty minutes, I?m surprised you didn?t hear her on the way over.",834.0,S07E01
+836,Ross,"Oh, I thought it was just a kid yelling, I?m gay! I?m gay! Can I bring her in?",835.0,S07E01
+837,Phoebe,"Oh no, let her stay out there. It?s sweet.",836.0,S07E01
+838,Monica,"I?m getting married!!!! I?m gonna be a bride!!!!  No, I will not shut up because I?m engaged!  Ohh, big talk! Huh, why don?t you come over here and say that to me?! Huh, buddy?! Yeah, my fiancee will kick your ass!  Come on, apartment 20! Apartment 20!",837.0,S07E01
+839,Chandler," Okay, you get her in here.  You bolt the door. I?ll be in the closet.",838.0,S07E01
+840,Monica,"Okay! Wait-wait-wait! Shhh!  Okay, umm, I just wanna say that?I love you guys so-so much and-and thank you for being here on my special night.  Our special night. I mean it just wouldn?t be my?our-our night, if you all weren?t here to celebrate with me?us?Damnit!",839.0,S07E01
+841,Chandler,"It?s okay, I want this to be your night too.  To Monica.",840.0,S07E01
+842,Monica,"Awww, come on?wait?stop it. Okay, to Monica.",841.0,S07E01
+843,Chandler,To Monica!,842.0,S07E01
+844,Phoebe,"So have you decided on a band for the wedding? Because, y?know, I?m kinda musical.",843.0,S07E01
+845,Rachel,"Yeah Pheebs, honey, she just got engaged a couple of hours ago. I doubt she?s even had time to?",844.0,S07E01
+846,Phoebe,"Well speaking of chiming in, remember the time you burned down my apartment?",845.0,S07E01
+847,Rachel," Yeah, you?re on your own.",846.0,S07E01
+848,Monica,Y?know what we should do? We should all get dressed up and go to have champagne at The Plaza.,847.0,S07E01
+849,Joey,"But I-I-I can?t stay too long, I gotta get up early for a commercial audition tomorrow and I gotta look good. I?m supposed to be playing a 19-year-old.  What?",848.0,S07E01
+850,Chandler,"So when you said, Get up early, did you mean 1986?",849.0,S07E01
+851,Joey,You guys don?t think I look 19?,850.0,S07E01
+852,Phoebe,"Oh, 19! We thought you said 90!",851.0,S07E01
+853,Monica,"Okay everybody, let?s go! Let?s go!",852.0,S07E01
+854,Rachel,Okay.,853.0,S07E01
+855,Chandler,Okay.,854.0,S07E01
+856,Joey," Hey, is uh the rest of my candy bar around here?",855.0,S07E01
+857,Phoebe,"Oh honey no, you ate it all.",856.0,S07E01
+858,Joey,I was afraid of that.,857.0,S07E01
+859,Monica, Y?know what shoes would look great with this ring? Diamond shoes!  You?re not getting dressed. ,858.0,S07E01
+860,Chandler,Know what I mean?,859.0,S07E01
+861,Monica,"Yeah, but I don?t think we have time.",860.0,S07E01
+862,Chandler,There?s gonna be a wedding. You?re gonna be the bride. Two hundred people are going to be looking at you in a clean white dress.,861.0,S07E01
+863,Monica, Let?s do it! ,862.0,S07E01
+864,Monica," Chandler! It happens to lots of guys! You-you-you were probably tired, you had a lot of champagne, don?t worry about it!",863.0,S07E01
+865,Chandler," I?m not worried, I?m uh, I?m fascinated. Y?know it?s like uh, Biology! Which is funny because in high school I uh, I-I failed Biology and tonight Biology failed me. ",864.0,S07E01
+866,Phoebe,"Check it out. Okay, I can play this when the guests are coming in. Okay. ",865.0,S07E01
+867,Monica,Phoebe!,866.0,S07E01
+868,Phoebe,"If you would?ve let me finish, it goes on to say that he?s probably not gay.",867.0,S07E01
+869,Chandler,"Sure, you guys don?t have this problem, you?re made of wood.  Hey!",868.0,S07E01
+870,Rachel,Hey!,869.0,S07E01
+871,Chandler,You look great!,870.0,S07E01
+872,Rachel," Oh, thanks.",871.0,S07E01
+873,Chandler,You okay over there?,872.0,S07E01
+874,Rachel,"I don?t know, y?know? I feel a little umm? No, y?know what? Nevermind, I?m gonna be fine.",873.0,S07E01
+875,Chandler,"Oh, don?t worry about it I mean you probably were tired, you had a lot of champagne, it happens to everybody.",874.0,S07E01
+876,Ross,Hey!,875.0,S07E01
+877,Rachel,Hi!,876.0,S07E01
+878,Ross,Wow! Happy Monica?s night!,877.0,S07E01
+879,Rachel,"Well thank you, you too.",878.0,S07E01
+880,Ross,Thanks.,879.0,S07E01
+881,Rachel,"Hey, do you believe this? Do you believe they are actually getting married?",880.0,S07E01
+882,Ross,Well sure. But I get married all the time so?,881.0,S07E01
+883,Rachel,Ohh?,882.0,S07E01
+884,Ross,You okay?,883.0,S07E01
+885,Rachel,"Yeah, I guess. I-I? I mean, do-do you think we?re ever gonna have that?",884.0,S07E01
+886,Ross,"You mean, we?you and me?",885.0,S07E01
+887,Rachel,"Oh no-no-no-no-no, no, no! We, you with someone and me with someone.",886.0,S07E01
+888,Ross,"Oh good, you scared me for a minute.",887.0,S07E01
+889,Rachel,Shake it off.,888.0,S07E01
+890,Ross,"I mean?no, it?s just ?cause, it?s just ?cause you and I were like a nightmare.  No, but there was some good times.",889.0,S07E01
+891,Rachel,"No, absolutely. Y?know like it was umm?",890.0,S07E01
+892,Ross,Surely you can think of something good.,891.0,S07E01
+893,Rachel,"Yeah, just give me a minute!  Oh well, yes, I can think of one good thing.",892.0,S07E01
+894,Ross,What?,893.0,S07E01
+895,Rachel,"Well you uh, you were always really good at the uh, at the uh the stuff.",894.0,S07E01
+896,Ross,Yeah? I was good at the stuff huh?,895.0,S07E01
+897,Rachel,"Uh-hmm, uh-hmm, yeah, yeah, I really liked your hands.",896.0,S07E01
+898,Ross,My hands?,897.0,S07E01
+899,Rachel,Yeah.,898.0,S07E01
+900,Ross,Yeah?,899.0,S07E01
+901,Rachel,Uh-huh.,900.0,S07E01
+902,Ross," Way to go guys. Y?know, you-you were really good at the stuff too.",901.0,S07E01
+903,Rachel,"Oh, I know. Hey, y?know what we never did?  Oh no, not that.  We uh, we never had bonus night!",902.0,S07E01
+904,Ross,A what?,903.0,S07E01
+905,Rachel,"Y?know, bonus night. Y?know, when two people break up but they get back together for just one night.",904.0,S07E01
+906,Ross,"One night, just-just sex. No strings attached?",905.0,S07E01
+907,Rachel,"Yeah-yeah, we never had that,",906.0,S07E01
+908,Ross,No.,907.0,S07E01
+909,Ross,"Okay, this is getting a little crazy. I mean, I?m-I?m sure it would be amazing but I?gotta say I really-really don?t think it would be a good idea. Y?know? I really, really?don?t.",908.0,S07E01
+910,Joey,?Sup? ?Sup dude?,909.0,S07E01
+911,Chandler," Take whatever you want, just please don?t hurt me.",910.0,S07E01
+912,Joey,"So you?re playing a little Playstation, huh? That?s whack! Playstation is whack! ?Sup with the whack Playstation, ?sup?! Huh? Come on, am I 19 or what?!",911.0,S07E01
+913,Chandler,"Yes, on a scale from 1 to 10, 10 being the dumbest a person can look, you are definitely 19.",912.0,S07E01
+914,Joey,"Come on man, really how old?!",913.0,S07E01
+915,Chandler,"Young! You?re a man-child okay?! Now go get changed because everybody?s ready and please, oh please, keep my underwear!",914.0,S07E01
+916,Joey,Wow thanks! ,915.0,S07E01
+917,Chandler,Joe?,916.0,S07E01
+918,Joey,Yeah!,917.0,S07E01
+919,Chandler,"Uhh, you?ve had a lot of sex right?",918.0,S07E01
+920,Joey,"When? Today? Some, not a lot.",919.0,S07E01
+921,Chandler,"Well, it?s just the reason that I?m asking is because I kind of eh, uh, I was unable to?I mean I really wanted too, but I couldn?t?. There huh?hmm, there-there was an incident.",920.0,S07E01
+922,Joey,"Don?t worry about that man, that happens.",921.0,S07E01
+923,Chandler,It?s happened to you?,922.0,S07E01
+924,Joey,Yeah! Once.,923.0,S07E01
+925,Chandler,"Well, what?d you do?",924.0,S07E01
+926,Joey,I did it anyway.,925.0,S07E01
+927,Monica,Phoebe! Come on! Let?s go!  Come on!  Why aren?t you dressed yet?!,926.0,S07E01
+928,Phoebe,"I?m sorry, but I just wrote the best dance song for your wedding. Check this out. ",927.0,S07E01
+929,Monica," No, Phoebe, I?ll tell you what, if you get ready now I?ll let you play it at the wedding.",928.0,S07E01
+930,Phoebe,"Really?! Oh that?s so exciting! Thank you! Thanks Mon! Oh but Mon, if you touch my guitar again I?ll have to pound on you for a little bit.",929.0,S07E01
+931,Monica,"Fair enough, now go get ready!",930.0,S07E01
+932,Phoebe,Okay. ,931.0,S07E01
+933,Monica,"I?ll get everybody else , finally we can start celebrating my? I?m sorry, uh apparently I?ve opened the door to the past.",932.0,S07E01
+934,Ross,"Okay, Monica. Mon, uh what-what you just saw?",933.0,S07E01
+935,Monica," Can I ask you just a little question, huh? Why tonight?",934.0,S07E01
+936,Rachel,What?,935.0,S07E01
+937,Monica,"See, I?ve been waiting my whole life to be engaged, and unlike some people I?m only planning on doing this once. So, uh y?know, maybe this is selfish and I?m sorry about it, but I was kinda hoping tonight could just be about that.",936.0,S07E01
+938,Rachel,"Oh honey, but it is just about?",937.0,S07E01
+939,Ross,It is! It is!,938.0,S07E01
+940,Monica,No it?s not! No! No! Now it?s about you and Ross getting back together!,939.0,S07E01
+941,Rachel,What?!,940.0,S07E01
+942,Monica,"See yeah umm, you kinda stole my thunder!",941.0,S07E01
+943,Ross,Okay! Ho-ho! We did not steal your thunder because we are not getting back together!,942.0,S07E01
+944,Rachel,Yeah. No. And you know what? Nobody even saw!,943.0,S07E01
+945,Ross,Yeah!,944.0,S07E01
+946,Monica,That?s true.,945.0,S07E01
+947,Rachel,Honey I swear it we just kissed.,946.0,S07E01
+948,Ross,It was just a kiss. ,947.0,S07E01
+949,Phoebe,"You guys kissed!!!!! What does this mean?!! Are you, are you getting back together?! Can I sing at your wedding?",948.0,S07E01
+950,Monica,Thunder being stolen!!,949.0,S07E01
+951,Rachel,"Okay come on Phoebe, it?s nothing! Monica, come on!",950.0,S07E01
+952,Ross,Look let?s not make a big deal out of this! It was a one time thing. It doesn?t even matter!,951.0,S07E01
+953,Joey,Oh my God! I cannot believe you guys are talking about this! The problems in the bedroom are between the man and the woman!!! All right?!! Now Chandler is doing the best he can!!,952.0,S07E01
+954,Chandler, I don?t think that?s what they were talking about Joe!!,953.0,S07E01
+955,Phoebe,"What a great night, Chandler can?t do it, these guys kissed? ",954.0,S07E01
+956,Joey,What?,955.0,S07E01
+957,Chandler,What?!,956.0,S07E01
+958,Joey,You guys kissed! Oh my?this is huge!,957.0,S07E01
+959,Rachel,No!,958.0,S07E01
+960,Ross,Oh no!,959.0,S07E01
+961,Rachel,"No-no, it?s really not huge.",960.0,S07E01
+962,Ross,And; people thinking it?s huge has led Monica to believe that we are stealing her thunder.  Which we are not!,961.0,S07E01
+963,Monica,"Well, we?re still talking about it, aren?t we?",962.0,S07E01
+964,Phoebe,"Well yeah, that and Chandler?s problem.",963.0,S07E01
+965,Joey,"Monica-Monica-Monica-Monica, listen-listen, listen, listen, would-would it make you feel better if we all stop talking about Ross and Rachel.",964.0,S07E01
+966,Monica,Yes that would be lovely.,965.0,S07E01
+967,Joey,"You got it. Okay. Now, I can pass for 19 right?!",966.0,S07E01
+968,Chandler,"Yes, you can pass for 19.",967.0,S07E01
+969,Joey,Really?,968.0,S07E01
+970,Chandler,Yes!,969.0,S07E01
+971,Joey,Seriously?,970.0,S07E01
+972,Chandler,"Seriously? Seriously, no! You can play your own age which is 31!",971.0,S07E01
+973,Joey, I?m 30!,972.0,S07E01
+974,Rachel,"Joey, you are not! You?re 31.",973.0,S07E01
+975,Joey, Aww crap!,974.0,S07E01
+976,Phoebe,"Okay, so The Plaza! Okay, we?ll get us some Mai Thai?s,  maybe no more for you though.",975.0,S07E01
+977,Monica,"Y?know what? I-I think that umm, I don?t feel like going to The Plaza.",976.0,S07E01
+978,Phoebe,Why?!,977.0,S07E01
+979,Rachel,"Honey, Monica, this is ridiculous! Look?",978.0,S07E01
+980,Monica,"No-no, I-I really don?t want to talk about it! I don?t!  Especially with you. ",979.0,S07E01
+981,Joey,"Psss, that is whack!",980.0,S07E01
+982,Phoebe," Yeah?  Okay, I think I?ll play it at the wedding.",981.0,S07E01
+983,Joey,"Yeah! Well, I think we?ll see if they actually let you play. Huh? I mean they tell you anything you want to hear like-like, You look 19, and then they just take it away like-like, No you don?t.",982.0,S07E01
+984,Phoebe,"Well, I don?t think Monica is gonna take this away.",983.0,S07E01
+985,Joey,Wouldn?t she?,984.0,S07E01
+986,Phoebe,Would she?,985.0,S07E01
+987,Joey,Would she?  You ate my candy bar!,986.0,S07E01
+988,Ross,Guess who? ,987.0,S07E01
+989,Rachel,Hey.,988.0,S07E01
+990,Ross,"Hey, I just realized we kinda let some stuff up in the air?",989.0,S07E01
+991,Rachel,"What do you think Monica mean when she said she didn?t want to talk, especially with me? I mean, why not especially you and me? We were both out there kissing.",990.0,S07E01
+992,Ross,Still thinking about it huh?,991.0,S07E01
+993,Rachel,"Come on! Serious-ser-ser-seriously, what did she mean by that?  Especially you!",992.0,S07E01
+994,Ross," Oh, who cares?",993.0,S07E01
+995,Rachel,I care!,994.0,S07E01
+996,Ross, And so do I.,995.0,S07E01
+997,Rachel,"Y?know what, I-I have to go talk to her, would you let me just get changed?",996.0,S07E01
+998,Ross,Okay. Sure. ,997.0,S07E01
+999,Rachel,Am I going to let you watch me undress?,998.0,S07E01
+1000,Ross, No! ,999.0,S07E01
+1001,Monica,"I can?t believe her, y?know it?s just?it?s so typical.",1000.0,S07E01
+1002,Chandler,"Now Monica, I know you?re upset, but don?t forget. There is going to be a wedding, you are going to throw the bouquet, and then there?s going to be a honeymoon, maybe in Paris.",1001.0,S07E01
+1003,Monica,Paris?,1002.0,S07E01
+1004,Chandler,We will take a moonlit walk on the Rue de la .,1003.0,S07E01
+1005,Monica,Keep talking.,1004.0,S07E01
+1006,Chandler,"Then we will sprinkle rose pedals on the bed and make love. Not just because it?s romantic, but because I can!",1005.0,S07E01
+1007,Monica,I love you!,1006.0,S07E01
+1008,Monica," Bonjour, monsieur.",1007.0,S07E01
+1009,Chandler,"Okay, don?t say anything, you might scare it away.",1008.0,S07E01
+1010,Chandler,"It?s Paris, who knows we?re here!",1009.0,S07E01
+1011,Monica," Hi Pheebs, what?s up? ",1010.0,S07E01
+1012,Phoebe,"Okay, you said I could sing at your wedding so, I?m just gonna need a small deposit.",1011.0,S07E01
+1013,Monica,What?!,1012.0,S07E01
+1014,Phoebe,"Y?know, just some good faith money to hold the date.",1013.0,S07E01
+1015,Chandler,"Pheebs, we?re not giving you a deposit for our wedding!",1014.0,S07E01
+1016,Phoebe,"Oh, I see. ",1015.0,S07E01
+1017,Joey,"They break your heart, don?t they?",1016.0,S07E01
+1018,Phoebe,"Y?know, I don?t really their permission.",1017.0,S07E01
+1019,Joey,"Yeah! If you wanna sing at their wedding, well you sing at their wedding!",1018.0,S07E01
+1020,Phoebe,"Yeah! And if you wanna look 19, then you? You gotta do something about your eyes.",1019.0,S07E01
+1021,Joey,What?! What?s wrong with my eyes.,1020.0,S07E01
+1022,Phoebe,They give you away! There?s just-there?s just too much wisdom in there.  Just put some tea bags on there for like 15 minutes.,1021.0,S07E01
+1023,Joey,And that?ll get rid of my wisdom?,1022.0,S07E01
+1024,Phoebe,Maybe just 10 minutes for you.,1023.0,S07E01
+1025,Chandler,"Oh, give her the deposit! Give her the ring! I don?t care!",1024.0,S07E01
+1026,Monica,Yes.,1025.0,S07E01
+1027,Rachel,"Monica, what did you mean before when you said you didn?t want to talk to anyone, especially me?",1026.0,S07E01
+1028,Chandler,"What a great apology!  And you accept! Okay, bye-bye!",1027.0,S07E01
+1029,Rachel,"No-no, seriously-seriously, what was the especially me part about?",1028.0,S07E01
+1030,Monica,"Well, let?s just say it?s not the first time you?ve stolen my thunder.",1029.0,S07E01
+1031,Rachel,What?!,1030.0,S07E01
+1032,Ross," Hey, here?s a thought.",1031.0,S07E01
+1033,Rachel,"Monica, what are you talking about?",1032.0,S07E01
+1034,Monica,"My Sweet Sixteen! Remember, you went to third base with my cousin Charlie.",1033.0,S07E01
+1035,Chandler," Ahh, third base.",1034.0,S07E01
+1036,Monica,It?s all everybody at the party could talk about!,1035.0,S07E01
+1037,Rachel,"Monica, y?know what? The only reason I did that was because your party was so boring!",1036.0,S07E01
+1038,Monica, We had a characturist!,1037.0,S07E01
+1039,Rachel,Oh!!,1038.0,S07E01
+1040,Phoebe,,1039.0,S07E01
+1041,Rachel,"Monica, your Sweet Sixteen was like a million years ago.",1040.0,S07E01
+1042,Monica,"And yet, here we are doing it again.",1041.0,S07E01
+1043,Rachel,"Ugh, Monica I don?t want to steal your stupid thunder!",1042.0,S07E01
+1044,Monica,Oh please! Why else would you have made out with Ross?!,1043.0,S07E01
+1045,Ross,Got me. ,1044.0,S07E01
+1046,Rachel,"All right, easy mimey, the moment has passed, it ain?t gonna happen!",1045.0,S07E01
+1047,Monica,I just thought it would be nice if I could have just this one night!,1046.0,S07E01
+1048,Rachel,"I swear, I never wanted any part of your night!",1047.0,S07E01
+1049,Monica,"Oh, is that why you did it the secret hallway where nobody ever goes?!",1048.0,S07E01
+1050,Ross,"Uh, Rachel, I?ve been thinking. I don?t think us getting together tonight is such a good idea. I?m calling it off.",1049.0,S07E01
+1051,Chandler, Why to save your dignity my man.,1050.0,S07E01
+1052,Rachel," Monica, why? Why would I ever want to take away from your night?",1051.0,S07E01
+1053,Monica,"I don?t know! I don?t?maybe you?re feeling a little resentful. Maybe ah, maybe you thought you?d get married first! Maybe you can?t stand the fact that your formally fat friend is getting married before you!",1052.0,S07E01
+1054,Rachel,"Oh wow. That?y?know what? That is so unfair. Y?know what? Now I want to steal your thunder! Come on Ross, let?s go have sex!",1053.0,S07E01
+1055,Monica, I can?t believe you?re gonna have sex on my engagement night!!,1054.0,S07E01
+1056,Chandler,"Well, somebody should. ",1055.0,S07E01
+1057,Ross,"Look uh, if we?re gonna do this?",1056.0,S07E01
+1058,Rachel,"We?re not gonna do this, all right? She?s just gonna think that we?re doin? it.",1057.0,S07E01
+1059,Ross,"Oh, I see, so everybody wins.",1058.0,S07E01
+1060,Rachel,Who is it?,1059.0,S07E01
+1061,Monica," It?s Monica, open up!",1060.0,S07E01
+1062,Rachel,Okay well Ross! Stop it please! Wait a minute! ,1061.0,S07E01
+1063,Ross,Oww!,1062.0,S07E01
+1064,Rachel,"Yeah, you like that baby?  May we help you?",1063.0,S07E01
+1065,Monica,"I just wanted to say that I hope you do have sex tonight and I hope that you guys get back together, but I must warn you, the night that you announce your engagement I?m going to announce that I?m pregnant!",1064.0,S07E01
+1066,Chandler,How is that ever going to happen?!,1065.0,S07E01
+1067,Rachel,"All right Monica, do you want to know why I was with Ross tonight?!",1066.0,S07E01
+1068,Monica,I know why!,1067.0,S07E01
+1069,Rachel,No you don?t know why!,1068.0,S07E01
+1070,Monica,Okay! Why?!,1069.0,S07E01
+1071,Rachel,Because! Because I was sad.,1070.0,S07E01
+1072,Monica,What do you mean?,1071.0,S07E01
+1073,Rachel,"Look, I am so?so happy for you guys, but you getting married just reminds me of the fact that I?m not. I?m not even close. And I don?t know, maybe I just wanted to make myself feel better. And I know that that?s dumb, but oh my God you were so depressed when Ross got married that you slept with Chandler!",1072.0,S07E01
+1074,Chandler," I don?t care, she slept with me.",1073.0,S07E01
+1075,Rachel,"Anyway sweetie, I am, I?m so sorry I ruined your night.",1074.0,S07E01
+1076,Monica, I?m sorry I almost made you sleep with Ross. ,1075.0,S07E01
+1077,Ross," Well, I?m going to take off.  Congratulations man.",1076.0,S07E01
+1078,Chandler,Thanks.,1077.0,S07E01
+1079,Ross," And uh, Rachel.",1078.0,S07E01
+1080,Rachel,Yeah.,1079.0,S07E01
+1081,Ross,"What can I say, you missed your chance. From now on the only person who?s going to enjoy these bad boys  is me. ",1080.0,S07E01
+1082,Phoebe,,1081.0,S07E01
+1083,Chandler," Hey! Here?s a dollar, consider it a deposit. Please sing at our wedding.",1082.0,S07E01
+1084,Phoebe,Oh thank you.,1083.0,S07E01
+1085,Chandler,Okay. ,1084.0,S07E01
+1086,Phoebe,"Now?  Who will perform the ceremony! Who will perform the cer??Oh?oh! All right, I?ll pound on him in the morning.",1085.0,S07E01
