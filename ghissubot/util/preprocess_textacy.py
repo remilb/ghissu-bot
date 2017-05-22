@@ -12,7 +12,7 @@ def tokenize(text):
 
 def textacy_preprocess(text):
     text = tt.preprocess.normalize_whitespace(text)
-    return tt.preprocess.preprocess_text(text=text,fix_unicode=True, lowercase=True, no_contractions=True, no_accents=True, transliterate=True)
+    return tt.preprocess.preprocess_text(text=text, fix_unicode=True, lowercase=True, no_contractions=True, no_accents=True, transliterate=True)
 
 def get_response_array(X):
     Y = copy.deepcopy(X)
