@@ -1,15 +1,13 @@
 #! /usr/bin/env python
 
-import datetime
+import tensorflow as tf
+import numpy as np
 import os
 import time
-
-import numpy as np
-import tensorflow as tf
-from tensorflow.contrib import learn
-
-from cnn_classification import data_helpers
+import datetime
+import data_helpers
 from text_cnn import TextCNN
+from tensorflow.contrib import learn
 
 # Parameters
 # ==================================================
@@ -166,11 +164,12 @@ with tf.Graph().as_default():
               cnn.input_y: y_batch,
               cnn.dropout_keep_prob: 1.0
             }
-            step, summaries, loss, accuracy = sess.run(
-                [global_step, dev_summary_op, cnn.loss, cnn.accuracy],
+            step, summaries, loss, accuracy, confusion_matrix = sess.run(
+                [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.confusion_matrix],
                 feed_dict)
             time_str = datetime.datetime.now().isoformat()
             print("{}: step {}, loss {:g}, acc {:g}".format(time_str, step, loss, accuracy))
+            print("confusion\n {}".format(confusion_matrix))
             if writer:
                 writer.add_summary(summaries, step)
 
