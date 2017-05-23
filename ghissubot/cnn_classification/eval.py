@@ -7,7 +7,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.contrib import learn
 
-from cnn_classification import data_helpers
+from ghissubot.cnn_classification import data_helpers
 
 # Parameters
 # ==================================================
@@ -18,8 +18,9 @@ tf.flags.DEFINE_string("negative_data_file", "./data/rt-polaritydata/rt-polarity
 
 # Eval Parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_string("checkpoint_dir", "", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("checkpoint_dir", "/Users/shubhi/Public/CMPS296/ghissubot/cnn_classification/data/switchboard/runs/1495511030/checkpoints/", "Checkpoint directory from training run")
 tf.flags.DEFINE_boolean("eval_train", False, "Evaluate on all training data")
+tf.flags.DEFINE_string("checkpoint_filename", "model-200", "checkpoint filename to pick up from")
 
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
@@ -44,6 +45,9 @@ else:
 
 # Map data into vocabulary
 vocab_path = os.path.join(FLAGS.checkpoint_dir, "..", "vocab")
+print(vocab_path)
+checkpoint_file = os.path.join(FLAGS.checkpoint_dir, "", FLAGS.checkpoint_filename)
+print(checkpoint_file)
 vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
 x_test = np.array(list(vocab_processor.transform(x_raw)))
 
@@ -51,7 +55,7 @@ print("\nEvaluating...\n")
 
 # Evaluation
 # ==================================================
-checkpoint_file = tf.train.latest_checkpoint(FLAGS.checkpoint_dir)
+
 graph = tf.Graph()
 
 with graph.as_default():
@@ -61,8 +65,16 @@ with graph.as_default():
       device_count = {'GPU': 1}
      )
     sess = tf.Session(config=session_conf)
+
+
+    #pool_3 = sess.graph.get_tensor_by_name('pool_3:0')
+    #predictions, pool3_val = sess.run([softmax_tensor, pool_3],
+    #                                  {'DecodeJpeg:0': image_data})
+
     with sess.as_default():
         # Load the saved meta graph and restore variables
+
+        print("{}.meta".format(checkpoint_file))
         saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
         saver.restore(sess, checkpoint_file)
 
@@ -79,16 +91,23 @@ with graph.as_default():
 
         # Collect the predictions here
         all_predictions = []
-
+        softmax_tensor = sess.graph.get_tensor_by_name('context_layer:0')
         for x_test_batch in batches:
-            batch_predictions = sess.run(predictions, {input_x: x_test_batch, dropout_keep_prob: 1.0})
+            softmax_tensor = sess.run(softmax_tensor,{input_x: x_test_batch, dropout_keep_prob: 1.0})
+
+            print(softmax_tensor, softmax_tensor.shape)
+            batch_predictions = []
             all_predictions = np.concatenate([all_predictions, batch_predictions])
+
+
+
 
 # Print accuracy if y_test is defined
 if y_test is not None:
     correct_predictions = float(sum(all_predictions == y_test))
     print("Total number of test examples: {}".format(len(y_test)))
     print("Accuracy: {:g}".format(correct_predictions/float(len(y_test))))
+    #print("Confusion Matrix : {g}" .format)
 
 # Save the evaluation to a csv
 predictions_human_readable = np.column_stack((np.array(x_raw), all_predictions))
