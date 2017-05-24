@@ -42,7 +42,7 @@ def preprocess(filename, utterance_filename, response_filename):
 
 def preprocess_cnn(df, data_filename , label_filename, data_col, label_col):
     df = df.dropna(subset=[data_col])
-    df['tokenised_sents'] = df[data_col].apply(clean_punctuations).apply(textacy_preprocess).apply(tokenize)
+    df['tokenised_sents'] = df[data_col].apply(clean_punctuations).apply(textacy_preprocess).apply(remove_quotes).apply(tokenize)
 
     clean_utterances = df['tokenised_sents']
     clean_utterances.to_csv(data_filename, index=False)
@@ -50,6 +50,8 @@ def preprocess_cnn(df, data_filename , label_filename, data_col, label_col):
     df[label_col].to_csv(label_filename, index=False)
     print("done preprocessing")
 
+def remove_quotes(text):
+    return text.replace('"', '')
 
 
 def main():

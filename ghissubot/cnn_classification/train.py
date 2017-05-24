@@ -7,7 +7,7 @@ import time
 import datetime
 import ghissubot.cnn_classification.data_helpers
 from ghissubot.cnn_classification import data_helpers
-from ghissubot.cnn_classification.text_cnn import TextCNN
+from ghissubot.cnn_classification.text_cnn2 import TextCNN
 from tensorflow.contrib import learn
 
 # Parameters
@@ -27,7 +27,7 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.1, "L2 regularization lambda (default: 
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
 tf.flags.DEFINE_integer("num_epochs", 2000, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
-tf.flags.DEFINE_integer("checkpoint_every", 1500, "Save model after this many steps (default: 1500)")
+tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 1500)")
 tf.flags.DEFINE_integer("num_checkpoints", 1, "Number of checkpoints to store (default: 1)")
 tf.flags.DEFINE_float("learning_rate", 5e-4, "Learning rate for the optimiser (default 5e-4)")
 # Misc Parameters
@@ -47,7 +47,7 @@ print("")
 params = {
 "embedding.size": 128,
 "embedding.init_scale": 0.04,
-"filter_sizes": "3,4,5",
+"filter_sizes": list(map(int, FLAGS.filter_sizes.split(","))),
 "num_filters": 128,
 "dropout_keep_prob": 1.0,
 "l2_reg_lambda": 0.0,
@@ -141,7 +141,8 @@ with tf.Graph().as_default():
         if not os.path.exists(checkpoint_dir):
             os.makedirs(checkpoint_dir)
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=FLAGS.num_checkpoints)
-
+        for i in tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES):
+            print (i)
         # Initialize all variables
         sess.run(tf.global_variables_initializer())
 
