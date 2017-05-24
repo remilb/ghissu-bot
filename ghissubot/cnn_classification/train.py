@@ -58,7 +58,7 @@ params = {
 "cnn_source.max_seq_len": 116,
 "vocab_size": 25000,
 "layer_name": "context_layer:0",
-"num_classes": 43,
+"num_classes": 10,
 "name_scope_of_convolutions": "conv-maxpool-",
 "vocab_source": "/Users/shubhi/Public/CMPS296/ghissubot/cnn_classification/data/switchboard/swbd_vocab",
 }
