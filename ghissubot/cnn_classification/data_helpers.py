@@ -64,7 +64,7 @@ def load_swbd_data(sequence_length, data_dir= os.getcwd() + "/data/switchboard")
 
 
     for i in range(len(x_text)):
-        for j in range(len(x_text[i])):
+        for j in range(min(sequence_length, len(x_text[i]))):
             x_text_temp[i][j] = x_text[i][j]
 
     for i in range(5):
