@@ -8,11 +8,18 @@ from seq2seq.graph_utils import templatemethod
 
 
 class ContextSeq2Seq(BasicSeq2Seq):
-    """Sequence to Sequence model with two encoders, one for input sequence
-       and one for preceding context. Both encoder outputs are made available
+    """Basic Sequence to Sequence model with two encoders, one for input sequence
+       and one for preceding context. Both encoder outputs are made available to decode
+       related ops by packing into an ExtendedEncoderOutput. Nothing is done with the context
+       encoder output in this class, thic class should function equivalentally to BasicSeq2Seq,
+       besides exposing the context. New dictionary parameters added:
+         Args:
+    params: A dictionary of hyperparameters
+      - context_encoder.class: An encoder class to use for the context encoder
+      - context_encoder.params: Params to pass to context encoder class
        """
 
-    def __init__(self, params, mode, name="context_att_seq2seq"):
+    def __init__(self, params, mode, name="context_seq2seq"):
         super(ContextSeq2Seq, self).__init__(params, mode, name)
         self.context_encoder_class = locate(self.params["context_encoder.class"])
 
@@ -32,31 +39,6 @@ class ContextSeq2Seq(BasicSeq2Seq):
         #TODO: Figure out what else needs to be passed here
         return context_encoder_fn(context_features)
 
-    def _create_decoder(self, encoder_output, features, _labels):
-        attention_class = locate(self.params["attention.class"]) or \
-                          getattr(decoders.attention, self.params["attention.class"])
-        attention_layer = attention_class(
-            params=self.params["attention.params"], mode=self.mode)
-
-        # If the input sequence is reversed we also need to reverse
-        # the attention scores.
-        reverse_scores_lengths = None
-        if self.params["source.reverse"]:
-            reverse_scores_lengths = features["source_len"]
-            if self.use_beam_search:
-                reverse_scores_lengths = tf.tile(
-                    input=reverse_scores_lengths,
-                    multiples=[self.params["inference.beam_search.beam_width"]])
-
-        return self.decoder_class(
-            params=self.params["decoder.params"],
-            mode=self.mode,
-            vocab_size=self.target_vocab_info.total_size,
-            attention_values=encoder_output.attention_values,
-            attention_values_length=encoder_output.attention_values_length,
-            attention_keys=encoder_output.outputs,
-            attention_fn=attention_layer,
-            reverse_scores_lengths=reverse_scores_lengths)
 
     #TODO: Need to override build so that we can split out the context features
     def _build(self, features, labels, params):
