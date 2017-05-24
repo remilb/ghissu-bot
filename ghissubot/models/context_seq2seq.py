@@ -32,6 +32,10 @@ class ContextSeq2Seq(BasicSeq2Seq):
         #TODO: Figure out what else needs to be passed here
         return context_encoder_fn(context_features)
 
+    @templatemethod("decode")
+    def decode_with_context(self, encoder_output, context_encoder_output, features, labels):
+
+
     def _create_decoder(self, encoder_output, features, _labels):
         attention_class = locate(self.params["attention.class"]) or \
                           getattr(decoders.attention, self.params["attention.class"])
@@ -64,7 +68,10 @@ class ContextSeq2Seq(BasicSeq2Seq):
         features, labels = self._preprocess(features, labels)
 
         encoder_output = self.encode(features, labels)
-        decoder_output, _, = self.decode(encoder_output, features, labels)
+        #TODO: Use right name for context features
+        context_encoder_output = self.encode_context(features["context_feature"], labels)
+        #TODO: Figure out the right way to provide context encoder output to decoder
+        decoder_output, _, = self.decode_with_context(encoder_output, context_encoder_output, features, labels)
 
         if self.mode == tf.contrib.learn.ModeKeys.INFER:
             predictions = self._create_predictions(
