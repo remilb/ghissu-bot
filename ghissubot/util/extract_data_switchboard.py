@@ -1,7 +1,8 @@
 import glob
 #from swda import Transcript
-from preprocess_textacy import *
+from ghissubot.util.preprocess_textacy import *
 import os
+
 
 def group_tags(tag):
     """

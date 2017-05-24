@@ -3,6 +3,8 @@ import re
 import itertools
 from collections import Counter
 import os
+from statsmodels.tools import categorical
+import pandas as pd
 
 
 def clean_str(string):
@@ -45,22 +47,38 @@ def load_data_and_labels(positive_data_file, negative_data_file):
     y = np.concatenate([positive_labels, negative_labels], 0)
     return [x_text, y]
 
-def load_swbd_data(data_dir= os.getcwd() + "/data/switchboard"):
+def load_swbd_data(sequence_length, data_dir= os.getcwd() + "/data/switchboard"):
 
-    from statsmodels.tools import categorical
-    import pandas as pd
     prev_dir = os.getcwd()
     os.chdir(data_dir)
     x_text = list(open(data_dir + "/swbd_utterance.csv", "r").readlines())
     x_text=  [s.strip() for s in x_text]
     x_text = [clean_str(sent) for sent in x_text]
+    x_text = [list(x.split()) for x in x_text]
+    #x_text = np.asanyarray(x_text)
+
+    row = ["ENDPADDING"] * sequence_length
+    x_text_temp = []
+    for i in range(len(x_text)):
+        x_text_temp.append(row[:])
+
+
+    for i in range(len(x_text)):
+        for j in range(len(x_text[i])):
+            x_text_temp[i][j] = x_text[i][j]
+
+    for i in range(5):
+        print("lists")
+        print(x_text[i])
+        print(x_text_temp[i])
+
+    x_test_temp = np.asanyarray(x_text_temp)
+    print(x_test_temp.shape)
     y = pd.read_csv(data_dir + "/swbd_act.csv")
     y = list(open(data_dir + "/swbd_act.csv", "r").readlines())
-    a = np.array([s.strip() for s in y])
-    y = categorical(a, drop=True)
-    #y = y.argmax(1)
-
-
+    a = np.array([s.strip() for s in y]) # ["fx" , "qa" ]
+    y = categorical(a, drop=True) # 3 = [0 0 0 1 0 0 0 0 0 ....]
+    #y = y.argmax(axis=1)  # 3
     '''
     from scikits.statsmodels.tools import categorical
 
@@ -72,7 +90,7 @@ def load_swbd_data(data_dir= os.getcwd() + "/data/switchboard"):
     Out[63]: array([0, 1, 2, 0, 1, 2])
     '''
     #return [x_text, y]
-    return [x_text, y]
+    return [x_text_temp, y]
 
 
 def batch_iter(data, batch_size, num_epochs, shuffle=True):

@@ -5,17 +5,16 @@ import numpy as np
 import os
 import time
 import datetime
-import data_helpers
-from text_cnn import TextCNN
+import ghissubot.cnn_classification.data_helpers
+from ghissubot.cnn_classification import data_helpers
+from ghissubot.cnn_classification.text_cnn import TextCNN
 from tensorflow.contrib import learn
 
 # Parameters
 # ==================================================
 
 # Data loading params
-tf.flags.DEFINE_float("dev_sample_percentage", .1, "Percentage of the training data to use for validation")
-tf.flags.DEFINE_string("positive_data_file", "./data/rt-polaritydata/rt-polarity.pos", "Data source for the positive data.")
-tf.flags.DEFINE_string("negative_data_file", "./data/rt-polaritydata/rt-polarity.neg", "Data source for the negative data.")
+tf.flags.DEFINE_float("dev_sample_percentage", 0.1, "Percentage of the training data to use for validation")
 
 # Model Hyperparameters
 tf.flags.DEFINE_integer("embedding_dim", 128, "Dimensionality of character embedding (default: 128)")
@@ -30,6 +29,7 @@ tf.flags.DEFINE_integer("num_epochs", 2000, "Number of training epochs (default:
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 1500, "Save model after this many steps (default: 1500)")
 tf.flags.DEFINE_integer("num_checkpoints", 1, "Number of checkpoints to store (default: 1)")
+tf.flags.DEFINE_float("learning_rate", 5e-4, "Learning rate for the optimiser (default 5e-4)")
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
 tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on devices")
@@ -44,35 +44,49 @@ print("")
 
 # Data Preparation
 # ==================================================
+params = {
+"embedding.size": 128,
+"embedding.init_scale": 0.04,
+"filter_sizes": "3,4,5",
+"num_filters": 128,
+"dropout_keep_prob": 1.0,
+"l2_reg_lambda": 0.0,
+"checkpoint_dir": "",
+"checkpoint_filename": "/Users/shubhi/Public/CMPS296/ghissubot/cnn_classification/data/switchboard/runs/1495511030/checkpoints/",
+"allow_soft_placement": True,
+"log_device_placement": False,
+"cnn_source.max_seq_len": 116,
+"vocab_size": 25000,
+"layer_name": "context_layer:0",
+"num_classes": 43,
+"name_scope_of_convolutions": "conv-maxpool-",
+"vocab_source": "/Users/shubhi/Public/CMPS296/ghissubot/cnn_classification/data/switchboard/swbd_vocab",
+}
 
 # Load data
 print("Loading data...")
 
-#x_text, y = data_helpers.load_data_and_labels(FLAGS.positive_data_file, FLAGS.negative_data_file)
-x_text, y = data_helpers.load_swbd_data()
-
-# Build vocabulary
-max_document_length = max([len(x.split(" ")) for x in x_text])
-vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
-x = np.array(list(vocab_processor.fit_transform(x_text)))
+x_text, y = data_helpers.load_swbd_data(params["cnn_source.max_seq_len"])
+print(x_text[0:5])
 
 # Randomly shuffle data
 np.random.seed(10)
 shuffle_indices = np.random.permutation(np.arange(len(y)))
-x_shuffled = x[shuffle_indices]
-y_shuffled = y[shuffle_indices]
+x_shuffled = x_text #[shuffle_indices]
+y_shuffled = y #[shuffle_indices]
 
 # Split train/test set
 # TODO: This is very crude, should use cross-validation
 dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
+
 x_train, x_dev = x_shuffled[:dev_sample_index], x_shuffled[dev_sample_index:]
 y_train, y_dev = y_shuffled[:dev_sample_index], y_shuffled[dev_sample_index:]
-print("Vocabulary Size: {:d}".format(len(vocab_processor.vocabulary_)))
-print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
 
+print("Train/Dev split: {:d}/{:d}".format(len(y_train), len(y_dev)))
 
 # Training
 # ==================================================
+#todo configure params dictionary
 
 with tf.Graph().as_default():
     session_conf = tf.ConfigProto(
@@ -82,18 +96,13 @@ with tf.Graph().as_default():
      )
     sess = tf.Session(config=session_conf)
     with sess.as_default():
-        cnn = TextCNN(
-            sequence_length=x_train.shape[1],
-            num_classes=y_train.shape[1],
-            vocab_size=len(vocab_processor.vocabulary_),
-            embedding_size=FLAGS.embedding_dim,
-            filter_sizes=list(map(int, FLAGS.filter_sizes.split(","))),
-            num_filters=FLAGS.num_filters,
-            l2_reg_lambda=FLAGS.l2_reg_lambda)
+
+        #TODO: tf.mode
+        cnn = TextCNN(params, "TRAIN", name="")
 
         # Define Training procedure
         global_step = tf.Variable(0, name="global_step", trainable=False)
-        optimizer = tf.train.AdamOptimizer(5e-4)
+        optimizer = tf.train.AdamOptimizer(FLAGS.learning_rate)
         grads_and_vars = optimizer.compute_gradients(cnn.loss)
         train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
 
@@ -133,11 +142,9 @@ with tf.Graph().as_default():
             os.makedirs(checkpoint_dir)
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=FLAGS.num_checkpoints)
 
-        # Write vocabulary
-        vocab_processor.save(os.path.join(out_dir, "vocab"))
-
         # Initialize all variables
         sess.run(tf.global_variables_initializer())
+
 
         def train_step(x_batch, y_batch):
             """
