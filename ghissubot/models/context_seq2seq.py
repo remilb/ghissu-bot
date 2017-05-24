@@ -6,6 +6,8 @@ from seq2seq.seq2seq.models import BasicSeq2Seq
 from seq2seq import decoders
 from seq2seq.graph_utils import templatemethod
 
+from ghissubot.encoders.extended_encoder_output import ExtendedEncoderOutput
+
 
 class ContextSeq2Seq(BasicSeq2Seq):
     """Basic Sequence to Sequence model with two encoders, one for input sequence
@@ -36,7 +38,7 @@ class ContextSeq2Seq(BasicSeq2Seq):
     def encode_context(self, context_features, labels):
         context_encoder_fn = self.context_encoder_class(self.params["context_encoder.params"],
                                                         self.mode)
-        #TODO: Figure out what else needs to be passed here
+        # This returns an EncoderOutput that will later be packed into an ExtendedEncoderOutput
         return context_encoder_fn(context_features)
 
 
@@ -48,9 +50,13 @@ class ContextSeq2Seq(BasicSeq2Seq):
         encoder_output = self.encode(features, labels)
         #TODO: Use right name for context features
         context_encoder_output = self.encode_context(features["context_feature"], labels)
-        #TODO: Figure out the right way to provide context encoder output to decoder
-        #TODO: Pack encoder_output and context_encoder_output into ExtendedEncoderOutput and pass to decode as usual
-        packed_output = None
+        #TODO: Figure out the
+        packed_output = ExtendedEncoderOutput(outputs=encoder_output.outputs,
+                                              final_state=encoder_output.final_state,
+                                              attention_values=encoder_output.attention_values,
+                                              attention_values_length=encoder_output.attention_values_length,
+                                              context_outputs=context_encoder_output.outputs
+                                              )
         decoder_output, _, = self.decode(packed_output, features, labels)
 
         if self.mode == tf.contrib.learn.ModeKeys.INFER:
