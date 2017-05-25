@@ -57,7 +57,7 @@ def load_swbd_data(sequence_length, data_dir= os.getcwd() + "/data/switchboard")
     x_text = [list(x.split()) for x in x_text]
     #x_text = np.asanyarray(x_text)
 
-    row = ["ENDPADDING"] * sequence_length
+    row = [""] * sequence_length
     x_text_temp = []
     for i in range(len(x_text)):
         x_text_temp.append(row[:])
