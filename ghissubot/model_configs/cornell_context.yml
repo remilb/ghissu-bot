@@ -24,10 +24,10 @@ model_params:
       metagraph_filename: ""
       max_sequence_length: 0
       vocab_size: 20816
-      input_name: "cnn_input_placeholder"
-      output_name: "hidden_context_layer"
-      naming_prefix: "context_restore_prefix"
-      freeze_graph: "True"
+      input_name: cnn_input_placeholder
+      output_name: hidden_context_layer
+      naming_prefix: context_restore_prefix
+      freeze_graph: true
 
   decoder.class: seq2seq.decoders.AttentionDecoder
   decoder.params:
@@ -67,3 +67,10 @@ input_pipeline_dev:
         - data/cornell_film/context/utterance_dev.txt
     target_files:
         - data/cornell_film/context/utterance_dev.txt
+
+# Need to restore variables of context encoder subgraph at session start
+hooks:
+  - class: VariableRestoreHook
+    params:
+      prefix: context_restore_prefix,
+      checkpoint_path:

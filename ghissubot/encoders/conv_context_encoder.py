@@ -36,7 +36,7 @@ class ConvContextEncoder(Encoder):
         "output_name": "",
         "output_layer_size": 0,
         "naming_prefix": "",
-        "freeze_graph": "True",
+        "freeze_graph": True,
         "padding_token": "ENDPADDING"
     }
 
@@ -66,7 +66,7 @@ class ConvContextEncoder(Encoder):
         context_vector = current_graph.get_tensor_by_name(output_layer_name)
 
         #TODO: We need to make sure to freeze the output tensor so that gradients don't flow
-        if self.params["freeze_graph"] == "True":
+        if self.params["freeze_graph"]:
             context_vector = tf.stop_gradient(context_vector)
 
         # Note that we don't return an EncoderOutput like the other classes, just the context vector
