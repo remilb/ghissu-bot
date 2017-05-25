@@ -29,7 +29,7 @@ import pickle
     2. Create a dictionary with ( key = line_id, value = text )
 '''
 def get_id2line():
-    lines=open('/Users/shubhi/Public/CMPS296/cornell_film/movie_lines.txt', encoding='utf-8', errors='ignore').read().split('\n')
+    lines=open('/Users/shubhi/Public/CMPS296/data/cornell movie-dialogs corpus/movie_lines.txt', encoding='utf-8', errors='ignore').read().split('\n')
     id2line = {}
     for line in lines:
         _line = line.split(' +++$+++ ')
@@ -42,7 +42,7 @@ def get_id2line():
     2. Create a list of [list of line_id's]
 '''
 def get_conversations():
-    conv_lines = open('/Users/shubhi/Public/CMPS296/cornell_film/movie_conversations.txt', encoding='utf-8', errors='ignore').read().split('\n')
+    conv_lines = open('/Users/shubhi/Public/CMPS296/data/cornell movie-dialogs corpus/movie_conversations.txt', encoding='utf-8', errors='ignore').read().split('\n')
     convs = [ ]
     for line in conv_lines[:-1]:
         _line = line.split(' +++$+++ ')[-1][1:-1].replace("'","").replace(" ","")
@@ -97,7 +97,7 @@ def prepare_seq2seq_files(questions, answers, path='',TESTSET_SIZE = 30000):
 
 
     df =pd.DataFrame(columns = ['utterance'],  data = questions)
-    df.to_csv("cornell_unprocessed_data.csv")
+    df.to_csv("cornell_unprocessed_data.csv", index=False)
     return df
 
 
