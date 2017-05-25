@@ -1,83 +1,65 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-import os
-
-from pydoc import locate
 
 import tensorflow as tf
 
 from seq2seq.seq2seq.encoders.encoder import Encoder, EncoderOutput
-from seq2seq.seq2seq.encoders.pooling_encoder import _create_position_embedding
 
 
 class ContextEncoder(Encoder):
   """A deep convolutional encoder, as described in
   https://arxiv.org/abs/1611.02344. The encoder supports optional positions
-  embeddings.
-
-  Params:
-    attention_cnn.units: Number of units in `cnn_a`. Same in each layer.
-    attention_cnn.kernel_size: Kernel size for `cnn_a`.
-    attention_cnn.layers: Number of layers in `cnn_a`.
-    embedding_dropout_keep_prob: Dropout keep probability
-      applied to the embeddings.
-    output_cnn.units: Number of units in `cnn_c`. Same in each layer.
-    output_cnn.kernel_size: Kernel size for `cnn_c`.
-    output_cnn.layers: Number of layers in `cnn_c`.
-    position_embeddings.enable: If true, add position embeddings to the
-      inputs before pooling.
-    position_embeddings.combiner_fn: Function used to combine the
-      position embeddings with the inputs. For example, `tensorflow.add`.
-    position_embeddings.num_positions: Size of the position embedding matrix.
-      This should be set to the maximum sequence length of the inputs.
-  """
-
-  # Placeholders for input, output and dropout
+  embeddings."""
 
 
-  def __init__(self, params, mode, name="conv_encoder"):
-
-    super(ContextEncoder, self).__init__(params, mode, name)
+  def __init__(self, params, mode, name="conv_context_encoder"):
+      super(ContextEncoder, self).__init__(params, mode, name)
+      if self.params["metagraph_filename"] == "":
+          raise ValueError("Must provide metagraph file to load for {}!".format(self.__class__.__name__))
+      if self.params["sequence_length"] == 0:
+          raise ValueError("Must provide max sequence length for {}!".format(self.__class__.__name__))
+      if self.params["input_name"] == "":
+          raise ValueError("Must provide name of input tensor for {}!".format(self.__class__.__name__))
+      if self.params["output_name"] == "":
+          raise ValueError("Must provide name for output (hidden repr tensor) for {}!".format(self.__class__.__name__))
+      if self.params["naming_prefix"] == "":
+          raise ValueError("Must provide naming prefix used for loaded graph in class {}!".format(self.__class__.__name__))
 
   @staticmethod
   def default_params():
     return {
-        "attention_cnn.units": 512,
-        "attention_cnn.kernel_size": 3,
-        "attention_cnn.layers": 15,
-        "embedding_dropout_keep_prob": 0.8,
         "output_cnn.units": 256,
-        "output_cnn.kernel_size": 3,
-        "output_cnn.layers": 5,
-        "position_embeddings.enable": True,
-        "position_embeddings.combiner_fn": "tensorflow.multiply",
-        "position_embeddings.num_positions": 100,
         "embedding_dim": 128,
-        "filter_sizes": "3,4,5",
-        "num_filters": 128,
-        "dropout_keep_prob": 1.0,
-        "l2_reg_lambda": 0.1,
-        "checkpoint_dir": "../cnn_classification/data/switchboard/runs/1495632539/checkpoints/",
-        "checkpoint_filename": "model-100",
-        "allow_soft_placement": True,
-        "log_device_placement": False,
-        "sequence_length": 30,
+        "metagraph_dir": "",
+        "metagraph_filename": "",
+        "sequence_length": 0,
         "vocab_size": 20816,
-        "layer_name": "context_layer:0",
-        "num_classes": 10,
-        "name_scope_of_convolutions": "conv-maxpool-"
+        "input_name": "",
+        "output_name": "",
+        "naming_prefix": "",
+        "freeze_graph": True
     }
 
-  def encode(self, inputs, sequence_length):
+  def encode(self, inputs, sequence_length, **kwargs):
+        #TODO: This is where we need to import metagraph and hook into it
 
-        #Keeping track of l2 regularization loss (optional)
+        metagraph_file = self.params["checkpoint_dir"] + self.params["metagraph_filename"]
 
-        context_graph_saver = tf.train.import_meta_graph("{}.meta".format(self.params["checkpoint_dir"] + self.params["checkpoint_file"]))
-        context_graph = tf.get_default_graph()
+        #TODO: Bind input tensors (inputs) to the input tensor of loaded subgraph
+        # Might need to make sure sequence lengths are all in order
+        input_tensor_name = self.params["naming_prefix"] + self.params["input_name"]
+        input_map = {input_tensor_name: inputs}
 
-        # Cutting of gradients for weights and biases on the convolution layers has to be performed and the model dumped
+        # Now import metagraph, remapping our inputs to the appropriate place
+        tf.train.import_meta_graph(metagraph_file, input_map=input_map)
+        current_graph = tf.get_default_graph()
 
-        context_layer = context_graph.get_tensor_by_name(self.params["layer_name"])
 
-        return EncoderOutput(outputs = context_layer)
+        context_vector = current_graph.get_tensor_by_name(self.params["output_name"])
+
+        #TODO: We need to make sure to freeze the subgraph so that gradients don't flow
+        if self.params["freeze_graph"]:
+
+
+        return EncoderOutput(outputs=context_vector)
