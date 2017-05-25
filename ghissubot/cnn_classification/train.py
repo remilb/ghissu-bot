@@ -1,14 +1,14 @@
 #! /usr/bin/env python
 
-import tensorflow as tf
-import numpy as np
+import datetime
 import os
 import time
-import datetime
-import ghissubot.cnn_classification.data_helpers
+
+import numpy as np
+import tensorflow as tf
+
 from ghissubot.cnn_classification import data_helpers
 from ghissubot.cnn_classification.text_cnn2 import TextCNN
-from tensorflow.contrib import learn
 
 # Parameters
 # ==================================================
@@ -145,6 +145,7 @@ with tf.Graph().as_default():
             print (i)
         # Initialize all variables
         sess.run(tf.global_variables_initializer())
+        tf.tables_initializer().run()
 
 
         def train_step(x_batch, y_batch):

@@ -1,10 +1,6 @@
 import tensorflow as tf
-import numpy as np
-
-from seq2seq import graph_utils
 from seq2seq.configurable import Configurable
 from seq2seq.data import vocab
-
 
 class TextCNN(Configurable):
     """
@@ -57,17 +53,13 @@ class TextCNN(Configurable):
         # Keeping track of l2 regularization loss (optional)
         l2_loss = tf.constant(0.0)
         #self.source_vocab_to_id = tf.placeholder(dtype= tf.contrib.lookup.HashTable, name="source_vocab_to_id")
-        with tf.name_scope("vocab"):
+        with tf.name_scope("vocab_this_is_where_code_shall_break"):
             '''preprocess code '''
-            self.source_vocab_to_id, source_id_to_vocab, source_word_to_count, _ = \
+            source_vocab_to_id, source_id_to_vocab, source_word_to_count, _ = \
               vocab.create_vocabulary_lookup_table(self.source_vocab_info.path)
 
-            self.source_vocab_to_id.init.run()
-            source_id_to_vocab.init.run()
-            source_word_to_count.init.run()
-
             #features =
-            features = self.source_vocab_to_id.lookup(self.input_x)
+            features = source_vocab_to_id.lookup(self.input_x)
             print("printing features shape" , features.shape)
 
 
@@ -102,14 +94,6 @@ class TextCNN(Configurable):
         self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars, -1)
         '''end of encode method'''
         '''------------------------------------------------------------------'''
-        # Embedding layer
-        '''this is replicated with encoding defs and method'''
-        '''with tf.name_scope("embedding"):
-            self.W = tf.Variable(
-                tf.random_uniform([vocab_size, embedding_size], -1.0, 1.0),
-                name="W")
-            self.embedded_chars = tf.nn.embedding_lookup(self.W, self.input_x)
-            self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars, -1)'''
 
         # Create a convolution + maxpool layer for each filter size
         pooled_outputs = []
