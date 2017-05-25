@@ -105,7 +105,7 @@ def damsl_act_tag(act_tag):
 data = pd.read_csv("/Users/shubhi/Public/CMPS296/data/switchboard_complete.csv")
 data['act_tag_new'] = data['act_tag'].apply(damsl_act_tag).apply(group_tags)
 data.to_csv("all_swbd_data.csv")
-preprocess_cnn(data, data_col='clean_text', label_col='act_tag_new', data_filename=os.getcwd() + '/../swbd_utterance.csv',label_filename= os.getcwd() + '/../swbd_act.csv' )
+#preprocess_cnn(data, data_col='clean_text', label_col='act_tag_new', data_filename=os.getcwd() + '/../swbd_utterance.csv',label_filename= os.getcwd() + '/../swbd_act.csv' )
 
 
 
