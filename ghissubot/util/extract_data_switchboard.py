@@ -1,7 +1,8 @@
 import glob
 #from swda import Transcript
-from preprocess_textacy import *
+from ghissubot.util.preprocess_textacy import *
 import os
+
 
 def group_tags(tag):
     """
@@ -80,14 +81,15 @@ def damsl_act_tag(act_tag):
     # there are only a handful of examples with 2 tags here.
     return d_tags[0]
 
-metadata_file = 'swda/swda-metadata.csv'
-data_dir = "/home/sharath/Downloads/swda/swda/"
-folders = glob.glob(data_dir + "*")
-print(folders)
-flag = True
-prev_dir = os.getcwd()
-os.chdir(data_dir)
-for folder in folders:
+
+'''for folder in folders:
+    metadata_file = 'swda/swda-metadata.csv'
+    data_dir = "/home/sharath/Downloads/swda/swda/"
+    folders = glob.glob(data_dir + "*")
+    print(folders)
+    flag = True
+    prev_dir = os.getcwd()
+    os.chdir(data_dir)
     files = glob.glob(folder + "/*")
     for filename in files:
         if flag:
@@ -98,13 +100,12 @@ for folder in folders:
             #frame = [tweet_df, tweet_df2]
             print(folder + " ----------- " + filename)
             data = pd.concat([data, pd.read_csv(filename)])
-os.chdir(prev_dir)
+            os.chdir(prev_dir)'''
+
+data = pd.read_csv("/Users/shubhi/Public/CMPS296/data/switchboard_complete.csv")
 data['act_tag_new'] = data['act_tag'].apply(damsl_act_tag).apply(group_tags)
-#my_set = set(data['act_tag_new'])
-#print(len(my_set))
-#print(my_set)
-#assert False
 data.to_csv("all_swbd_data.csv")
-preprocess_cnn(data, data_col='text', label_col='act_tag_new', data_filename='swbd_utterance.csv',label_filename='swbd_act.csv' )
+#preprocess_cnn(data, data_col='clean_text', label_col='act_tag_new', data_filename=os.getcwd() + '/../swbd_utterance.csv',label_filename= os.getcwd() + '/../swbd_act.csv' )
+
 
 
