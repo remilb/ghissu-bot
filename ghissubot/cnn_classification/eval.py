@@ -20,10 +20,10 @@ tf.flags.DEFINE_string("negative_data_file", "./data/rt-polaritydata/rt-polarity
 # Eval Parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
-tf.flags.DEFINE_string("checkpoint_dir", os.getcwd() + "/data/switchboard/runs/1495672830/checkpoints/", "Checkpoint directory from training run")
+tf.flags.DEFINE_string("checkpoint_dir", os.getcwd() + "/data/switchboard/runs/1495676086/checkpoints/", "Checkpoint directory from training run")
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
-tf.flags.DEFINE_string("checkpoint_filename", "model-200", "checkpoint filename to pick up from")
-
+tf.flags.DEFINE_string("checkpoint_filename", "model-100", "checkpoint filename to pick up from")
+tf.flags.DEFINE_integer("num_epochs", 2000, "Number of training epochs (default: 200)")
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
 tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on devices")
@@ -132,13 +132,14 @@ vgg_graph = tf.get_default_graph()
 # # Access the graph
 # vgg_graph = tf.get_default_graph()
 
-if True:
-# with vgg_graph:
+#if True:
+with vgg_graph.as_default():
     # session_conf = tf.ConfigProto(
     #   allow_soft_placement=FLAGS.allow_soft_placement,
     #   log_device_placement=FLAGS.log_device_placement,
     #   device_count = {'GPU': 1}
     #  )
+
     sess = tf.Session()#config=session_conf)
 
 
@@ -155,16 +156,24 @@ if True:
 
     with sess.as_default():
         # Load the saved meta graph and restore variables
-
+        #del tf.get_collection_ref(tf.GraphKeys.TRAIN_OP)[:]
 
         # print("{}.meta".format(checkpoint_file))
         # #saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
-        # vgg_saver.restore(sess, checkpoint_file)
+        vgg_saver.restore(sess, checkpoint_file)
+        '''for name, coll in tf.get_default_graph()._collections.iteritems():
+            print ('%s: %s' % (name, set(map(type, coll))))'''
+
         #
         # # Get the placeholders from the graph by name
-        input_x = vgg_graph.get_operation_by_name("input_x").outputs[0]
+        input_x = vgg_graph.get_operation_by_name("input_x_string").outputs[0]
         input_y = vgg_graph.get_operation_by_name("input_y").outputs[0]
         dropout_keep_prob = vgg_graph.get_operation_by_name("dropout_keep_prob").outputs[0]
+
+        '''random testing code'''
+        #init = tf.initialize_all_variables()
+
+        '''end of rtc'''
         #
         # # Tensors we want to evaluate
         # #predictions = graph.get_operation_by_name("output/predictions").outputs[0]
@@ -187,8 +196,9 @@ if True:
         # for batch in batches:
         #     x_batch, y_batch = zip(*batch)
 
-
+        sess.run(tf.global_variables_initializer())
         for x_test_batch in batches:
+
             softmax_tensor = sess.run(softmax_tensor,{input_x: x_test_batch, dropout_keep_prob: 1.0})
 
             print(softmax_tensor, softmax_tensor.shape)
