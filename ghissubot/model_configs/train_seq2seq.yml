@@ -2,4 +2,4 @@ buckets: 5,10,15,20,25,50
 hooks:
   - class: TrainSampleHook
     params:
-      every_n_steps: 1000
+      every_n_steps: 500

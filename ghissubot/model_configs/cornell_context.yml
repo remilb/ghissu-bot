@@ -20,9 +20,9 @@ model_params:
 
   context_encoder.class: ghissubot.encoders.ConvContextEncoder
   context_encoder.params:
-      metagraph_dir: ""
-      metagraph_filename: ""
-      max_sequence_length: 0
+      metagraph_dir: trained_models/context_encoder/checkpoints
+      metagraph_filename: model-500.meta
+      max_sequence_length: 25
       vocab_size: 20816
       input_name: cnn_input_placeholder
       output_name: hidden_context_layer
@@ -72,5 +72,5 @@ input_pipeline_dev:
 hooks:
   - class: VariableRestoreHook
     params:
-      prefix: context_restore_prefix,
-      checkpoint_path:
+      prefix: context_restore_prefix
+      checkpoint_path: trained_models/context_encoder/checkpoints
