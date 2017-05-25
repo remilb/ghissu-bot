@@ -1,4 +1,4 @@
-buckets: 5,10,20,30,40
+buckets: 5,10,15,20,25,50
 hooks:
   - class: TrainSampleHook
     params:
