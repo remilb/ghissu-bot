@@ -63,6 +63,8 @@ class TextCNN(Configurable):
               vocab.create_vocabulary_lookup_table(self.source_vocab_info.path)
 
             self.source_vocab_to_id.init.run()
+            source_id_to_vocab.init.run()
+            source_word_to_count.init.run()
 
             #features =
             features = self.source_vocab_to_id.lookup(self.input_x)

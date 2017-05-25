@@ -52,15 +52,15 @@ params = {
 "dropout_keep_prob": 1.0,
 "l2_reg_lambda": 0.0,
 "checkpoint_dir": "",
-"checkpoint_filename": "/Users/shubhi/Public/CMPS296/ghissubot/cnn_classification/data/switchboard/runs/1495511030/checkpoints/",
+"checkpoint_filename": os.getcwd() + "/data/switchboard/runs/1495511030/checkpoints/",
 "allow_soft_placement": True,
 "log_device_placement": False,
-"cnn_source.max_seq_len": 116,
+"cnn_source.max_seq_len": 25,
 "vocab_size": 25000,
 "layer_name": "context_layer:0",
 "num_classes": 10,
 "name_scope_of_convolutions": "conv-maxpool-",
-"vocab_source": "/Users/shubhi/Public/CMPS296/ghissubot/cnn_classification/data/switchboard/swbd_vocab",
+"vocab_source": os.getcwd() + "/data/switchboard/swbd_vocab",
 }
 
 # Load data
