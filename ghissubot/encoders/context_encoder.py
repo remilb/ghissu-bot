@@ -8,10 +8,8 @@ from seq2seq.seq2seq.encoders.encoder import Encoder, EncoderOutput
 
 
 class ContextEncoder(Encoder):
-  """A deep convolutional encoder, as described in
-  https://arxiv.org/abs/1611.02344. The encoder supports optional positions
-  embeddings."""
-
+  """Encoder class that loads in an externally trained CNN classifer and encodes input
+  sequences by passing them through it. Rips out the final hiddent state"""
 
   def __init__(self, params, mode, name="conv_context_encoder"):
       super(ContextEncoder, self).__init__(params, mode, name)
@@ -58,8 +56,9 @@ class ContextEncoder(Encoder):
 
         context_vector = current_graph.get_tensor_by_name(self.params["output_name"])
 
-        #TODO: We need to make sure to freeze the subgraph so that gradients don't flow
+        #TODO: We need to make sure to freeze the output tensor so that gradients don't flow
         if self.params["freeze_graph"]:
+            context_vector = tf.stop_gradient(context_vector)
 
-
-        return EncoderOutput(outputs=context_vector)
+        # Note that we don't return an EncoderOutput like the other classes, just the context vector
+        return context_vector
