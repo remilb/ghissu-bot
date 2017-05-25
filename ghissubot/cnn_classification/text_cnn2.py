@@ -27,6 +27,7 @@ class TextCNN(Configurable):
             "num_classes": 43,
             "name_scope_of_convolutions": "conv-maxpool-",
             "vocab_source": "",
+            "context_size": 512
         }
 
     '''def __init__(
@@ -141,17 +142,20 @@ class TextCNN(Configurable):
             self.h_pool = tf.concat(pooled_outputs, 3)
             print(num_filters_total)
             print(self.h_pool.shape)
-            self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total], name="hidden_context_layer")
-
+            self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total], name="dummy")
+            self.feed_forward_layer = tf.contrib.layers.fully_connected(inputs=self.h_pool_flat, num_outputs=params["context_size"], scope="feed_forward")
+            self.h_forward_flat = tf.reshape(self.feed_forward_layer, [-1, params["context_size"]], name="hidden_context_layer")
             # Add dropout
             with tf.name_scope("dropout"):
-                self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
+                self.h_drop = tf.nn.dropout(self.h_forward_flat, self.dropout_keep_prob)
+                # self.h_drop = tf.nn.dropout(self.feed_forward_layer, self.dropout_keep_prob, name="dropout_layer")
 
             # Final (unnormalized) scores and predictions
             with tf.name_scope("output"):
                 W = tf.get_variable(
                     "W",
-                        shape=[num_filters_total, self.params["num_classes"]],
+                        # shape=[num_filters_total, self.params["num_classes"]],
+                    shape=[params["context_size"], self.params["num_classes"]],
                     initializer=tf.contrib.layers.xavier_initializer())
                 b = tf.Variable(tf.constant(0.1, shape=[self.params["num_classes"]]), name="b")
                 l2_loss += tf.nn.l2_loss(W)
@@ -172,6 +176,3 @@ class TextCNN(Configurable):
             with tf.name_scope("confusion_matrix"):
                 # correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))
                 self.confusion_matrix = tf.confusion_matrix(tf.argmax(self.input_y, 1), self.predictions)
-
-
-
