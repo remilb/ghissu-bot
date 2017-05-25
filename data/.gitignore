@@ -1,2 +1,4 @@
 *
 !.gitignore
+/cornell_film/utterance.txt
+/cornell_film/response.txt
