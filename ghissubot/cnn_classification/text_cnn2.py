@@ -74,12 +74,13 @@ class TextCNN(Configurable):
         # Add vocab tables to graph collection so that we can access them in
         # other places.
         #todo we probably need to remove this
+        '''
         graph_utils.add_dict_to_collection({
             "cnn_source_vocab_to_id": self.source_vocab_to_id,
             "cnn_source_id_to_vocab": source_id_to_vocab,
             "cnn_source_word_to_count": source_word_to_count,
         }, "cnn_vocab_tables")
-        #print(source_vocab_to_id.shape)
+        #print(source_vocab_to_id.shape)'''
 
         '''end of preprocess code '''
         '''------------------------------------------------------------------'''
