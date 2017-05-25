@@ -142,8 +142,14 @@ with tf.Graph().as_default():
         if not os.path.exists(checkpoint_dir):
             os.makedirs(checkpoint_dir)
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=FLAGS.num_checkpoints)
-        for i in tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES):
-            print (i)
+        # print("All variables")
+        # for i in tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES):
+        #     print(i)
+        #
+        # print("All operations")
+        # for op in tf.get_default_graph().get_operations():
+        #     print(str(op.name))
+
         # Initialize all variables
         # h = sess.partial_run_setup(fetches=None, feeds=[cnn.input_x])
         # sess.partial_run(h, fetches=None, feed_dict={cnn.input_x: 1, b: 2})
