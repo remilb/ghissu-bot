@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
+import os
 
 from pydoc import locate
 
@@ -38,9 +39,6 @@ class ContextEncoder(Encoder):
   def __init__(self, params, mode, name="conv_encoder"):
 
     super(ContextEncoder, self).__init__(params, mode, name)
-    self.input_x = tf.placeholder(tf.int32, [None, self.params["sequence_length"]], name="input_x")
-    self.input_y = tf.placeholder(tf.float32, [None, self.params["num_classes"]], name="input_y")
-    self.dropout_keep_prob = tf.placeholder(tf.float32, name="dropout_keep_prob")
 
   @staticmethod
   def default_params():
@@ -60,7 +58,7 @@ class ContextEncoder(Encoder):
         "num_filters": 128,
         "dropout_keep_prob": 1.0,
         "l2_reg_lambda": 0.1,
-        "checkpoint_dir": "/Users/shubhi/Public/CMPS296/ghissubot/cnn_classification/data/switchboard/runs/1495632539/checkpoints/",
+        "checkpoint_dir": "../cnn_classification/data/switchboard/runs/1495632539/checkpoints/",
         "checkpoint_filename": "model-100",
         "allow_soft_placement": True,
         "log_device_placement": False,
