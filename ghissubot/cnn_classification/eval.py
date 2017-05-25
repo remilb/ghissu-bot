@@ -162,15 +162,15 @@ if True:
         # vgg_saver.restore(sess, checkpoint_file)
         #
         # # Get the placeholders from the graph by name
-        # input_x = vgg_graph.get_operation_by_name("input_x").outputs[0]
-        # input_y = graph.get_operation_by_name("input_y").outputs[0]
+        input_x = vgg_graph.get_operation_by_name("input_x").outputs[0]
+        input_y = vgg_graph.get_operation_by_name("input_y").outputs[0]
         dropout_keep_prob = vgg_graph.get_operation_by_name("dropout_keep_prob").outputs[0]
         #
         # # Tensors we want to evaluate
         # #predictions = graph.get_operation_by_name("output/predictions").outputs[0]
         #
         # Generate batches for one epoch
-        # batches = data_helpers.batch_iter(x_text, FLAGS.batch_size, 1, shuffle=False)
+        batches = data_helpers.batch_iter(x_text, FLAGS.batch_size, 1, shuffle=False)
 
         softmax_tensor = vgg_graph.get_tensor_by_name('context_layer:0')
         # # print(softmax_tensor)
@@ -180,16 +180,16 @@ if True:
         #
         #
 
-        # Generate batches
-        batches = data_helpers.batch_iter(
-            list(zip(x_text, y_test)), FLAGS.batch_size, FLAGS.num_epochs)
-        # Training loop. For each batch...
-        for batch in batches:
-            x_batch, y_batch = zip(*batch)
+        # # Generate batches
+        # batches = data_helpers.batch_iter(
+        #     list(zip(x_text, y_test)), FLAGS.batch_size, FLAGS.num_epochs)
+        # # Training loop. For each batch...
+        # for batch in batches:
+        #     x_batch, y_batch = zip(*batch)
 
 
-        # for x_test_batch in batches:
-            softmax_tensor = sess.run(softmax_tensor,{vgg_graph.input_x: x_batch, vgg_graph.input_y: y_batch, vgg_graph.dropout_keep_prob: 1.0})
+        for x_test_batch in batches:
+            softmax_tensor = sess.run(softmax_tensor,{input_x: x_test_batch, dropout_keep_prob: 1.0})
 
             print(softmax_tensor, softmax_tensor.shape)
         #     batch_predictions = []
