@@ -49,6 +49,7 @@ class AttentionSeq2SeqWithContext(ContextSeq2Seq):
             multiples=[self.params["inference.beam_search.beam_width"]])
 
     #TODO: Make sure this is joining along the correct dimension
+    #TODO: Might need to do some kind of projection here to make sizes align
     attention_values = tf.concat([encoder_output.context_outputs, encoder_output.attention_values], 0)
     attention_keys = tf.concat([encoder_output.context_outputs, encoder_output.outputs], 0)
     attention_values_length = tf.add(encoder_output.attention_values_length, tf.constant(1))
