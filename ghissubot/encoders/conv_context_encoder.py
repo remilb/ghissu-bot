@@ -27,7 +27,6 @@ class ConvContextEncoder(Encoder):
   @staticmethod
   def default_params():
     return {
-        "output_cnn.units": 256,
         "embedding_dim": 128,
         "metagraph_dir": "",
         "metagraph_filename": "",
@@ -35,8 +34,10 @@ class ConvContextEncoder(Encoder):
         "vocab_size": 20816,
         "input_name": "",
         "output_name": "",
+        "output_layer_size": 0,
         "naming_prefix": "",
-        "freeze_graph": "True"
+        "freeze_graph": "True",
+        "padding_token": "ENDPADDING"
     }
 
   def encode(self, inputs, sequence_length, **kwargs):
@@ -47,22 +48,22 @@ class ConvContextEncoder(Encoder):
         #TODO: Might need to make sure sequence lengths are all in order
         # Inspiration from this?
         # Slice source to max_len
-        # if self.params["source.max_seq_len"] is not None:
-        #     features["source_tokens"] = features["source_tokens"][:, :self.params[
-        #         "source.max_seq_len"]]
-        #     features["source_len"] = tf.minimum(features["source_len"],
-        #                                         self.params["source.max_seq_len"])
+        if self.params["max_sequence_length"] is not None:
+            inputs = inputs[:, :self.params["max_sequence_length"]]
+            sequence_length = tf.minimum(sequence_length, self.params["max_sequence_length"])
+
+
 
         #TODO: Bind input tensors (inputs) to the input tensor of loaded subgraph
-        input_tensor_name = self.params["naming_prefix"] + self.params["input_name"]
+        input_tensor_name = self.params["naming_prefix"] + '/' + self.params["input_name"] + ':0'
         input_map = {input_tensor_name: inputs}
 
         # Now import metagraph, remapping our inputs to the appropriate place
         tf.train.import_meta_graph(metagraph_file, input_map=input_map)
         current_graph = tf.get_default_graph()
 
-
-        context_vector = current_graph.get_tensor_by_name(self.params["output_name"])
+        output_layer_name = self.params["naming_prefix"] + '/' + self.params["output_name"] + ':0'
+        context_vector = current_graph.get_tensor_by_name(output_layer_name)
 
         #TODO: We need to make sure to freeze the output tensor so that gradients don't flow
         if self.params["freeze_graph"] == "True":
