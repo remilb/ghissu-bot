@@ -12,7 +12,7 @@ from ghissubot.cnn_classification import data_helpers
 # Eval Parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
-tf.flags.DEFINE_string("checkpoint_dir", os.getcwd() + "/data/switchboard/runs/1495681911/checkpoints/",
+tf.flags.DEFINE_string("checkpoint_dir", os.getcwd() + "/data/switchboard/runs/1495709993/checkpoints/",
                        "Checkpoint directory from training run")
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
 tf.flags.DEFINE_string("checkpoint_filename", "model-100", "checkpoint filename to pick up from")
@@ -58,17 +58,22 @@ with vgg_graph.as_default():
         tf.tables_initializer().run()
         vgg_saver.restore(sess, checkpoint_file)
 
-        # # Get the placeholders from the graph by name
-        input_x = vgg_graph.get_operation_by_name("input_x_string").outputs[0]
-        input_y = vgg_graph.get_operation_by_name("input_y").outputs[0]
-        dropout_keep_prob = vgg_graph.get_operation_by_name("dropout_keep_prob").outputs[0]
+        # Get the placeholders from the graph by name
+        # with tf.name_scope("context_restore_prefix"):
 
+        input_x = vgg_graph.get_operation_by_name("context_restore_prefix/cnn_input_placeholder").outputs[0]
+        input_y = vgg_graph.get_operation_by_name("context_restore_prefix/input_y").outputs[0]
+        dropout_keep_prob = vgg_graph.get_operation_by_name("context_restore_prefix/dropout_keep_prob").outputs[0]
+        #hook_x = vgg_graph.get_tensor_by_name('cnn_input_hook:0')
         # Generate batches for one epoch
         batches = data_helpers.batch_iter(x_text, FLAGS.batch_size, 1, shuffle=False)
 
-        softmax_tensor = vgg_graph.get_tensor_by_name('context_layer:0')
+        softmax_tensor = vgg_graph.get_tensor_by_name('context_restore_prefix/hidden_context_layer:0')
+        # input_x = vgg_graph.get_tensor_by_name('input_x_string:0')
+        # input_y = vgg_graph.get_tensor_by_name('input_y:0')
+        # dropout_keep_prob = vgg_graph.get_tensor_by_name('dropout_keep_prob:0')
 
         for x_test_batch in batches:
-            softmax_array = sess.run(softmax_tensor, {input_x: x_test_batch, dropout_keep_prob: 1.0, })
+            softmax_array = sess.run(softmax_tensor, feed_dict={input_x: x_test_batch, dropout_keep_prob: 1.0})
 
-            print(softmax_array)
+            print(softmax_array.shape)

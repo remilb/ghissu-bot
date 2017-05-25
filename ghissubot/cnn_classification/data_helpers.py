@@ -79,6 +79,7 @@ def load_swbd_data(sequence_length, data_dir= os.getcwd() + "/data/switchboard")
     a = np.array([s.strip() for s in y]) # ["fx" , "qa" ]
     y = categorical(a, drop=True) # 3 = [0 0 0 1 0 0 0 0 0 ....]
     #y = y.argmax(axis=1)  # 3
+    print(y.shape)
     '''
     from scikits.statsmodels.tools import categorical
 

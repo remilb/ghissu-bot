@@ -49,7 +49,7 @@ params = {
 "embedding.init_scale": 0.04,
 "filter_sizes": list(map(int, FLAGS.filter_sizes.split(","))),
 "num_filters": 128,
-"dropout_keep_prob": 1.0,
+"dropout_keep_prob": 0.5,
 "l2_reg_lambda": 0.0,
 "checkpoint_dir": "",
 "checkpoint_filename": os.getcwd() + "/data/switchboard/runs/1495511030/checkpoints/",
@@ -144,9 +144,10 @@ with tf.Graph().as_default():
         for i in tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES):
             print (i)
         # Initialize all variables
+        # h = sess.partial_run_setup(fetches=None, feeds=[cnn.input_x])
+        # sess.partial_run(h, fetches=None, feed_dict={cnn.input_x: 1, b: 2})
         sess.run(tf.global_variables_initializer())
         tf.tables_initializer().run()
-
 
         def train_step(x_batch, y_batch):
             """
@@ -159,7 +160,7 @@ with tf.Graph().as_default():
             }
             _, step, summaries, loss, accuracy = sess.run(
                 [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy],
-                feed_dict)
+                feed_dict=feed_dict)
             time_str = datetime.datetime.now().isoformat()
             print("{}: step {}, loss {:g}, acc {:g}".format(time_str, step, loss, accuracy))
             train_summary_writer.add_summary(summaries, step)
@@ -175,7 +176,7 @@ with tf.Graph().as_default():
             }
             step, summaries, loss, accuracy, confusion_matrix = sess.run(
                 [global_step, dev_summary_op, cnn.loss, cnn.accuracy, cnn.confusion_matrix],
-                feed_dict)
+                feed_dict=feed_dict)
             time_str = datetime.datetime.now().isoformat()
             print("{}: step {}, loss {:g}, acc {:g}".format(time_str, step, loss, accuracy))
             print("confusion\n {}".format(confusion_matrix))
