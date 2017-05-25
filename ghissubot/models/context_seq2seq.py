@@ -44,18 +44,22 @@ class ContextSeq2Seq(BasicSeq2Seq):
 
 
     def _build(self, features, labels, params):
-        # Pre-process features and labels
+        #First get context encoding of previous utterance and current
+        context_encoder_output_previous = self.encode_context(features["context_tokens"], features["context_len"])
+        #TODO: This might throw value error if load subgraph doesn't internally use get_variable
+        context_encoder_output_current = self.encode_context(features["source_tokens"], features["source_len"])
+
+        # Now pre-process features and labels for the regular RNN encoder
         features, labels = self._preprocess(features, labels)
 
         encoder_output = self.encode(features, labels)
-        #TODO: Use right name for context features
-        context_encoder_output = self.encode_context(features["context_tokens"], features["context_len"])
+
         #TODO: Figure out the
         packed_output = ExtendedEncoderOutput(outputs=encoder_output.outputs,
                                               final_state=encoder_output.final_state,
                                               attention_values=encoder_output.attention_values,
                                               attention_values_length=encoder_output.attention_values_length,
-                                              context_outputs=context_encoder_output
+                                              context_outputs=context_encoder_output_previous
                                               )
         decoder_output, _, = self.decode(packed_output, features, labels)
 
