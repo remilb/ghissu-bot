@@ -35,27 +35,27 @@ class ContextSeq2Seq(BasicSeq2Seq):
         return params
 
     @templatemethod("encode_context")
-    def encode_context(self, context_features, labels):
+    def encode_context(self, context_tokens, context_len):
+        """Takes in tokens of context utterance and lengths"""
         context_encoder_fn = self.context_encoder_class(self.params["context_encoder.params"],
                                                         self.mode)
         # This returns an EncoderOutput that will later be packed into an ExtendedEncoderOutput
-        return context_encoder_fn(context_features)
+        return context_encoder_fn(context_tokens, context_len)
 
 
-    #TODO: Need to override build so that we can split out the context features
     def _build(self, features, labels, params):
         # Pre-process features and labels
         features, labels = self._preprocess(features, labels)
 
         encoder_output = self.encode(features, labels)
         #TODO: Use right name for context features
-        context_encoder_output = self.encode_context(features["context_feature"], labels)
+        context_encoder_output = self.encode_context(features["context_tokens"], features["context_len"])
         #TODO: Figure out the
         packed_output = ExtendedEncoderOutput(outputs=encoder_output.outputs,
                                               final_state=encoder_output.final_state,
                                               attention_values=encoder_output.attention_values,
                                               attention_values_length=encoder_output.attention_values_length,
-                                              context_outputs=context_encoder_output.outputs
+                                              context_outputs=context_encoder_output
                                               )
         decoder_output, _, = self.decode(packed_output, features, labels)
 

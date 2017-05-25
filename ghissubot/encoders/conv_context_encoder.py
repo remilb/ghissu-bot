@@ -42,10 +42,18 @@ class ConvContextEncoder(Encoder):
   def encode(self, inputs, sequence_length, **kwargs):
         #TODO: This is where we need to import metagraph and hook into it
 
-        metagraph_file = self.params["checkpoint_dir"] + self.params["metagraph_filename"]
+        metagraph_file = self.params["metagraph_dir"] + self.params["metagraph_filename"]
+
+        #TODO: Might need to make sure sequence lengths are all in order
+        # Inspiration from this?
+        # Slice source to max_len
+        if self.params["source.max_seq_len"] is not None:
+            features["source_tokens"] = features["source_tokens"][:, :self.params[
+                "source.max_seq_len"]]
+            features["source_len"] = tf.minimum(features["source_len"],
+                                                self.params["source.max_seq_len"])
 
         #TODO: Bind input tensors (inputs) to the input tensor of loaded subgraph
-        # Might need to make sure sequence lengths are all in order
         input_tensor_name = self.params["naming_prefix"] + self.params["input_name"]
         input_map = {input_tensor_name: inputs}
 
