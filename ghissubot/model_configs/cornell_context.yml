@@ -1,0 +1,69 @@
+model: ghissubot.models.AttentionSeq2SeqWithContext
+model_params:
+  attention.class: seq2seq.decoders.attention.AttentionLayerDot
+  attention.params:
+    num_units: 256
+
+  bridge.class: seq2seq.models.bridges.ZeroBridge
+
+  embedding.dim: 128
+
+  encoder.class: seq2seq.encoders.BidirectionalRNNEncoder
+  encoder.params:
+    rnn_cell:
+      cell_class: LSTMCell
+      cell_params:
+        num_units: 256
+      dropout_input_keep_prob: 0.8
+      dropout_output_keep_prob: 1.0
+      num_layers: 1
+
+  context_encoder.class: ghissubot.encoders.ConvContextEncoder
+  context_encoder.params:
+      metagraph_dir: ""
+      metagraph_filename: ""
+      max_sequence_length: 0
+      vocab_size: 20816
+      input_name: ""
+      output_name: ""
+      naming_prefix: ""
+      freeze_graph: "True"
+
+  decoder.class: seq2seq.decoders.AttentionDecoder
+  decoder.params:
+    rnn_cell:
+      cell_class: LSTMCell
+      cell_params:
+        num_units: 256
+      dropout_input_keep_prob: 0.8
+      dropout_output_keep_prob: 1.0
+      num_layers: 1
+
+  optimizer.name: Adam
+  optimizer.params:
+    epsilon: 0.0000008
+  optimizer.learning_rate: 0.0005
+
+  source.max_seq_len: 50
+  source.reverse: false
+  target.max_seq_len: 50
+
+  vocab_source: data/cornell_film/cornell_vocab.txt
+  vocab_target: data/cornell_film/cornell_vocab.txt
+
+input_pipeline_train:
+  class: ghissubot.data_pipelines.ConversationInputPipeline
+  params:
+    source_files:
+        - data/cornell_film/context/utterance_train.txt
+    target_files:
+        - data/cornell_film/context/response_train.txt
+    num_epochs: 10
+
+input_pipeline_dev:
+  class: ghissubot.data_pipelines.ConversationInputPipeline
+  params:
+    source_files:
+        - data/cornell_film/context/utterance_dev.txt
+    target_files:
+        - data/cornell_film/context/utterance_dev.txt
