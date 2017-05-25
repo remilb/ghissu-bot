@@ -36,21 +36,21 @@ model_params:
   source.max_seq_len: 50
   source.reverse: false
   target.max_seq_len: 50
-  vocab_source: ../../cornell_films_vocab.txt
-  vocab_target: ../../cornell_films_vocab.txt
+  vocab_source: /Users/shubhi/Public/CMPS296/ghissubot/baseline/cornell_vocab.txt
+  vocab_target: /Users/shubhi/Public/CMPS296/ghissubot/baseline/cornell_vocab.txt
 
 input_pipeline_train:
   class: ParallelTextInputPipeline
   params:
     source_files:
-        - ../../utterances_train.csv
+        - /Users/shubhi/Public/CMPS296/ghissubot/baseline/utterance_train.csv
     target_files:
-        - ../../responses_train.csv
+        - /Users/shubhi/Public/CMPS296/ghissubot/baseline/response_train.csv
 
 input_pipeline_dev:
   class: ParallelTextInputPipeline
   params:
     source_files:
-        - ../../utterances_dev.csv
+        - /Users/shubhi/Public/CMPS296/ghissubot/baseline/utterance_dev.csv
     target_files:
-        - ../../responses_dev.csv
+        - /Users/shubhi/Public/CMPS296/ghissubot/baseline/response_dev.csv

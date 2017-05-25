@@ -34,7 +34,7 @@ def read_from_csv_with_custom_transform():
     csv_fname = "/Users/shubhi/Public/CMPS296/friends.csv"
     glove_filename = '/Users/shubhi/Public/CMPS296/glove.6B/glove.6B.50d.txt'
 
-    df = pd.DataFrame.from_csv(csv_fname)
+    df = pd.DataFrame.from_csv(csv_fname, sep='\n')
     df = df.dropna(subset = ['utterance'])
 
     X = list(df['utterance'])
