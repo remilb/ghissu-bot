@@ -52,11 +52,11 @@ class ConvContextEncoder(Encoder):
             inputs = inputs[:, :self.params["max_sequence_length"]]
             sequence_length = tf.minimum(sequence_length, self.params["max_sequence_length"])
 
-
-
         #TODO: Bind input tensors (inputs) to the input tensor of loaded subgraph
         input_tensor_name = self.params["naming_prefix"] + '/' + self.params["input_name"] + ':0'
-        input_map = {input_tensor_name: inputs}
+        dropout_name = self.params["naming_prefix"] + '/' + "dropout_keep_prob"
+        input_map = {input_tensor_name: inputs,
+                     dropout_name: tf.constant(1.0)}
 
         # Now import metagraph, remapping our inputs to the appropriate place
         tf.train.import_meta_graph(metagraph_file, input_map=input_map)

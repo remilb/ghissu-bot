@@ -21,11 +21,11 @@ model_params:
   context_encoder.class: ghissubot.encoders.ConvContextEncoder
   context_encoder.params:
       metagraph_dir: trained_models/context_encoder/checkpoints
-      metagraph_filename: model-500.meta
+      metagraph_filename: model-300.meta
       max_sequence_length: 25
       vocab_size: 20816
       input_name: cnn_input_placeholder
-      output_name: hidden_context_layer
+      output_name: hidden_context_layer/Relu
       naming_prefix: context_restore_prefix
       freeze_graph: true
 
@@ -66,7 +66,7 @@ input_pipeline_dev:
     source_files:
         - data/cornell_film/context/utterance_dev.txt
     target_files:
-        - data/cornell_film/context/utterance_dev.txt
+        - data/cornell_film/context/response_dev.txt
 
 # Need to restore variables of context encoder subgraph at session start
 hooks:
