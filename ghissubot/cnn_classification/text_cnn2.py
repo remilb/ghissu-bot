@@ -143,9 +143,14 @@ class TextCNN(Configurable):
             print(num_filters_total)
             print(self.h_pool.shape)
             self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total], name="dummy")
-            self.feed_forward_layer = tf.contrib.layers.fully_connected(inputs=self.h_pool_flat, num_outputs=params["context_size"], scope="hidden_context_layer")
+
+            with tf.name_scope("dropout_flatten"):
+                self.h_pool_flat_dropout = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
+
+            self.feed_forward_layer = tf.contrib.layers.fully_connected(inputs=self.h_pool_flat_dropout, num_outputs=params["context_size"], scope="hidden_context_layer")
             # Add dropout
-            with tf.name_scope("dropout"):
+
+            with tf.name_scope("dropout_fully_connected"):
                 self.h_drop = tf.nn.dropout(self.feed_forward_layer, self.dropout_keep_prob)
 
             # Final (unnormalized) scores and predictions
