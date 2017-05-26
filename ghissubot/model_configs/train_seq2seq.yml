@@ -6,4 +6,4 @@ hooks:
   - class: VariableRestoreHook
     params:
       prefix: context_restore_prefix
-      checkpoint_path: trained_models/context_encoder/checkpoints
+      checkpoint_path: trained_models/context_encoder/checkpoints/model-300

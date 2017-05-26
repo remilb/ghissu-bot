@@ -61,6 +61,8 @@ class ConvContextEncoder(Encoder):
                      dropout_name: tf.constant(1.0),
                      input_y_name: tf.constant(0, shape=(64, 10))}
 
+        print(eval())
+
         # Now import metagraph, remapping our inputs to the appropriate place
         tf.train.import_meta_graph(metagraph_file, input_map=input_map)
         current_graph = tf.get_default_graph()
@@ -72,5 +74,7 @@ class ConvContextEncoder(Encoder):
         if self.params["freeze_graph"]:
             context_vector = tf.stop_gradient(context_vector)
 
+        # logits_vector = current_graph.get_operation_by_name("context_restore_prefix/loss/SoftmaxCrossEntropyWithLogits")
+        # tf.assign(logits_vector, tf.constant(0, shape=(64,10)))
         # Note that we don't return an EncoderOutput like the other classes, just the context vector
         return context_vector
