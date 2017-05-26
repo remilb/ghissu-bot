@@ -102,8 +102,8 @@ with tf.Graph().as_default():
         cnn = TextCNN(params, "TRAIN", name="")
 
         # Define Training procedure
-        with tf.name_scope("context_encoder_train_op"):
-            global_step = tf.Variable(0, name="global_step", trainable=False)
+        with tf.variable_scope("context_restore_prefix"):
+            global_step = tf.get_variable(name="global_step", initializer=0, trainable=False)
             optimizer = tf.train.AdamOptimizer(FLAGS.learning_rate)
             grads_and_vars = optimizer.compute_gradients(cnn.loss)
             train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
