@@ -5,6 +5,7 @@ from collections import Counter
 import os
 from statsmodels.tools import categorical
 import pandas as pd
+from collections import Counter
 
 
 def clean_str(string):
@@ -77,6 +78,16 @@ def load_swbd_data(sequence_length, data_dir= os.getcwd() + "/data/switchboard")
     y = pd.read_csv(data_dir + "/swbd_act.csv")
     y = list(open(data_dir + "/swbd_act.csv", "r").readlines())
     a = np.array([s.strip() for s in y]) # ["fx" , "qa" ]
+
+    np.random.seed(10)
+    shuffle_indices = np.random.permutation(np.arange(len(y)))
+    a = a[shuffle_indices]
+
+    dev_sample_index = -1 * int(0.1 * float(len(y)))
+
+    y_train, y_dev = a[:dev_sample_index], a[dev_sample_index:]
+    print(Counter(y_dev))
+
     y = categorical(a, drop=True) # 3 = [0 0 0 1 0 0 0 0 0 ....]
     #y = y.argmax(axis=1)  # 3
     print(y.shape)
