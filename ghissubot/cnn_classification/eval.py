@@ -12,10 +12,10 @@ from ghissubot.cnn_classification import data_helpers
 # Eval Parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5,6,8", "Comma-separated filter sizes (default: '3,4,5')")
-tf.flags.DEFINE_string("checkpoint_dir", os.getcwd() + "/data/switchboard/runs/1495755568/checkpoints/",
+tf.flags.DEFINE_string("checkpoint_dir", os.getcwd() + "/data/switchboard/runs/1495770752/checkpoints/",
                        "Checkpoint directory from training run")
 tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
-tf.flags.DEFINE_string("checkpoint_filename", "model-100", "checkpoint filename to pick up from")
+tf.flags.DEFINE_string("checkpoint_filename", "model-300", "checkpoint filename to pick up from")
 tf.flags.DEFINE_integer("num_epochs", 2000, "Number of training epochs (default: 200)")
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")

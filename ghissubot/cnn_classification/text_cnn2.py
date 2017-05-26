@@ -68,7 +68,7 @@ class TextCNN(Configurable):
             # Keeping track of l2 regularization loss (optional)
             l2_loss = tf.constant(0.0)
             #self.source_vocab_to_id = tf.placeholder(dtype= tf.contrib.lookup.HashTable, name="source_vocab_to_id")
-            with tf.name_scope("vocab"):
+            with tf.variable_scope("vocab"):
                 '''preprocess code '''
                 source_vocab_to_id, source_id_to_vocab, source_word_to_count, _ = \
                   vocab.create_vocabulary_lookup_table(self.source_vocab_info.path)
@@ -113,12 +113,12 @@ class TextCNN(Configurable):
             # Create a convolution + maxpool layer for each filter size
             pooled_outputs = []
             for i, filter_size in enumerate(self.params["filter_sizes"]):
-                with tf.name_scope("conv-maxpool-%s" % filter_size):
+                with tf.variable_scope("conv-maxpool-%s" % filter_size):
                     # Convolution Layer
                         #filter_shape = [filter_size, embedding_size, 1, num_filters]
                     filter_shape = [filter_size, self.params["embedding.size"], 1, self.params["num_filters"]]
-                    W = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name="W")
-                    b = tf.Variable(tf.constant(0.1, shape=[self.params["num_filters"]]), name="b")
+                    W = tf.get_variable(name="W", initializer=tf.truncated_normal(filter_shape, stddev=0.1))
+                    b = tf.get_variable(name="b", initializer=tf.constant(0.1, shape=[self.params["num_filters"]]))
                     conv = tf.nn.conv2d(
                         self.embedded_chars_expanded,
                         W,
@@ -144,38 +144,38 @@ class TextCNN(Configurable):
             print(self.h_pool.shape)
             self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total], name="dummy")
 
-            with tf.name_scope("dropout_flatten"):
+            with tf.variable_scope("dropout_flatten"):
                 self.h_pool_flat_dropout = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
 
             self.feed_forward_layer = tf.contrib.layers.fully_connected(inputs=self.h_pool_flat_dropout, num_outputs=params["context_size"], scope="hidden_context_layer")
             # Add dropout
 
-            with tf.name_scope("dropout_fully_connected"):
+            with tf.variable_scope("dropout_fully_connected"):
                 self.h_drop = tf.nn.dropout(self.feed_forward_layer, self.dropout_keep_prob)
 
             # Final (unnormalized) scores and predictions
-            with tf.name_scope("output"):
+            with tf.variable_scope("output"):
                 W = tf.get_variable(
-                    "W",
+                    name="W",
                         # shape=[num_filters_total, self.params["num_classes"]],
                     shape=[params["context_size"], self.params["num_classes"]],
                     initializer=tf.contrib.layers.xavier_initializer())
-                b = tf.Variable(tf.constant(0.1, shape=[self.params["num_classes"]]), name="b")
+                b = tf.get_variable(name="b", initializer=tf.constant(0.1, shape=[self.params["num_classes"]]))
                 l2_loss += tf.nn.l2_loss(W)
                 l2_loss += tf.nn.l2_loss(b)
                 self.scores = tf.nn.xw_plus_b(self.h_drop, W, b, name="scores")
                 self.predictions = tf.argmax(self.scores, 1, name="predictions")
 
             # CalculateMean cross-entropy loss
-            with tf.name_scope("loss"):
+            with tf.variable_scope("loss"):
                 losses = tf.nn.softmax_cross_entropy_with_logits(logits=self.scores, labels=self.input_y)
                 self.loss = tf.reduce_mean(losses) + self.params["l2_reg_lambda"] * l2_loss
 
             # Accuracy
-            with tf.name_scope("accuracy"):
+            with tf.variable_scope("accuracy"):
                 correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))
                 self.accuracy = tf.reduce_mean(tf.cast(correct_predictions, "float"), name="accuracy")
 
-            with tf.name_scope("confusion_matrix"):
+            with tf.variable_scope("confusion_matrix"):
                 # correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))
                 self.confusion_matrix = tf.confusion_matrix(tf.argmax(self.input_y, 1), self.predictions)
