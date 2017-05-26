@@ -55,8 +55,11 @@ class ConvContextEncoder(Encoder):
         #TODO: Bind input tensors (inputs) to the input tensor of loaded subgraph
         input_tensor_name = self.params["naming_prefix"] + '/' + self.params["input_name"] + ':0'
         dropout_name = self.params["naming_prefix"] + '/' + "dropout_keep_prob"
+        input_y_name = self.params["naming_prefix"] + '/' + "input_y"
+
         input_map = {input_tensor_name: inputs,
-                     dropout_name: tf.constant(1.0)}
+                     dropout_name: tf.constant(1.0),
+                     input_y_name: tf.constant(0, shape=(64, 10))}
 
         # Now import metagraph, remapping our inputs to the appropriate place
         tf.train.import_meta_graph(metagraph_file, input_map=input_map)
