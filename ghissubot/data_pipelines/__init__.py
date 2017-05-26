@@ -1,0 +1,1 @@
+from ghissubot.data_pipelines.conversation_input_pipeline import ConversationInputPipeline

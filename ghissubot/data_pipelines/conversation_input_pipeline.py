@@ -8,8 +8,9 @@ from ghissubot.data_pipelines import split_utterances_decoder
 
 class ConversationInputPipeline(InputPipeline):
     """Input pipeline for text files containing conversations, one line per turn"""
-    #TODO: Right now only supports a really stupid file format for convenience of
-    #implementation. Also it will only take in one context utterance
+
+    # TODO: Right now only supports a really stupid file format for convenience of
+    # implementation. Also it will only take in one context utterance
     @staticmethod
     def default_params():
         params = InputPipeline.default_params()
@@ -23,7 +24,7 @@ class ConversationInputPipeline(InputPipeline):
         return params
 
     def make_data_provider(self, **kwargs):
-        #TODO: This needs to split context utterance from input
+        # TODO: This needs to split context utterance from input
         decoder_source = split_utterances_decoder.SplitUtterancesDecoder(
             tokens_feature_name="source_tokens",
             length_feature_name="source_len",
