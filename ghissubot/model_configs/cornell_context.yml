@@ -67,10 +67,3 @@ input_pipeline_dev:
         - data/cornell_film/context/utterance_dev.txt
     target_files:
         - data/cornell_film/context/response_dev.txt
-
-# Need to restore variables of context encoder subgraph at session start
-hooks:
-  - class: VariableRestoreHook
-    params:
-      prefix: context_restore_prefix
-      checkpoint_path: trained_models/context_encoder/checkpoints

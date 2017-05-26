@@ -3,3 +3,7 @@ hooks:
   - class: TrainSampleHook
     params:
       every_n_steps: 500
+  - class: VariableRestoreHook
+    params:
+      prefix: context_restore_prefix
+      checkpoint_path: trained_models/context_encoder/checkpoints
