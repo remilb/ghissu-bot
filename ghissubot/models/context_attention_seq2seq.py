@@ -50,8 +50,14 @@ class AttentionSeq2SeqWithContext(ContextSeq2Seq):
 
         #TODO: Make sure this is joining along the correct dimension
         #TODO: Might need to do some kind of projection here to make sizes align
-        attention_values = tf.concat([encoder_output.context_outputs, encoder_output.attention_values], 0)
-        attention_keys = tf.concat([encoder_output.context_outputs, encoder_output.outputs], 0)
+        #Reshape context output
+        context_batch_size = tf.shape(encoder_output.context_outputs)[0]
+        context_embedding_width = tf.shape(encoder_output.context_outputs)[1]
+        context_outputs_reshaped = tf.reshape(encoder_output.context_outputs, (context_batch_size, 1, context_embedding_width))
+
+        #Append as extra hidden state to encoder hidden states
+        attention_values = tf.concat([context_outputs_reshaped, encoder_output.attention_values], 1)
+        attention_keys = tf.concat([context_outputs_reshaped, encoder_output.outputs], 1)
         attention_values_length = tf.add(encoder_output.attention_values_length, tf.constant(1))
         return self.decoder_class(
             params=self.params["decoder.params"],

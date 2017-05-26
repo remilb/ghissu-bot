@@ -4,6 +4,7 @@ import tensorflow as tf
 
 from seq2seq.models import BasicSeq2Seq
 from seq2seq import decoders
+from seq2seq import graph_utils
 from seq2seq.graph_utils import templatemethod
 
 from ghissubot.encoders.extended_encoder_output import ExtendedEncoderOutput
@@ -47,7 +48,7 @@ class ContextSeq2Seq(BasicSeq2Seq):
         #First get context encoding of previous utterance and current
         context_encoder_output_previous = self.encode_context(features["context_tokens"], features["context_len"])
         #TODO: This might throw value error if load subgraph doesn't internally use get_variable
-        context_encoder_output_current = self.encode_context(features["source_tokens"], features["source_len"])
+        #context_encoder_output_current = self.encode_context(features["source_tokens"], features["source_len"])
 
         # Now pre-process features and labels for the regular RNN encoder
         features, labels = self._preprocess(features, labels)
