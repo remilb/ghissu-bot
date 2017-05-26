@@ -102,7 +102,7 @@ with tf.Graph().as_default():
         cnn = TextCNN(params, "TRAIN", name="")
 
         # Define Training procedure
-        with tf.name_scope("context_encoder_train_op":)
+        with tf.name_scope("context_encoder_train_op"):
             global_step = tf.Variable(0, name="global_step", trainable=False)
             optimizer = tf.train.AdamOptimizer(FLAGS.learning_rate)
             grads_and_vars = optimizer.compute_gradients(cnn.loss)
