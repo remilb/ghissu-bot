@@ -1,2 +1,0 @@
-model_checkpoint_path: "/home/sharath/programming/CMPS296/ghissubot/cnn_classification/data/switchboard/runs/1495785891/checkpoints/model-300"
-all_model_checkpoint_paths: "/home/sharath/programming/CMPS296/ghissubot/cnn_classification/data/switchboard/runs/1495785891/checkpoints/model-300"
