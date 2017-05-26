@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow.contrib.slim.python.slim.data import data_decoder
 
-from seq2seq.seq2seq.data.split_tokens_decoder import SplitTokensDecoder
+from seq2seq.data.split_tokens_decoder import SplitTokensDecoder
 
 class SplitUtterancesDecoder(SplitTokensDecoder):
     def __init__(self,
@@ -9,7 +9,7 @@ class SplitUtterancesDecoder(SplitTokensDecoder):
                  context_tokens_feature_name="context_tokens",
                  context_length_feature_name="context_length",
                  **kwargs):
-        super(SplitUtterancesDecoder, self).__init__(kwargs)
+        super(SplitUtterancesDecoder, self).__init__(**kwargs)
         self.utterance_delimiter = utterance_delimiter
         self.context_tokens_feature_name = context_tokens_feature_name
         self.context_length_feature_name=context_length_feature_name

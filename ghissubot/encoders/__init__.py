@@ -1,0 +1,3 @@
+import ghissubot.encoders.conv_context_encoder
+
+from ghissubot.encoders.conv_context_encoder import ConvContextEncoder

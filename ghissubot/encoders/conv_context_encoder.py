@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from seq2seq.seq2seq.encoders.encoder import Encoder, EncoderOutput
+from seq2seq.encoders.encoder import Encoder, EncoderOutput
 
 
 class ConvContextEncoder(Encoder):
@@ -43,7 +43,7 @@ class ConvContextEncoder(Encoder):
   def encode(self, inputs, sequence_length, **kwargs):
         #TODO: This is where we need to import metagraph and hook into it
 
-        metagraph_file = self.params["metagraph_dir"] + self.params["metagraph_filename"]
+        metagraph_file = self.params["metagraph_dir"] + '/' + self.params["metagraph_filename"]
 
         #TODO: Might need to make sure sequence lengths are all in order
         # Inspiration from this?

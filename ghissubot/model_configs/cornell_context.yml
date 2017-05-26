@@ -1,4 +1,4 @@
-model: ghissubot.models.AttentionSeq2SeqWithContext
+model: AttentionSeq2SeqWithContext
 model_params:
   attention.class: seq2seq.decoders.attention.AttentionLayerDot
   attention.params:
@@ -52,7 +52,7 @@ model_params:
   vocab_target: data/cornell_film/cornell_vocab.txt
 
 input_pipeline_train:
-  class: ghissubot.data_pipelines.ConversationInputPipeline
+  class: ConversationInputPipeline
   params:
     source_files:
         - data/cornell_film/context/utterance_train.txt
@@ -61,7 +61,7 @@ input_pipeline_train:
     num_epochs: 10
 
 input_pipeline_dev:
-  class: ghissubot.data_pipelines.ConversationInputPipeline
+  class: ConversationInputPipeline
   params:
     source_files:
         - data/cornell_film/context/utterance_dev.txt

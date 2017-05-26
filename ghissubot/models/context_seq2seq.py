@@ -2,7 +2,7 @@ from pydoc import locate
 
 import tensorflow as tf
 
-from seq2seq.seq2seq.models import BasicSeq2Seq
+from seq2seq.models import BasicSeq2Seq
 from seq2seq import decoders
 from seq2seq.graph_utils import templatemethod
 

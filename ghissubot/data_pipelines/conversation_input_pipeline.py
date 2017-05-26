@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from seq2seq.seq2seq.data.input_pipeline import InputPipeline
+from seq2seq.data.input_pipeline import InputPipeline
 from seq2seq.data import split_tokens_decoder, parallel_data_provider
 
 from ghissubot.data_pipelines import split_utterances_decoder
