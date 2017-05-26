@@ -25,7 +25,7 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.1, "L2 regularization lambda (default: 
 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 64, "Batch Size (default: 64)")
-tf.flags.DEFINE_integer("num_epochs", 10, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 3, "Number of training epochs (default: 200)")
 tf.flags.DEFINE_integer("evaluate_every", 200, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 300, "Save model after this many steps (default: 1500)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 1)")
@@ -73,8 +73,8 @@ print(x_text[0:5])
 # Randomly shuffle data
 np.random.seed(10)
 shuffle_indices = np.random.permutation(np.arange(len(y)))
-x_shuffled = x_text #[shuffle_indices]
-y_shuffled = y #[shuffle_indices]
+x_shuffled = np.asanyarray(x_text)[shuffle_indices]
+y_shuffled = y[shuffle_indices]
 
 # Split train/test set
 # TODO: This is very crude, should use cross-validation
