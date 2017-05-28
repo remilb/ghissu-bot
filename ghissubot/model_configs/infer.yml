@@ -1,0 +1,12 @@
+model_params:
+  inference.beam_search.beam_width: 5000
+  inference.beam_search.length_penalty_weight: 1.0
+
+tasks:
+  - class: DecodeText
+
+input_pipeline:
+  class: ParallelTextInputPipeline
+  params:
+    source_files:
+        - test_convo.txt
