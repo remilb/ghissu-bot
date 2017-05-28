@@ -22,12 +22,13 @@ model_params:
   context_encoder.params:
       metagraph_dir: trained_models/context_encoder/checkpoints
       metagraph_filename: model-300.meta
-      max_sequence_length: 25
+      cnn_source.max_seq_len: 30
       vocab_size: 20816
       input_name: cnn_input_placeholder
       output_name: hidden_context_layer/Relu
       naming_prefix: context_restore_prefix
       freeze_graph: true
+      vocab_path: ghissubot/cnn_classification/data/switchboard/swbd_vocab
 
   decoder.class: seq2seq.decoders.AttentionDecoder
   decoder.params:
