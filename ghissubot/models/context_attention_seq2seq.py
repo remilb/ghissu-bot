@@ -56,8 +56,8 @@ class AttentionSeq2SeqWithContext(ContextSeq2Seq):
         context_outputs_reshaped = tf.reshape(encoder_output.context_outputs, (context_batch_size, 1, context_embedding_width))
 
         #Append as extra hidden state to encoder hidden states
-        attention_values = tf.concat([context_outputs_reshaped, encoder_output.attention_values], 1)
-        attention_keys = tf.concat([context_outputs_reshaped, encoder_output.outputs], 1)
+        attention_values = tf.concat([context_outputs_reshaped, encoder_output.attention_values], axis=1, name="attention_values")
+        attention_keys = tf.concat([context_outputs_reshaped, encoder_output.outputs], axis=1, name="attention_keys")
         attention_values_length = tf.add(encoder_output.attention_values_length, tf.constant(1))
         return self.decoder_class(
             params=self.params["decoder.params"],

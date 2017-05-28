@@ -99,10 +99,11 @@ with tf.Graph().as_default():
     with sess.as_default():
 
         #TODO: tf.mode
-        cnn = TextCNN(params, "TRAIN", name="")
+
 
         # Define Training procedure
         with tf.variable_scope("context_restore_prefix"):
+            cnn = TextCNN(params, "TRAIN", name="")
             global_step = tf.get_variable(name="global_step", initializer=0, trainable=False)
             optimizer = tf.train.AdamOptimizer(FLAGS.learning_rate)
             grads_and_vars = optimizer.compute_gradients(cnn.loss)
@@ -204,5 +205,5 @@ with tf.Graph().as_default():
                     dev_step(x_dev, y_dev, writer=dev_summary_writer)
                     print("")
                 if current_step % FLAGS.checkpoint_every == 0:
-                    path = saver.save(sess, checkpoint_prefix, global_step=current_step)
+                    path = saver.save(sess, checkpoint_prefix, global_step=current_step, var)
                     print("Saved model checkpoint to {}\n".format(path))
