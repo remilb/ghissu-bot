@@ -61,7 +61,8 @@ params = {
 "num_classes": 10,
 "name_scope_of_convolutions": "conv-maxpool-",
 "vocab_source": os.getcwd() + "/data/switchboard/swbd_vocab",
-"context_size": 512
+"context_size": 512,
+"unique_prefix": "ghissubot_subgraph"
 }
 
 # Load data
@@ -102,7 +103,7 @@ with tf.Graph().as_default():
 
 
         # Define Training procedure
-        with tf.variable_scope("context_restore_prefix"):
+        with tf.variable_scope(params["unique_prefix"]):
             cnn = TextCNN(params, "TRAIN", name="")
             global_step = tf.get_variable(name="global_step", initializer=0, trainable=False)
             optimizer = tf.train.AdamOptimizer(FLAGS.learning_rate)
@@ -205,5 +206,5 @@ with tf.Graph().as_default():
                     dev_step(x_dev, y_dev, writer=dev_summary_writer)
                     print("")
                 if current_step % FLAGS.checkpoint_every == 0:
-                    path = saver.save(sess, checkpoint_prefix, global_step=current_step, var)
+                    path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                     print("Saved model checkpoint to {}\n".format(path))
