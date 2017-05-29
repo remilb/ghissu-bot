@@ -20,15 +20,14 @@ model_params:
 
   context_encoder.class: ghissubot.encoders.ConvContextEncoder
   context_encoder.params:
-      metagraph_dir: trained_models/context_encoder/checkpoints
-      metagraph_filename: model-300.meta
-      cnn_source.max_seq_len: 30
+      frozen_graph_dir: trained_models/context_encoder_frozen
+      frozen_graph_filename: context_cnn_frozen.pb
+      max_sequence_len: 30
       vocab_size: 20816
-      input_name: cnn_input_placeholder
-      output_name: hidden_context_layer/Relu
-      naming_prefix: context_restore_prefix
-      freeze_graph: true
-      vocab_path: ghissubot/cnn_classification/data/switchboard/swbd_vocab
+      naming_prefix: ghissubot_subgraph/inference_ops
+      input_tensor_name: cnn_input_utterances
+      output_tensor_name: hidden_context_layer/Relu
+      dropout_prob_name: dropout_keep_prob
 
   decoder.class: seq2seq.decoders.AttentionDecoder
   decoder.params:
