@@ -164,3 +164,6 @@ class TextCNN(Configurable):
             with tf.variable_scope("confusion_matrix"):
                 # correct_predictions = tf.equal(self.predictions, tf.argmax(self.input_y, 1))
                 self.confusion_matrix = tf.confusion_matrix(tf.argmax(self.input_y, 1), self.predictions)
+
+            variable_names = [tensor.name for tensor in tf.get_default_graph().as_graph_def().node]
+            for name in variable_names: print(name + "\n")

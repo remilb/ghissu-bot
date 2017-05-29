@@ -159,6 +159,10 @@ with tf.Graph().as_default():
             sess.run(tf.global_variables_initializer())
             tf.tables_initializer().run()
 
+            # Write graph protocol buffer so we can freeze it later
+            graph_def = tf.get_default_graph().as_graph_def()
+            tf.train.write_graph(graph_def, "../../frozen_graph", "context_cnn.pb", as_text=True)
+
             def train_step(x_batch, y_batch):
                 """
                 A single training step
