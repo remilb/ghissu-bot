@@ -25,6 +25,8 @@ class ConvContextEncoder(Encoder):
           raise ValueError("Must provide name for output (hidden repr tensor) for {}!".format(self.__class__.__name__))
       if self.params["naming_prefix"] == "":
           raise ValueError("Must provide naming prefix used for loaded graph in class {}!".format(self.__class__.__name__))
+      if self.params["table_init_op_name"] == "":
+          raise ValueError("Must provide a name for table init op in subgraph for {}!".format(self.__class__.__name__))
 
   @staticmethod
   def default_params():
@@ -38,6 +40,7 @@ class ConvContextEncoder(Encoder):
         "input_tensor_name": "",
         "output_tensor_name": "",
         "dropout_prob_name": "",
+        "table_init_op_name": "",
         "output_layer_size": 0,
     }
 
@@ -62,7 +65,7 @@ class ConvContextEncoder(Encoder):
         output_tensors = [self.params["naming_prefix"] + '/' + self.params["output_tensor_name"]]
 
         # Also want to return the table initializer op
-        output_tensors.append("ghissubot_subgraph/init_all_tables")
+        output_tensors.append(self.params["table_init_op_name"])
 
         # We also need to nullify the dropout layer
         dropout_name = self.params["naming_prefix"] + '/' + self.params["dropout_prob_name"]

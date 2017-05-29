@@ -28,6 +28,7 @@ model_params:
       input_tensor_name: cnn_input_utterances
       output_tensor_name: hidden_context_layer/Relu
       dropout_prob_name: dropout_keep_prob
+      table_init_op_name: ghissubot_subgraph/init_all_tables
 
   decoder.class: seq2seq.decoders.AttentionDecoder
   decoder.params:
