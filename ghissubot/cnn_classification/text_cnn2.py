@@ -132,7 +132,7 @@ class TextCNN(Configurable):
             with tf.variable_scope("dropout_flatten"):
                 self.h_pool_flat_dropout = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
 
-            self.feed_forward_layer = tf.contrib.layers.fully_connected(inputs=self.h_pool_flat_dropout, num_outputs=params["context_size"], scope="hidden_context_layer")
+            self.feed_forward_layer = tf.contrib.layers.fully_connected(inputs=self.h_pool_flat_dropout, num_outputs=self.params["context_size"], scope="hidden_context_layer")
             # Add dropout
 
             with tf.variable_scope("dropout_fully_connected"):
