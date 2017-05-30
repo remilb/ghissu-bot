@@ -7,6 +7,7 @@ model_params:
   bridge.class: seq2seq.models.bridges.ZeroBridge
 
   embedding.dim: 128
+  embedding.share: true
 
   encoder.class: seq2seq.encoders.BidirectionalRNNEncoder
   encoder.params:
@@ -48,8 +49,8 @@ model_params:
   source.reverse: false
   target.max_seq_len: 50
 
-  vocab_source: data/cornell_film/cornell_vocab.txt
-  vocab_target: data/cornell_film/cornell_vocab.txt
+  vocab_source: data/cornell_film/context/cornell_vocab_31000.txt
+  vocab_target: data/cornell_film/context/cornell_vocab_31000.txt
 
 input_pipeline_train:
   class: ConversationInputPipeline
@@ -58,7 +59,7 @@ input_pipeline_train:
         - data/cornell_film/context/utterance_train.txt
     target_files:
         - data/cornell_film/context/response_train.txt
-    num_epochs: 10
+    num_epochs: 19
 
 input_pipeline_dev:
   class: ConversationInputPipeline
