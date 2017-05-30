@@ -45,11 +45,17 @@ class ContextSeq2Seq(BasicSeq2Seq):
 
 
     def _build(self, features, labels, params):
-        #First get context encoding of previous utterance and current
-        context_encoder_output_previous = self.encode_context(features["context_tokens"], features["context_len"])
+        #First get context encoding of previous utterance
+        with tf.name_scope("context_previous_utterance"):
+            context_encoder_output_previous = self.encode_context(features["context_tokens"], features["context_len"])
 
-        #TODO: This might throw value error if load subgraph doesn't internally use get_variable
-        #context_encoder_output_current = self.encode_context(features["source_tokens"], features["source_len"])
+        # Context encoding of current utterance
+        with tf.name_scope("context_current_utterance"):
+            context_encoder_output_current = self.encode_context(features["source_tokens"], features["source_len"])
+
+        # #For now we'll just average these two context vectors to get the final representation
+        context_representation = tf.add(context_encoder_output_previous, context_encoder_output_current)
+        context_representation = tf.multiply(context_representation, 0.5)
 
         # Now pre-process features and labels for the regular RNN encoder
         features, labels = self._preprocess(features, labels)
@@ -62,7 +68,7 @@ class ContextSeq2Seq(BasicSeq2Seq):
                                               final_state=encoder_output.final_state,
                                               attention_values=encoder_output.attention_values,
                                               attention_values_length=encoder_output.attention_values_length,
-                                              context_outputs=context_encoder_output_previous
+                                              context_outputs=context_representation
                                               )
         decoder_output, _, = self.decode(packed_output, features, labels)
 

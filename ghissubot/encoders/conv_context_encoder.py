@@ -43,14 +43,18 @@ class ConvContextEncoder(Encoder):
     }
 
   def encode(self, inputs, sequence_length, **kwargs):
-        #TODO: This is where we need to import metagraph and hook into it
-
         frozen_graph_file = self.params["frozen_graph_dir"] + '/' + self.params["frozen_graph_filename"]
 
-        #TODO: Might need to make sure sequence lengths are all in order
+        # Make sure sequences end up the right length by extending them then chopping them
+        batch_size = tf.shape(inputs)[0]
+        pads = tf.fill((batch_size, self.params["max_sequence_len"]), '')
+        inputs = tf.concat([inputs, pads], axis=1)
         if self.params["max_sequence_len"] is not None:
             inputs = inputs[:, :self.params["max_sequence_len"]]
             sequence_length = tf.minimum(sequence_length, self.params["max_sequence_len"])
+
+        #Print various lengths for debugging
+        #inputs = tf.Print(inputs, [inputs, sequence_length, tf.shape(inputs)], message="The inputs are: ", summarize=25)
 
         # Now we have to read in binary protobuf for frozen graph, then parse it to a GraphDef
         with gfile.FastGFile(frozen_graph_file, 'rb') as f:
@@ -79,8 +83,6 @@ class ConvContextEncoder(Encoder):
         # Finally, we need to add the table initializers in the imported subgraph to the global table initializers collection
         # This ensures that the vocab lookup tables in the subgraph get initialized. This is so fucked up
         tf.add_to_collection(tf.GraphKeys.TABLE_INITIALIZERS, table_initializer)
-
-        # Now we need to get a handle to the outputs
 
         # Note that we don't return an EncoderOutput like the other classes, just the context vector
         return context_vector

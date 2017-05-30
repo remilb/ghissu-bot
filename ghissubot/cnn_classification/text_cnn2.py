@@ -24,7 +24,7 @@ class TextCNN(Configurable):
             "cnn_source.max_seq_len": 25,
             "vocab_size": 26297,
             "layer_name": "context_layer:0",
-            "num_classes": 43,
+            "num_classes": 10,
             "name_scope_of_convolutions": "conv-maxpool-",
             "vocab_source": "",
             "context_size": 512,
