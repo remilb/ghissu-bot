@@ -26,7 +26,7 @@ def clean_punctuations(text):
     return re.sub("[^a-zA-Z .?!0-9,\']", "", text)
 import  numpy as np
 def preprocess(filename, utterance_train_filename, response_train_filename, utterance_dev_filename, response_dev_filename):
-    df = pd.read_csv(filename, sep = "\n")
+    df = pd.read_csv(filename, sep = ",")
 
     df = df.dropna(subset = ['utterance'])
     df['tokenised_sents'] = df['utterance'].apply(clean_punctuations).apply(textacy_preprocess).apply(tokenize)
@@ -35,8 +35,8 @@ def preprocess(filename, utterance_train_filename, response_train_filename, utte
     clean_utterances, response = get_response_array( clean_utterances)
     response = np.array(response)
 
-    #code to concat prev utterance
-    delim = "|"
+    ''''#code to concat prev utterance
+    delim = " "
     concat_utterance = []
     for i in range(len(clean_utterances)):
         concat_utterance.append(clean_utterances[i] + delim +  response[i])
@@ -44,11 +44,13 @@ def preprocess(filename, utterance_train_filename, response_train_filename, utte
     clean_utterances = pd.Series(data=concat_utterance)
     response_new = response[1:]
     response = pd.Series(data=response_new)
+    '''
 
 
 
     division_boundary = math.floor(len(df)*0.9)
-
+    clean_utterances = pd.Series(data=clean_utterances)
+    response = pd.Series(data=response)
     clean_utterances_train = clean_utterances[:division_boundary]
     clean_utterances_dev = clean_utterances[division_boundary:]
     response_train = response[:division_boundary]
@@ -58,6 +60,7 @@ def preprocess(filename, utterance_train_filename, response_train_filename, utte
     response_train.to_csv(response_train_filename, index=False)
     clean_utterances_dev.to_csv(utterance_dev_filename, index=False)
     response_dev.to_csv(response_dev_filename, index=False)
+    clean_utterances.to_csv("utt.csv", index=False)
 
     print("done")
 
@@ -86,5 +89,9 @@ def main():
     response_dev_filename = sys.argv[5]
     preprocess(filename, utterance_filename, response_filename, utterance_dev_filename, response_dev_filename)
     pass
+
+
+def preprocess_text(text):
+    return tokenize(remove_quotes(textacy_preprocess(clean_punctuations(text))))
 
 main()
