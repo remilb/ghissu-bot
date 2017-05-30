@@ -11,7 +11,7 @@ from seq2seq.data import vocab
 
 class ConvContextEncoder(Encoder):
   """Encoder class that loads in an externally trained CNN classifer and encodes input
-  sequences by passing them through it. Rips out the final hiddent state"""
+  sequences by passing them through it. Rips out the final hidden state"""
 
   def __init__(self, params, mode, name="conv_context_encoder"):
       super(ConvContextEncoder, self).__init__(params, mode, name)
@@ -31,11 +31,9 @@ class ConvContextEncoder(Encoder):
   @staticmethod
   def default_params():
     return {
-        "embedding.size": 128,
         "frozen_graph_dir": "",
         "frozen_graph_filename": "",
         "max_sequence_len": 0,
-        "vocab_size": 20816,
         "naming_prefix": "",
         "input_tensor_name": "",
         "output_tensor_name": "",
@@ -81,9 +79,6 @@ class ConvContextEncoder(Encoder):
         # Finally, we need to add the table initializers in the imported subgraph to the global table initializers collection
         # This ensures that the vocab lookup tables in the subgraph get initialized. This is so fucked up
         tf.add_to_collection(tf.GraphKeys.TABLE_INITIALIZERS, table_initializer)
-
-        variable_names = [tensor.name for tensor in tf.get_default_graph().as_graph_def().node]
-        for name in variable_names: print(name + "\n")
 
         # Now we need to get a handle to the outputs
 

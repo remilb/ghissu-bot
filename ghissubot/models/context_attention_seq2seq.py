@@ -50,21 +50,24 @@ class AttentionSeq2SeqWithContext(ContextSeq2Seq):
 
         #TODO: Make sure this is joining along the correct dimension
         #TODO: Might need to do some kind of projection here to make sizes align
-        #Reshape context output
-        context_batch_size = tf.shape(encoder_output.context_outputs)[0]
-        context_embedding_width = tf.shape(encoder_output.context_outputs)[1]
-        context_outputs_reshaped = tf.reshape(encoder_output.context_outputs, (context_batch_size, 1, context_embedding_width))
+        ### Concatenate context encoder hidden state to all the RNN encoder hidden states, then pass to attention
+        # First expand dimensions of hidden layer output
+        context_outputs_reshaped = tf.expand_dims(encoder_output.context_outputs, axis=1)
 
-        #Append as extra hidden state to encoder hidden states
-        attention_values = tf.concat([context_outputs_reshaped, encoder_output.attention_values], axis=1, name="attention_values")
-        attention_keys = tf.concat([context_outputs_reshaped, encoder_output.outputs], axis=1, name="attention_keys")
-        attention_values_length = tf.add(encoder_output.attention_values_length, tf.constant(1))
+        # Now tile the reshaped context layer so that is is ready for concatenation
+        sequence_length = tf.shape(encoder_output.outputs)[1]
+        context_outputs_tiled = tf.tile(context_outputs_reshaped, (1, sequence_length, 1))
+
+        # Concatenate context hidden layer to every RNN encoder hidden state, and pass to attention
+        attention_values = tf.concat([encoder_output.attention_values, context_outputs_tiled], axis=2, name="attention_values")
+        attention_keys = tf.concat([encoder_output.outputs, context_outputs_tiled], axis=2, name="attention_keys")
+
         return self.decoder_class(
             params=self.params["decoder.params"],
             mode=self.mode,
             vocab_size=self.target_vocab_info.total_size,
             attention_values=attention_values,
-            attention_values_length=attention_values_length,
+            attention_values_length=encoder_output.attention_values_length,
             attention_keys=attention_keys,
             attention_fn=attention_layer,
             reverse_scores_lengths=reverse_scores_lengths)

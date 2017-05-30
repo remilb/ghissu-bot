@@ -21,7 +21,7 @@ class TextCNN(Configurable):
             "checkpoint_filename": "",
             "allow_soft_placement": True,
             "log_device_placement": False,
-            "cnn_source.max_seq_len": 30,
+            "cnn_source.max_seq_len": 25,
             "vocab_size": 26297,
             "layer_name": "context_layer:0",
             "num_classes": 43,

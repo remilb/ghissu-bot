@@ -22,8 +22,7 @@ model_params:
   context_encoder.params:
       frozen_graph_dir: trained_models/context_encoder_frozen
       frozen_graph_filename: context_cnn_frozen.pb
-      max_sequence_len: 30
-      vocab_size: 20816
+      max_sequence_len: 25
       naming_prefix: ghissubot_subgraph/inference_ops
       input_tensor_name: cnn_input_utterances
       output_tensor_name: hidden_context_layer/Relu

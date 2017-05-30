@@ -160,6 +160,7 @@ with tf.Graph().as_default():
             tf.tables_initializer().run()
 
             # Write graph protocol buffer so we can freeze it later
+            # Excuse my poor directory etiquette
             graph_def = tf.get_default_graph().as_graph_def()
             tf.train.write_graph(graph_def, "../../graph_def", "context_cnn_unfrozen.pb", as_text=True)
 
